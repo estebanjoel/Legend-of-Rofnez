@@ -3,26 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour
+namespace RPG.Movement
 {
-    [SerializeField] private Transform target;
-    void Update()
+    public class Mover : MonoBehaviour
     {
-        if(Input.GetMouseButtonDown(0))
+        private Transform target;
+        public void MoveTo(Vector3 destination)
         {
-            MoveToCursor();
+            GetComponent<NavMeshAgent>().destination = destination;
         }
-        
-    }
-
-    private void MoveToCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit);
-        if(hasHit)
-        {
-            GetComponent<NavMeshAgent>().destination = hit.point;
-        }        
     }
 }
