@@ -14,6 +14,10 @@ public class MuverPlayer : MonoBehaviour
             MoverAlCursor();
         }
         UpdateAnimator();
+        if (Input.GetMouseButton(1))
+        {
+            Hitt();
+        }
     }
     private void MoverAlCursor()//sitema de movimento
         {
@@ -29,5 +33,13 @@ public class MuverPlayer : MonoBehaviour
         Vector3 LocalVelocity = transform.InverseTransformDirection(velocity);
         float speed = LocalVelocity.z;
         GetComponent<Animator>().SetFloat("forwordSpeed",speed);
+    }
+    private void Hitt()
+    {
+        GetComponent<Animator>().SetTrigger("Attack");
+    }
+    void Hit()//Animator event para dano Proximamente
+    {
+
     }
 }
