@@ -9,13 +9,13 @@ public class MuverPlayer : MonoBehaviour
     [SerializeField] Transform target;
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             MoverAlCursor();
-            //LastRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         }
+        UpdateAnimator();
     }
-    private void MoverAlCursor()
+    private void MoverAlCursor()//sitema de movimento
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -23,4 +23,11 @@ public class MuverPlayer : MonoBehaviour
                 if(hasHit == true)
                 {GetComponent<NavMeshAgent>().destination = hit.point; }
         }
+    private void UpdateAnimator()//el codigo de animacion de caminata
+    {
+        Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+        Vector3 LocalVelocity = transform.InverseTransformDirection(velocity);
+        float speed = LocalVelocity.z;
+        GetComponent<Animator>().SetFloat("forwordSpeed",speed);
+    }
 }
