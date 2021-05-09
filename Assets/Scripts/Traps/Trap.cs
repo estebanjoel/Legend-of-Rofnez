@@ -8,9 +8,11 @@ public class Trap : MonoBehaviour
     private float currentTime;
     public float time = 2f;
     private float fireRank = 1;
+    BoxCollider objCollider;
     private void Start()
     {
         particle = GetComponentInChildren<ParticleSystem>();
+        objCollider = GetComponent<BoxCollider>();
         currentTime = time;
     }
     private void FixedUpdate()
@@ -20,13 +22,16 @@ public class Trap : MonoBehaviour
         {
             particle.enableEmission = false;
             fireRank = 1;
+            objCollider.enabled = false;
             StartCoroutine(waitToReactivate());
            
         }
     }
     IEnumerator waitToReactivate()
     {
+        
         yield return new WaitForSeconds(5);
+        objCollider.enabled = true;
         particle.enableEmission = true;
         fireRank += Time.deltaTime;
         Mathf.Clamp(fireRank, 0, 4);
@@ -36,8 +41,7 @@ public class Trap : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("damage");
+        collision.gameObject.GetComponent<Player>().TakeDamage(1);
     }
 
-   
 }
