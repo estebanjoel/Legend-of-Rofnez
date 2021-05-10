@@ -33,7 +33,6 @@ namespace RPG.Control
                 } 
                 return true;
             }
-            fighter.Cancel();
             return false;
         }
 
