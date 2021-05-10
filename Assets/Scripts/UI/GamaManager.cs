@@ -24,6 +24,9 @@ public class GamaManager : Lif
         {
             SceneManager.LoadScene(1);
         }
-
+        if(loseCondition.getTheKey == true)
+        {
+            //se habre la puerta del boss
+        }
     }
 }

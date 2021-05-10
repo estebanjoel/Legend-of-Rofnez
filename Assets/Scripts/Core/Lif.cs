@@ -5,4 +5,5 @@ using UnityEngine;
 public abstract class Lif : MonoBehaviour
 {
     public int life;
+    protected int maxLife;
 }
