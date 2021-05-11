@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
+using RPG.Core;
 using System;
 
 namespace RPG.Control
@@ -10,12 +11,15 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         Fighter fighter;
+        Health health;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
+            health = GetComponent<Health>();
         }
         void Update()
         {
+            if(health.IsDead()) return;
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
         }
@@ -27,10 +31,11 @@ namespace RPG.Control
             foreach(RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.gameObject.GetComponent<CombatTarget>();
-                if(!fighter.CanAttack(target)) continue;
+                if(target == null) continue;
+                if(!fighter.CanAttack(target.gameObject)) continue;
                 if(Input.GetMouseButtonDown(0))
                 {
-                    fighter.Attack(target);
+                    fighter.Attack(target.gameObject);
                 } 
                 return true;
             }

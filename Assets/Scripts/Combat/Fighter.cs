@@ -14,7 +14,7 @@ namespace RPG.Combat
         Mover mover;
         Animator anim;
         [SerializeField] Health target;
-        float timeSinceLastAttack = 0;
+        float timeSinceLastAttack = Mathf.Infinity;
         private void Start()
         {
             mover = GetComponent<Mover>();  
@@ -75,14 +75,14 @@ namespace RPG.Combat
         }
 
         //Inicio la acción de ataque y defino mi objetivo
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
         }
 
         //Chequeo si puedo atacar
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if(combatTarget == null) return false; //Chequeo si el objetivo es null
             Health targetToTest =  combatTarget.GetComponent<Health>();
