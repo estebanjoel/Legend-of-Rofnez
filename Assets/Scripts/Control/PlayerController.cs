@@ -20,13 +20,14 @@ namespace RPG.Control
             if(InteractWithMovement()) return;
         }
 
+        // Busco con raycast si encuentro un objetivo para pelear, chequeo si puedo atacarlo y si hago click, lo ataco
         private bool InteractWithCombat()
         {
             RaycastHit[] hits = Physics.RaycastAll(GetMouseRay());
             foreach(RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.gameObject.GetComponent<CombatTarget>();
-                if(target == null) continue;
+                if(!fighter.CanAttack(target)) continue;
                 if(Input.GetMouseButtonDown(0))
                 {
                     fighter.Attack(target);
@@ -36,6 +37,7 @@ namespace RPG.Control
             return false;
         }
 
+        //Chequeo con Raycast algún punto en el mundo en donde pueda hacer moverme y si hago click y tengo lugar, me muevo
         private bool InteractWithMovement()
         {
             RaycastHit hit;
@@ -51,6 +53,7 @@ namespace RPG.Control
             return false;
         }
 
+        //Devuelve el punto donde esté apuntando con el mouse en la posición del mundo
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);

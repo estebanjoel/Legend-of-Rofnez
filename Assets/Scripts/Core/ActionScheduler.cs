@@ -4,9 +4,12 @@ using UnityEngine;
 
 namespace RPG.Core
 {
+    //Clase diseñada para el manejo de acciones de distintas clases en el juego
     public class ActionScheduler : MonoBehaviour
     {
-        IAction currentAction;
+        IAction currentAction; //Acción actual activa
+        
+        //Si tengo una acción activa, la cancelo e inicio la nueva acción seleccionada
         public void StartAction(IAction action)
         {
             if(currentAction == action) return;
