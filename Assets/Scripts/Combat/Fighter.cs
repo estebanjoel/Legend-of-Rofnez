@@ -8,9 +8,10 @@ namespace RPG.Combat
 {
     public class Fighter : MonoBehaviour, IAction
     {
-        [SerializeField] float weaponRange = 2f;
-        [SerializeField] float weaponDamage = 5f;
-        [SerializeField] float timeBetweenAttacks = 1f;
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
+        [SerializeField] Weapon defaultWeapon = null;
+        [SerializeField] Weapon currentWeapon = null;
         Mover mover;
         Animator anim;
         [SerializeField] Health target;
@@ -19,6 +20,7 @@ namespace RPG.Combat
         {
             mover = GetComponent<Mover>();  
             anim = GetComponent<Animator>();
+            EquipWeapon(defaultWeapon);
         }
         
         private void Update()
@@ -42,18 +44,32 @@ namespace RPG.Combat
             }
         }
 
+        public void EquipWeapon(Weapon weapon)
+        {
+            currentWeapon = weapon;
+            if(weapon == null) return;
+            weapon.Spawn(rightHandTransform, leftHandTransform, anim);
+        }
+
         //Evento en la animación de Attack. Realiza el daño al objetivo.
         void Hit()
         {
             if(target == null) return;
-            target.TakeDamage(weaponDamage);
+
+            if(currentWeapon.HasProjectile()) currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            else target.TakeDamage(currentWeapon.GetWeaponDamage());
+        }
+
+        void Shoot()
+        {
+            Hit();
         }
 
         //Lo que hago al atacar
         private void AttackBehaviour()
         {
             transform.LookAt(target.transform); //Roto hacia mi objetivo
-            if(timeSinceLastAttack >= timeBetweenAttacks)
+            if(timeSinceLastAttack >= currentWeapon.GetTimeBetweenAttacks())
             {
                 //Esto invoca el evento Hit()
                 timeSinceLastAttack = 0f;
@@ -71,7 +87,7 @@ namespace RPG.Combat
         //Devuelve la distancia entre mi posición y la del objetivo y chequea que sea menor al rango del arma
         private bool GetIsInRange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetWeaponRange();
         }
 
         //Inicio la acción de ataque y defino mi objetivo

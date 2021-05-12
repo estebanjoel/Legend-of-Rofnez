@@ -27,6 +27,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 3
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 5
 --- !u!114 &7865442223320813579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +58,12 @@ PrefabInstance:
     - target: {fileID: -5624243092093947636, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -5624243092093947636, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: maxHealthPoints
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -116,6 +125,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231214, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_Speed
@@ -126,6 +140,33 @@ PrefabInstance:
       propertyPath: timeBetweenAttacks
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: a6967366e0c0953498498184df0a9939,
+        type: 2}
+    - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 3529686434509596632}
+    - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: a6967366e0c0953498498184df0a9939,
+        type: 2}
+    - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 3529686434509596632}
+    - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 3529686434509522906}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716606a900d64c24abfa70679b6e56ed, type: 3}
 --- !u!1 &540004773825614262 stripped
@@ -201,3 +242,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 4eaaa3032586832468e97a6452e498a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &3529686434509522906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 3529686434509476054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3529686434509596632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 3529686434509476054}
+  m_PrefabAsset: {fileID: 0}

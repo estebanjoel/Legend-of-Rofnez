@@ -6,7 +6,13 @@ namespace RPG.Core
     public class Health : MonoBehaviour
     {
         [SerializeField] float healthPoints = 100f;
+        [SerializeField] float maxHealthPoints = 100f;
         private bool isDead;
+
+        private void Start()
+        {
+            healthPoints = maxHealthPoints;    
+        }
 
         public bool IsDead()
         {
@@ -22,6 +28,11 @@ namespace RPG.Core
             }
         }
 
+        public void Heal(float healPoints)
+        {
+            healthPoints = Mathf.Min(healthPoints + healPoints, maxHealthPoints);
+        }
+
         public float GetHP()
         {
             return healthPoints;
@@ -31,8 +42,16 @@ namespace RPG.Core
             if(isDead) return;
             
             isDead = true;
-            GetComponent<Animator>().SetTrigger("Die");
-            GetComponent<ActionScheduler>().CancelCurrentAction();
+            if(gameObject.tag == "Enemy")
+            {
+                GetComponent<Animator>().SetTrigger("Die");
+                GetComponent<ActionScheduler>().CancelCurrentAction();
+            }
+            if(gameObject.tag == "DestroyableObstacle")
+            {
+                GetComponent<NavMeshObstacle>().enabled = false;
+                GetComponent<MeshFilter>().mesh = null;
+            }
         }
     }
 }

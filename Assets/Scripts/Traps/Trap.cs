@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Core;
 
 public class Trap : MonoBehaviour
 {
@@ -8,12 +9,13 @@ public class Trap : MonoBehaviour
     private float currentTime;
     public float time = 2f;
     private float fireRank = 1;
+    [SerializeField] private float trapDamage = 10f; 
     BoxCollider objCollider;
     private void Start()
     {
         particle = GetComponentInChildren<ParticleSystem>();
         objCollider = GetComponent<BoxCollider>();
-        currentTime = time;
+        currentTime = 0;
     }
     private void FixedUpdate()
     {
@@ -24,7 +26,6 @@ public class Trap : MonoBehaviour
             fireRank = 1;
             objCollider.enabled = false;
             StartCoroutine(waitToReactivate());
-           
         }
     }
     IEnumerator waitToReactivate()
@@ -39,9 +40,12 @@ public class Trap : MonoBehaviour
         currentTime = time;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        collision.gameObject.GetComponent<Player>().TakeDamage(1);
+        if(other.gameObject.tag == "Player")
+        {
+            other.GetComponent<Health>().TakeDamage(trapDamage);
+        }
     }
 
 }
