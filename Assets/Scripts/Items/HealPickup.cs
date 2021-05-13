@@ -11,7 +11,9 @@ namespace RPG.Item
         public override void UseItem(GameObject player)
         {
             player.GetComponent<Health>().Heal(pointToHeal);
-            player.GetComponent<Animator>().SetTrigger("Heal");
+            // player.GetComponent<Animator>().SetTrigger("Heal");
+            player.GetComponent<ActionScheduler>().CancelCurrentAction();
+            transform.GetChild(0).GetComponent<ParticleSystem>().startLifetime = 0f;
         }
     }
 }

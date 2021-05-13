@@ -43,7 +43,7 @@ namespace RPG.Core
             if (isDead) return;
 
             isDead = true;
-            if (gameObject.tag == "Enemy")
+            if (gameObject.tag == "Enemy" || gameObject.tag == "Player")
             {
                 GetComponent<Animator>().SetTrigger("Die");
                 GetComponent<ActionScheduler>().CancelCurrentAction();
@@ -52,6 +52,7 @@ namespace RPG.Core
             {
                 GetComponent<NavMeshObstacle>().enabled = false;
                 GetComponent<MeshFilter>().mesh = null;
+                transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         public void HealActiv()

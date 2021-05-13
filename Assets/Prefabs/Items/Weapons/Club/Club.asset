@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26458d6aee7f71b40986aa84abfd0de8, type: 3}
-  m_Name: Unarmed-Enemy
+  m_Name: Club
   m_EditorClassIdentifier: 
-  weaponRange: 1
-  weaponDamage: 3
-  timeBetweenAttacks: 2
-  equippedPrefab: {fileID: 0}
-  animatorOverride: {fileID: 0}
+  weaponRange: 1.5
+  weaponDamage: 8
+  timeBetweenAttacks: 1.5
+  equippedPrefab: {fileID: 7549051083786947283, guid: 456afded84e803d43b5effdb885d4b6e,
+    type: 3}
+  animatorOverride: {fileID: 22100000, guid: 8e030bc255f368349bda76646a9c969e, type: 2}
   isRightHanded: 1
   projectile: {fileID: 0}

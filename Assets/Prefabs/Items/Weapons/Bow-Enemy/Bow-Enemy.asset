@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26458d6aee7f71b40986aa84abfd0de8, type: 3}
   m_Name: Bow-Enemy
   m_EditorClassIdentifier: 
-  weaponRange: 20
-  weaponDamage: 10
+  weaponRange: 10
+  weaponDamage: 5
   timeBetweenAttacks: 1
   equippedPrefab: {fileID: 5953904553036106882, guid: 4e2a261fd2e572d4faff0fb06851161a,
     type: 3}

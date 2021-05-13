@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private bool isHoming;
     float damage;
     [SerializeField] GameObject hitEffect = null;
+    [SerializeField] float lifeSpan = 1f;
+    float lifeTime = 0f;
     
     private void Start()
     {
@@ -25,9 +27,18 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target == null) return;
-        if(isHoming && !target.IsDead()) transform.LookAt(GetAimLocation());
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        lifeTime += Time.deltaTime;
+        if(lifeTime < lifeSpan)
+        {
+            if(target == null) return;
+            if(isHoming && !target.IsDead()) transform.LookAt(GetAimLocation());
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 
     private Vector3 GetAimLocation()
@@ -39,7 +50,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        bool canBeDestroyed = true;
+        bool canBeDestroyed = false;
         if(other.gameObject == target.gameObject)
         {
             if(!target.IsDead()) target.TakeDamage(damage);
@@ -47,8 +58,19 @@ public class Projectile : MonoBehaviour
             {
                 Instantiate(hitEffect, GetAimLocation(), transform.rotation);
             }
-            else canBeDestroyed = false;
+            canBeDestroyed = true;
         }
-        if(canBeDestroyed) Destroy(this.gameObject);
+        else if(other.gameObject.tag == "Prop" || other.gameObject.tag == "Obstacle")
+        {
+            canBeDestroyed = true;
+            if(hitEffect != null)
+            {
+                Instantiate(hitEffect, transform.position, transform.rotation);
+            }
+        }
+        if(canBeDestroyed)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
