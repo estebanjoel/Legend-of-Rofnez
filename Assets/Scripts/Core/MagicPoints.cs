@@ -14,7 +14,15 @@ namespace RPG.Core
         void Start()
         {
             magicPoints = maxMagicPoints;
-            bar = GameObject.FindObjectsOfType<HealBar>()[0];
+            HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
+            for(int i = 0; i < healbars.Length; i++)
+            {
+                if(healbars[i].gameObject.name == "Magic")
+                {
+                    bar = healbars[i];
+                    break;
+                }
+            }
         }
 
         public float GetMagicPoints()

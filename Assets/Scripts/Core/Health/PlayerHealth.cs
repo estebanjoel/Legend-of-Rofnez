@@ -12,7 +12,15 @@ namespace RPG.Core
 
         private void Start()
         {
-            bar = GameObject.FindObjectsOfType<HealBar>()[1];    
+            HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
+            for(int i = 0; i < healbars.Length; i++)
+            {
+                if(healbars[i].gameObject.name == "Health")
+                {
+                    bar = healbars[i];
+                    break;
+                }
+            }
         }
 
         public override void ShowVisualChanges()
