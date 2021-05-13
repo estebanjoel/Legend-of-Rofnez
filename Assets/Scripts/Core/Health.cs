@@ -8,10 +8,11 @@ namespace RPG.Core
         [SerializeField] float healthPoints = 100f;
         [SerializeField] float maxHealthPoints = 100f;
         private bool isDead;
+        public GameObject HealShader;
 
         private void Start()
         {
-            healthPoints = maxHealthPoints;    
+            healthPoints = maxHealthPoints;
         }
 
         public bool IsDead()
@@ -22,7 +23,7 @@ namespace RPG.Core
         public void TakeDamage(float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
-            if(healthPoints == 0)
+            if (healthPoints == 0)
             {
                 Die();
             }
@@ -39,19 +40,27 @@ namespace RPG.Core
         }
         public void Die()
         {
-            if(isDead) return;
-            
+            if (isDead) return;
+
             isDead = true;
-            if(gameObject.tag == "Enemy")
+            if (gameObject.tag == "Enemy")
             {
                 GetComponent<Animator>().SetTrigger("Die");
                 GetComponent<ActionScheduler>().CancelCurrentAction();
             }
-            if(gameObject.tag == "DestroyableObstacle")
+            if (gameObject.tag == "DestroyableObstacle")
             {
                 GetComponent<NavMeshObstacle>().enabled = false;
                 GetComponent<MeshFilter>().mesh = null;
             }
+        }
+        public void HealActiv()
+        {
+            HealShader.gameObject.SetActive(true);
+        }
+        public void HealDiActiv()
+        {
+            HealShader.gameObject.SetActive(false);
         }
     }
 }
