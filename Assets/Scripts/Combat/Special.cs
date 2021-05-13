@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Core;
+using CombatEnums;
 
 namespace RPG.Combat
 {
@@ -41,6 +42,7 @@ namespace RPG.Combat
                 GetComponent<ActionScheduler>().StartAction(this);
                 anim.SetTrigger("MagicAttack");
                 magicPoints.ConsumeMagicPoints(currentMagic.GetMpToConsume());
+                InstantiateMagic();
                 timeToActivateMagic = 0f;
             }
             
@@ -51,6 +53,15 @@ namespace RPG.Combat
             bool secondCondition = timeToActivateMagic >= currentMagic.GetMagicCooldown();
             if(firstCondition && secondCondition) return true;
             else return false;
+        }
+
+        private void InstantiateMagic()
+        {
+            if(currentMagic.GetMagicType() == MagicType.Expansive)
+            {
+                GameObject areaMagic = Instantiate(currentMagic.GetEquippedPrefab(), transform.position, transform.rotation);
+                areaMagic.GetComponent<AreaMagic>().SetAreaDamage(currentMagic.GetMagicDamage());
+            }
         }
 
         public void Cancel()

@@ -15,6 +15,7 @@ MonoBehaviour:
   magicDamage: 20
   mpToConsume: 5
   magicCooldown: 2.5
-  equippedPrefab: {fileID: 0}
+  equippedPrefab: {fileID: 2331271551912489652, guid: 571d0c0c0c73d8f4fa94220a8c735234,
+    type: 3}
   animatorOverride: {fileID: 0}
   magicType: 1

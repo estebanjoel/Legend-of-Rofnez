@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Core;
+using CombatEnums;
 
 namespace RPG.Combat
 {    
-    enum MagicType
-    {
-        Projectile,
-        Expansive,
-        Melee,
-        Defensive,
-        Heal
-    }
 
     [CreateAssetMenu(fileName = "Magic", menuName = "My Scriptable Objects/Make New Magic", order = 1)]
     public class Magic : ScriptableObject
@@ -24,6 +17,11 @@ namespace RPG.Combat
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] MagicType magicType;
 
+        public float GetMagicDamage()
+        {
+            return magicDamage;
+        }
+        
         public float GetMpToConsume()
         {
             return mpToConsume;
@@ -32,6 +30,16 @@ namespace RPG.Combat
         public float GetMagicCooldown()
         {
             return magicCooldown;
+        }
+
+        public GameObject GetEquippedPrefab()
+        {
+            return equippedPrefab;
+        }
+
+        public MagicType GetMagicType()
+        {
+            return magicType;
         }
     }
 }
