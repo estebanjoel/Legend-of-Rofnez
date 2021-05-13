@@ -7,9 +7,9 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] Health target;
     [SerializeField] float speed;
-
     [SerializeField] private bool isHoming;
     float damage;
+    [SerializeField] GameObject hitEffect = null;
     
     private void Start()
     {
@@ -26,7 +26,7 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         if(target == null) return;
-        if(isHoming && target.IsDead()) transform.LookAt(GetAimLocation());
+        if(isHoming && !target.IsDead()) transform.LookAt(GetAimLocation());
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -43,6 +43,10 @@ public class Projectile : MonoBehaviour
         if(other.gameObject == target.gameObject)
         {
             if(!target.IsDead()) target.TakeDamage(damage);
+            if(hitEffect != null)
+            {
+                Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+            }
             else canBeDestroyed = false;
         }
         if(canBeDestroyed) Destroy(this.gameObject);
