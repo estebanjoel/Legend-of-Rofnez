@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RPG.Combat
 {
-    [CreateAssetMenu(fileName = "Weapon", menuName = "Weapons/Make New Weapon", order = 0)]
+    [CreateAssetMenu(fileName = "Weapon", menuName = "My Scriptable Objects/Make New Weapon", order = 0)]
     public class Weapon : ScriptableObject
     {
         [SerializeField] float weaponRange = 2f;

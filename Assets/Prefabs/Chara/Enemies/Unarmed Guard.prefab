@@ -43,6 +43,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fe1a05800091b40bb1dde11c052948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8212890988055871080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540004773825614262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700610640910b4c4b8db74b55371be21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 30
+  maxHealthPoints: 30
 --- !u!1001 &3383250315200596442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,7 +137,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_Name
-      value: Guard
+      value: Unarmed Guard
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}

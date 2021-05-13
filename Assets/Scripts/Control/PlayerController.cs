@@ -11,19 +11,32 @@ namespace RPG.Control
     public class PlayerController : MonoBehaviour
     {
         Fighter fighter;
+        Special special;
         Health health;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
+            special = GetComponent<Special>();
             health = GetComponent<Health>();
         }
         void Update()
         {
             if(health.IsDead()) return;
+            if(ActivateSpecialAttack()) return;
             if(InteractWithCombat()) return;
             if(InteractWithMovement()) return;
         }
 
+        private bool ActivateSpecialAttack()
+        {
+            if(Input.GetMouseButtonDown(1) && special.getCurrentMagic() != null)
+            {
+                special.SpecialAttack();
+                return true;
+            }
+            else return false;
+        }
+        
         // Busco con raycast si encuentro un objetivo para pelear, chequeo si puedo atacarlo y si hago click, lo ataco
         private bool InteractWithCombat()
         {

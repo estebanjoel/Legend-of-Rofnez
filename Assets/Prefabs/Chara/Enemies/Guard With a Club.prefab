@@ -73,5 +73,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guard With a Club
       objectReference: {fileID: 0}
+    - target: {fileID: 2234089465751091414, guid: 78698cf7a23a12347a02382a2e58bf96,
+        type: 3}
+      propertyPath: healthPoints
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234089465751091414, guid: 78698cf7a23a12347a02382a2e58bf96,
+        type: 3}
+      propertyPath: maxHealthPoints
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78698cf7a23a12347a02382a2e58bf96, type: 3}

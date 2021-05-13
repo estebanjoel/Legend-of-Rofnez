@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2994264039517231219}
   - component: {fileID: 2994264039517231216}
   - component: {fileID: 2994264039517231217}
-  - component: {fileID: -5624243092093947636}
   - component: {fileID: 8156592015768999972}
   m_Layer: 0
   m_Name: Character
@@ -141,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536d9eb751575d1418dfbf2d78e8466e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handTransform: {fileID: 0}
+  rightHandTransform: {fileID: 0}
+  leftHandTransform: {fileID: 0}
   defaultWeapon: {fileID: 0}
   currentWeapon: {fileID: 0}
   target: {fileID: 0}
@@ -157,19 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6335080c96fd41c4f8df7d13bd8b0e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5624243092093947636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2994264039517231212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159028674c0e37c4491c189590bc2734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 100
 --- !u!54 &8156592015768999972
 Rigidbody:
   m_ObjectHideFlags: 0
