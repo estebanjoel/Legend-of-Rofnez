@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using RPG.UI;
-
 
 namespace RPG.Core
 {
@@ -11,12 +9,10 @@ namespace RPG.Core
         [SerializeField] float maxHealthPoints = 100f;
         private bool isDead;
         public GameObject HealShader;
-        HealBar bar;
-        
+
         private void Start()
         {
             healthPoints = maxHealthPoints;
-            bar = GameObject.FindObjectOfType<HealBar>();
         }
 
         public bool IsDead()
@@ -27,7 +23,6 @@ namespace RPG.Core
         public void TakeDamage(float damage)
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
-            bar.ChangeBarFiller(healthPoints, maxHealthPoints);
             if (healthPoints == 0)
             {
                 Die();
@@ -37,7 +32,6 @@ namespace RPG.Core
         public void Heal(float healPoints)
         {
             healthPoints = Mathf.Min(healthPoints + healPoints, maxHealthPoints);
-            bar.ChangeBarFiller(healthPoints, maxHealthPoints);
         }
 
         public float GetHP()
