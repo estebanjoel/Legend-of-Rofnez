@@ -1,6 +1,0 @@
-1. Un nivel jugable
-2. Personaje que se mueva y ataque
-3. Al menos un enemigo
-4. Al menos un objeto/colectable
-5. UI simple + Menú
-6. Condición de Victoria y Derrota
