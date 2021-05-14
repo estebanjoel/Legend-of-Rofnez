@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Obstacle;
 
 namespace RPG.Item
 {
@@ -8,7 +9,7 @@ namespace RPG.Item
     {
         public override void UseItem(GameObject player)
         {
-            Debug.Log("You have picked the key");
+            GameObject.FindObjectOfType<ArenaObstacle>().pickUpTheKey();
         }
     }
 }

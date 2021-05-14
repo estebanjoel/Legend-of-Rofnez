@@ -13,14 +13,14 @@ namespace RPG.Obstacle
         
         void Update()
         {
-            Debug.Log(door.rotation.y);
-            Debug.Log(newYRotation);
             if(hasPlayerPickedUpTheKey)
             {
-                if(door.rotation.y <= newYRotation)
+                Quaternion worldRotation = transform.rotation * door.rotation;
+                Debug.Log(worldRotation.y * newYRotation);
+                if(worldRotation.y * newYRotation >= newYRotation/4)
                 {
-                    Debug.Log("Rotating");
                     door.Rotate(new Vector3(0, -1 * rotationSpeed * Time.deltaTime, 0));
+                    // Debug.Log(door.rotation.y * -newYRotation);
                 }
             }
         }
