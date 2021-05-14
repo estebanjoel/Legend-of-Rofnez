@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd74ea7a36738f84a9709ed3516cfd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemClip: {fileID: 8300000, guid: 136a21330c4e00a4a89a64b01e15607f, type: 3}
   pointToHeal: 75
 --- !u!1001 &74154475739188849
 PrefabInstance:

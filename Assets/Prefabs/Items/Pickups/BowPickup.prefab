@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa174df3dd20134ba1c31f3870af45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemClip: {fileID: 8300000, guid: 3693a1b258d256d41ade7f4937913456, type: 3}
   weaponToEquip: {fileID: 11400000, guid: 07c4e74d6df03854ba2833fd9d98a221, type: 2}
 --- !u!1001 &3757313873721925995
 PrefabInstance:
