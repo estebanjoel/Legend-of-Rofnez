@@ -49,7 +49,6 @@ namespace RPG.Combat
             currentWeapon = weapon;
             if(weapon == null) return;
             weapon.Spawn(rightHandTransform, leftHandTransform, anim);
-
         }
 
         //Evento en la animación de Attack. Realiza el daño al objetivo.
