@@ -13,7 +13,6 @@ namespace RPG.Control
         Fighter fighter;
         Special special;
         Health health;
-        public AudioSource runsound;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
@@ -67,9 +66,7 @@ namespace RPG.Control
                 if (Input.GetMouseButtonDown(0))
                 {
                     GetComponent<Mover>().StartMoveAction(hit.point);
-                    runsound.Play();
-                }else
-                    runsound.Stop();
+                }
                 return true;
             }
             return false;

@@ -11,6 +11,7 @@ namespace RPG.Movement
         private Transform target;
         private NavMeshAgent navMeshAgent;
         private Health health;
+        [SerializeField] AudioSource runsound = null;
 
         private void Start()
         {
@@ -22,6 +23,7 @@ namespace RPG.Movement
         {
             navMeshAgent.enabled = !health.IsDead();
             UpdateAnimator();
+            if(transform.position == navMeshAgent.destination && runsound != null) runsound.Stop();
         }
 
         private void UpdateAnimator()//el codigo de animacion de caminata
@@ -37,6 +39,7 @@ namespace RPG.Movement
         public void StartMoveAction(Vector3 destination)
         {
             GetComponent<ActionScheduler>().StartAction(this);
+            if(runsound != null) runsound.Play();
             MoveTo(destination);
         }
         //Selecciono la posición de destino y empiezo a moverme
@@ -49,6 +52,7 @@ namespace RPG.Movement
         //Cancela la acción de moverme
         public void Cancel()
         {
+            runsound.Stop();
             navMeshAgent.isStopped = true;
         }
     }
