@@ -17,6 +17,12 @@ namespace RPG.Combat
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] MagicType magicType;
 
+        public Animator SetAnimatorOverride(Animator anim)
+        {
+            if(animatorOverride!= null) anim.runtimeAnimatorController = animatorOverride;
+            return anim;
+        }
+        
         public float GetMagicDamage()
         {
             return magicDamage;

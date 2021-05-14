@@ -21,7 +21,7 @@ namespace RPG.Combat
         {
             anim = GetComponent<Animator>();
             magicPoints = GetComponent<MagicPoints>();
-            currentMagic = defaultMagic;
+            setCurrentMagic(defaultMagic);
         }
 
         private void Update()
@@ -35,6 +35,12 @@ namespace RPG.Combat
             return currentMagic;
         }
 
+        public void setCurrentMagic(Magic magic)
+        {
+            currentMagic = magic;
+            anim = currentMagic.SetAnimatorOverride(anim);
+        }
+
         public void SpecialAttack()
         {
             if(CheckIfCanUseMagic())
@@ -42,7 +48,7 @@ namespace RPG.Combat
                 GetComponent<ActionScheduler>().StartAction(this);
                 anim.SetTrigger("MagicAttack");
                 magicPoints.ConsumeMagicPoints(currentMagic.GetMpToConsume());
-                InstantiateMagic();
+                // InstantiateMagic();
                 timeToActivateMagic = 0f;
             }
             
@@ -55,12 +61,16 @@ namespace RPG.Combat
             else return false;
         }
 
-        private void InstantiateMagic()
+        public void InstantiateMagic()
         {
             if(currentMagic.GetMagicType() == MagicType.Expansive)
             {
                 GameObject areaMagic = Instantiate(currentMagic.GetEquippedPrefab(), transform.position, transform.rotation);
                 areaMagic.GetComponent<AreaMagic>().SetAreaDamage(currentMagic.GetMagicDamage());
+            }
+            if(currentMagic.GetMagicType() == MagicType.Projectile)
+            {
+                GameObject projectileMagic = Instantiate(currentMagic.GetEquippedPrefab(), leftHandTransform.position, leftHandTransform.rotation);
             }
         }
 
