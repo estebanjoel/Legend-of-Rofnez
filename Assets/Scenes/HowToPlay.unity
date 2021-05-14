@@ -188,7 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'move: left click'
+  m_Text: 'move and attack: left click'
 --- !u!222 &240093325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: attack:right click
+  m_Text: special attack:right click
 --- !u!222 &1118027593
 CanvasRenderer:
   m_ObjectHideFlags: 0
