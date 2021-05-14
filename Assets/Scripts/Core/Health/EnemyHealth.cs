@@ -16,8 +16,11 @@ namespace RPG.Core
         
         public override void ShowVisualChanges()
         {
-            if(gameObject.name != "Boss") renderTexture.material.color = Color.red;
-            StartCoroutine(BackToNormal());
+            if(gameObject.name != "Boss")
+            {
+                renderTexture.material.color = Color.red;
+                StartCoroutine(BackToNormal());  
+            } 
         }
 
         public override void DeathBehaviour()
