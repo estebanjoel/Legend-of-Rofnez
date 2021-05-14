@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.UI;
 
 namespace RPG.Core
 {
@@ -15,13 +16,15 @@ namespace RPG.Core
         
         public override void ShowVisualChanges()
         {
-            renderTexture.material.color = Color.red;
+            if(gameObject.name != "Boss") renderTexture.material.color = Color.red;
             StartCoroutine(BackToNormal());
         }
 
         public override void DeathBehaviour()
         {
-            GameObject.FindObjectOfType<Deathcounter>().AddToCounter();
+            Deathcounter deathcounter = GameObject.FindObjectOfType<Deathcounter>();
+            deathcounter.AddToCounter();
+            GameObject.FindObjectOfType<KillCounterText>().SetKillText(deathcounter.GetCounter());
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }

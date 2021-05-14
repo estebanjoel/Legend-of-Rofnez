@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 508378288}
   - component: {fileID: 508378290}
   - component: {fileID: 508378289}
+  - component: {fileID: 7595865872775270708}
   m_Layer: 5
   m_Name: EventText
   m_TagString: Untagged
@@ -76,7 +77,19 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You can enter the Arena and fight the Boss!
+  m_Text: <Insert Event Text here>
+--- !u!114 &7595865872775270708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508378287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5353dc5467d8e42a963698704a1705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1157277069
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +101,7 @@ GameObject:
   - component: {fileID: 1157277070}
   - component: {fileID: 1157277072}
   - component: {fileID: 1157277071}
+  - component: {fileID: 6651301150312760999}
   m_Layer: 5
   m_Name: KillCounterText
   m_TagString: Untagged
@@ -154,6 +168,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Kills: 0'
+--- !u!114 &6651301150312760999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157277069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d3f860747f7e34fa98fe65450ee890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1187716972
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +310,7 @@ GameObject:
   - component: {fileID: 6108193568134982715}
   - component: {fileID: 6108193568134982714}
   - component: {fileID: 352236872}
+  - component: {fileID: 7651863262598500436}
   m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
@@ -347,6 +374,19 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &352236872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108193568134982712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee68b636ad04f7344a2c4bc8f2bc20e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healBar: {fileID: 6108193568134982714}
+--- !u!114 &7651863262598500436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.UI;
 
 namespace RPG.Obstacle
 {
@@ -10,6 +11,12 @@ namespace RPG.Obstacle
         [SerializeField] float newYRotation;
         [SerializeField] float rotationSpeed;
         [SerializeField] bool hasPlayerPickedUpTheKey = false;
+        EventText eventText;
+
+        private void Start()
+        {
+            eventText = GameObject.FindObjectOfType<EventText>();
+        }
         
         void Update()
         {
@@ -25,6 +32,7 @@ namespace RPG.Obstacle
         public void pickUpTheKey()
         {
             hasPlayerPickedUpTheKey = true;
+            eventText.SetEventText("You can enter the Arena and fight the boss!");
         }
     }
 }

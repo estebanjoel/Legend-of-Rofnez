@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.UI;
 
 namespace RPG.Core
 {
@@ -10,6 +11,7 @@ namespace RPG.Core
         BossHealth boss;
         RPGSceneManager rpgSceneManager;
         Deathcounter deathcounter;
+        EventText eventText;
         [SerializeField] string loseScene;
         [SerializeField] string winScene;
         [SerializeField] GameObject key;
@@ -23,6 +25,7 @@ namespace RPG.Core
         {
             player = GameObject.FindObjectOfType<PlayerHealth>();
             boss = GameObject.FindObjectOfType<BossHealth>();
+            eventText = GameObject.FindObjectOfType<EventText>();
             victoryCondition = false;
             failCondiction = false;
             rpgSceneManager = GetComponent<RPGSceneManager>();
@@ -36,6 +39,7 @@ namespace RPG.Core
             {
                 if(deathcounter.GetCounter() >= deathsNeeded)
                 {
+                    eventText.SetEventText("You can get the Key hidden in the forest!");
                     key.SetActive(true);
                     keyHasAppeared = true;
                 }   

@@ -8,13 +8,13 @@ namespace RPG.Core
     {
         int counter = 0;
 
-        public float AddToCounter()
+        public int AddToCounter()
         {
             counter++;
             return GetCounter();
         }
 
-        public float GetCounter()
+        public int GetCounter()
         {
             return counter;
         }
