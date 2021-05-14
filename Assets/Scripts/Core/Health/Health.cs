@@ -7,6 +7,12 @@ namespace RPG.Core
     {
         [SerializeField] float healthPoints = 100f;
         [SerializeField] float maxHealthPoints = 100f;
+        public AudioSource deadSound;
+        public AudioClip deadClipSound;
+        public AudioSource damageSound;
+        public AudioClip damageClipSound;
+        public AudioSource impactSound;
+        public AudioClip impactClipSound;
         private bool isDead;
         
         private void Start()
@@ -24,6 +30,9 @@ namespace RPG.Core
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             ShowVisualChanges();
+            damageSound.PlayOneShot(damageClipSound);
+            impactSound.PlayOneShot(impactClipSound);
+
             if (healthPoints == 0)
             {
                 Die();
@@ -49,7 +58,7 @@ namespace RPG.Core
         public void Die()
         {
             if (isDead) return;
-
+            deadSound.PlayOneShot(deadClipSound);
             isDead = true;
             DeathBehaviour();
         }
