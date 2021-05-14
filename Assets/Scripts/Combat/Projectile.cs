@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     float damage;
     [SerializeField] GameObject hitEffect = null;
     [SerializeField] float lifeSpan = 1f;
+    public AudioSource impactSound;
     float lifeTime = 0f;
     
     private void Start()
@@ -57,6 +58,7 @@ public class Projectile : MonoBehaviour
             if(hitEffect != null)
             {
                 Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+                impactSound.Play();
             }
             canBeDestroyed = true;
         }

@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2076953366269911983, guid: 4201983a6d84da546849904833e4a90a,
+        type: 3}
+      propertyPath: impactSound
+      value: 
+      objectReference: {fileID: 4689337985447686049}
+    - target: {fileID: 4753150140389754213, guid: 4201983a6d84da546849904833e4a90a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5949824491859072103, guid: 4201983a6d84da546849904833e4a90a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,3 +109,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4201983a6d84da546849904833e4a90a, type: 3}
+--- !u!82 &4689337985447686049 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7600179948209535022, guid: 4201983a6d84da546849904833e4a90a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2912319777400264591}
+  m_PrefabAsset: {fileID: 0}
