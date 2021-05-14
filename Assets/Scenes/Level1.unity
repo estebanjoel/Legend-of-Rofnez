@@ -7566,12 +7566,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1337738769}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1340434775 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4159371018750396842, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1844431312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1379765912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10195,36 +10189,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: deadClipSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 1bf9ee80f2374534b80d6c5880558f5e, type: 3}
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: deadSound
-      value: 
-      objectReference: {fileID: 1340434775}
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: damageSound
-      value: 
-      objectReference: {fileID: 2123287221}
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: damageClipSound
-      value: 
-      objectReference: {fileID: 8300000, guid: c67b8f28ccb1a184cba5b958315fb75f, type: 3}
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: impactSound
-      value: 
-      objectReference: {fileID: 1326504205}
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: impactClipSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0d3d7afb5ec538343a9fd9d4235bdefa, type: 3}
     - target: {fileID: 3810658928676046817, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
         type: 3}
       propertyPath: weaponPickSound
@@ -11137,12 +11101,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 416864, guid: d66c89601ce96d4419ce36a4dce3c401,
     type: 3}
   m_PrefabInstance: {fileID: 2060035521}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2123287221 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5048863658197523211, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1844431312}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2125777183 stripped
 Transform:
