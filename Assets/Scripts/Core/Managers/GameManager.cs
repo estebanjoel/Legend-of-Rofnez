@@ -9,12 +9,15 @@ namespace RPG.Core
         PlayerHealth player;
         BossHealth boss;
         RPGSceneManager rpgSceneManager;
+        Deathcounter deathcounter;
         [SerializeField] string loseScene;
         [SerializeField] string winScene;
-
+        [SerializeField] GameObject key;
+        [SerializeField] int deathsNeeded;
         bool victoryCondition;
         bool failCondiction;
         bool isLoadingScene;
+        bool keyHasAppeared = false;
         // Start is called before the first frame update
         void Start()
         {
@@ -23,9 +26,22 @@ namespace RPG.Core
             victoryCondition = false;
             failCondiction = false;
             rpgSceneManager = GetComponent<RPGSceneManager>();
+            deathcounter = GetComponent<Deathcounter>();
+            key.SetActive(false);
         }
 
-        // Update is called once per frame
+        void Update()
+        {
+            if(!keyHasAppeared)
+            {
+                if(deathcounter.GetCounter() >= deathsNeeded)
+                {
+                    key.SetActive(true);
+                    keyHasAppeared = true;
+                }   
+            }
+        }
+        
         void LateUpdate()
         {
             if(!isLoadingScene)
@@ -66,7 +82,7 @@ namespace RPG.Core
         private IEnumerator NextSceneCo(string newScene)
         {
             rpgSceneManager.SetSceneToLoad(newScene);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2.5f);
             rpgSceneManager.LoadScene();
             isLoadingScene = false;
         }

@@ -46,8 +46,8 @@ namespace RPG.Combat
             if(CheckIfCanUseMagic())
             {
                 GetComponent<ActionScheduler>().StartAction(this);
+                anim.ResetTrigger("StopMagicAttack");
                 anim.SetTrigger("MagicAttack");
-                magicPoints.ConsumeMagicPoints(currentMagic.GetMpToConsume());
                 // InstantiateMagic();
                 timeToActivateMagic = 0f;
             }
@@ -63,6 +63,7 @@ namespace RPG.Combat
 
         public void InstantiateMagic()
         {
+            magicPoints.ConsumeMagicPoints(currentMagic.GetMpToConsume());
             if(currentMagic.GetMagicType() == MagicType.Expansive)
             {
                 GameObject areaMagic = Instantiate(currentMagic.GetEquippedPrefab(), transform.position, transform.rotation);
