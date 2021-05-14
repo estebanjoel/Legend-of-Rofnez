@@ -16,5 +16,10 @@ namespace RPG.Core
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
+
+        public override void HealShader()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
