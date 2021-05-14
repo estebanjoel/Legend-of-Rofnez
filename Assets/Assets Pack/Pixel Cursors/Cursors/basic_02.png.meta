@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a2b4775272c890448e1bd6239fdfc84
+guid: 3c4f808ffcf1fc34e909f97a5e96d91c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -51,7 +51,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 7
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -100,7 +100,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e67555c44f065ab489cdcb472e98e270
+    spriteID: 66dd8260ef29adf49ae8b1bdd89548c2
     internalID: 0
     vertices: []
     indices: 
