@@ -133,8 +133,8 @@ MonoBehaviour:
   deadClipSound: {fileID: 8300000, guid: 59da0ad043828c446b7a2acc7524d008, type: 3}
   damageSound: {fileID: 2731295837708022014}
   damageClipSound: {fileID: 8300000, guid: 35ea60cc5be64c24cbb54146158b100d, type: 3}
-  impactSound: {fileID: 0}
-  impactClipSound: {fileID: 0}
+  impactSound: {fileID: 2731295837708022014}
+  impactClipSound: {fileID: 8300000, guid: 35ea60cc5be64c24cbb54146158b100d, type: 3}
 --- !u!114 &2084990403842373004
 MonoBehaviour:
   m_ObjectHideFlags: 0

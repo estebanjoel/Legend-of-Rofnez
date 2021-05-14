@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemClip: {fileID: 8300000, guid: 136a21330c4e00a4a89a64b01e15607f, type: 3}
-  pointToHeal: 75
+  pointToHeal: 50
 --- !u!1001 &74154475739188849
 PrefabInstance:
   m_ObjectHideFlags: 0
