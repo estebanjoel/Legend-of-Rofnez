@@ -53,7 +53,7 @@ namespace RPG.Core
                 {
                     if(Input.GetAxis("Vertical")!=0) axisMod = Input.GetAxis("Vertical");
                     else axisMod = 1;
-                    pos.z += camSpeed * Time.deltaTime * Input.GetAxis("Vertical");
+                    pos.z += camSpeed * Time.deltaTime * axisMod;
                     if(pos.z > levelBounds[2]) pos.z = levelBounds[2];
                 }
 
