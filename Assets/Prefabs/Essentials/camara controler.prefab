@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb3449ba6a388645a6943a91f97f1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camSpeed: 20
+  mauseBorderMuv: 10
   target: {fileID: 0}
 --- !u!1 &6759137803672969991
 GameObject:
