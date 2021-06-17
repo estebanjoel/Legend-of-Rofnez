@@ -20,6 +20,8 @@ namespace RPG.Core
         bool failCondiction;
         bool isLoadingScene;
         bool keyHasAppeared = false;
+        [SerializeField] GameObject pauseMenuUI;
+        [SerializeField] static bool GameIsPaused = false;
         // Start is called before the first frame update
         void Start()
         {
@@ -77,7 +79,18 @@ namespace RPG.Core
             }
 
         }
-
+        void MenuContinue() 
+        {
+            pauseMenuUI.SetActive(false); ;
+            Time.timeScale = 1;
+            GameIsPaused = false;
+        }
+        void MenuPause()
+        {
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameIsPaused = true;
+        }
         private void LoadNextScene(string newScene)
         {
             StartCoroutine(NextSceneCo(newScene));
