@@ -73,5 +73,7 @@ namespace RPG.Core
         }
 
         public abstract void DeathBehaviour();
+
+        
     }
 }
