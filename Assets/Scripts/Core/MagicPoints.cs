@@ -13,6 +13,11 @@ namespace RPG.Core
         // Start is called before the first frame update
         void Start()
         {
+            SetStartingMagicPointsSettings();
+        }
+
+        public void SetStartingMagicPointsSettings()
+        {
             magicPoints = maxMagicPoints;
             HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
             for(int i = 0; i < healbars.Length; i++)
@@ -23,6 +28,7 @@ namespace RPG.Core
                     break;
                 }
             }
+            bar.ChangeBarFiller(magicPoints, maxMagicPoints);
         }
 
         public float GetMagicPoints()

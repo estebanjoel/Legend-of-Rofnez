@@ -20,8 +20,9 @@ namespace RPG.Core
         public int damagetik;
         public float poisonDamage;
         public Renderer poisonedColor;
-        
-        private void Start()
+    
+
+        public void ParentStartingSettings()
         {
             healthPoints = maxHealthPoints;
         }

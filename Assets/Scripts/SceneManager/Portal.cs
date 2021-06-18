@@ -8,12 +8,10 @@ namespace RPG.SceneManagement
 {
     public class Portal : MonoBehaviour
     {
-        [SerializeField] int sceneToLoad = -1;
+        [SerializeField] int sceneDestination = -1;
         [SerializeField] Transform spawnPoint;
         [SerializeField] bool canBeUsed;
-        [SerializeField] float fadeOutTime = 1f;
-        [SerializeField] float fadeInTime = 2f;
-        [SerializeField] float fadeWaitTime = 0.5f;
+        [SerializeField] bool isOnPortal;
 
         private void Start()
         {
@@ -22,21 +20,31 @@ namespace RPG.SceneManagement
                 transform.GetChild(0).gameObject.SetActive(false);
             }
         }
+
+        public bool IsPlayerOnPortal()
+        {
+            return isOnPortal;
+        }
         private void OnTriggerEnter(Collider other)
         {
             if(other.tag == "Player" && canBeUsed)    
             {
                 StartCoroutine(TransitionCo());
+                isOnPortal = true;
             }
         }
 
         private IEnumerator TransitionCo()
         {
-            UIFade fader = FindObjectOfType<UIFade>();
+            SceneLoader sceneLoader = GameObject.FindObjectOfType<SceneLoader>();
+            sceneLoader.SetSceneToLoad(sceneDestination);
             DontDestroyOnLoad(gameObject);
-            yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+            yield return sceneLoader.TransitionBeginCo();
+
             Portal otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
+            yield return sceneLoader.TransitionEndCo();
             Destroy(gameObject);
         }
 

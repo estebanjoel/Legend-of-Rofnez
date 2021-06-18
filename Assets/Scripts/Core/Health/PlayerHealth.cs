@@ -12,6 +12,12 @@ namespace RPG.Core
 
         private void Start()
         {
+            SetStartingHealthSettings();
+        }
+
+        public void SetStartingHealthSettings()
+        {
+            ParentStartingSettings();
             HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
             for (int i = 0; i < healbars.Length; i++)
             {
@@ -21,6 +27,7 @@ namespace RPG.Core
                     break;
                 }
             }
+            ShowVisualChanges();
         }
 
         public override void ShowVisualChanges()

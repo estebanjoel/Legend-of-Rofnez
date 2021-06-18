@@ -12,6 +12,11 @@ namespace RPG.Core
         float[] levelBounds;
         private void Start()
         {
+            SetCameraStartingSettings();
+        }
+
+        public void SetCameraStartingSettings()
+        {
             transform.position = target.position;
             SetCurrentLevelBounds();
         }

@@ -7,13 +7,22 @@ namespace RPG.SceneManagement
     public class UIFade : MonoBehaviour
     {
         CanvasGroup canvasGroup;
+        [SerializeField] GameObject mainCanvas;
         void Start()
         {
             canvasGroup = GetComponent<CanvasGroup>();
+            // StartCoroutine(FadeInOut());
+        }
+
+        IEnumerator FadeInOut()
+        {
+            yield return FadeOut(1f);
+            yield return FadeIn(2f);
         }
 
         public IEnumerator FadeOut(float time)
         {
+            mainCanvas.SetActive(false);
             while(canvasGroup.alpha < 1)
             {
                 canvasGroup.alpha += Time.deltaTime / time;
@@ -28,6 +37,7 @@ namespace RPG.SceneManagement
                 canvasGroup.alpha -= Time.deltaTime / time;
                 yield return null;
             }
+            mainCanvas.SetActive(true);
         }
     }
 }

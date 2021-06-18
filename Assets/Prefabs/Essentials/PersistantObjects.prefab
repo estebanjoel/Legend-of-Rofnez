@@ -1,67 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!222 &4924050615135940190
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323008080646445991}
-  m_CullTransparentMesh: 0
---- !u!225 &4924050615135940191
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323008080646445991}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!114 &4924050615135940188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323008080646445991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e26bd8e303e974cbc0ece7592f1ccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeOutTime: 1
-  fadeInTime: 2
---- !u!114 &4924050615135940189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323008080646445991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5378969390671281401
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2658511079991243496}
+  - component: {fileID: 5785354584672666185}
   m_Layer: 0
   m_Name: PersistantObjects
   m_TagString: Untagged
@@ -93,6 +32,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5785354584672666185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5378969390671281401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f675e06b545c9ef458398113f7ce27a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4924050615084761220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100,16 +51,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2658511079991243496}
     m_Modifications:
-    - target: {fileID: 246419781308786437, guid: 0cfff02477e1556418b7bc88f7524fe9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 440932633807670982, guid: 0cfff02477e1556418b7bc88f7524fe9,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1349910666415691002, guid: 0cfff02477e1556418b7bc88f7524fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -170,22 +111,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7510691534570357646, guid: 0cfff02477e1556418b7bc88f7524fe9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cfff02477e1556418b7bc88f7524fe9, type: 3}
 --- !u!4 &6264055643265307774 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1349910666415691002, guid: 0cfff02477e1556418b7bc88f7524fe9,
-    type: 3}
-  m_PrefabInstance: {fileID: 4924050615084761220}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1323008080646445991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6199760298854636323, guid: 0cfff02477e1556418b7bc88f7524fe9,
     type: 3}
   m_PrefabInstance: {fileID: 4924050615084761220}
   m_PrefabAsset: {fileID: 0}

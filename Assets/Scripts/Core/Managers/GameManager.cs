@@ -2,49 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.UI;
+using RPG.SceneManagement;
 
 namespace RPG.Core
 {
     public class GameManager : MonoBehaviour
     {
         PlayerHealth player;
-        BossHealth boss;
-        RPGSceneManager rpgSceneManager;
-        Deathcounter deathcounter;
-        EventText eventText;
-        [SerializeField] string loseScene;
-        [SerializeField] string winScene;
-        [SerializeField] GameObject key;
-        [SerializeField] int deathsNeeded;
-        bool victoryCondition;
+        QuestManager questManager;
+        PauseManager pauseManager;
+        [SerializeField] int loseScene;
+        SceneLoader sceneLoader;
+        int currentScene;
         bool failCondiction;
         bool isLoadingScene;
-        bool keyHasAppeared = false;
-        [SerializeField] GameObject pauseMenuUI;
-        [SerializeField] static bool GameIsPaused = false;
         // Start is called before the first frame update
         void Start()
         {
             player = GameObject.FindObjectOfType<PlayerHealth>();
-            boss = GameObject.FindObjectOfType<BossHealth>();
-            eventText = GameObject.FindObjectOfType<EventText>();
-            victoryCondition = false;
-            failCondiction = false;
-            rpgSceneManager = GetComponent<RPGSceneManager>();
-            deathcounter = GetComponent<Deathcounter>();
-            key.SetActive(false);
+            pauseManager = GetComponent<PauseManager>();
+            sceneLoader = GetComponent<SceneLoader>();
+            SetLevelSettings();
         }
 
         void Update()
         {
-            if(!keyHasAppeared)
+            if(Input.GetButtonDown("Cancel"))
             {
-                if(deathcounter.GetCounter() >= deathsNeeded)
-                {
-                    eventText.SetEventText("You can get the Key hidden in the forest!");
-                    key.SetActive(true);
-                    keyHasAppeared = true;
-                }   
+                if(pauseManager.GetPauseState()) pauseManager.SetPause(false);
+                else pauseManager.SetPause(true);
             }
         }
         
@@ -52,56 +38,57 @@ namespace RPG.Core
         {
             if(!isLoadingScene)
             {
-                if(victoryCondition)
+                if(!failCondiction)
                 {
-                    LoadNextScene(winScene);
-                    isLoadingScene = true;
-                    return;
-                } 
+                    if(!player.IsDead()) // Si el personaje no está muerto, chequeo las quests del nivel para saber si puedo acceder al siguiente nivel
+                    {
+                        if(questManager.CheckIfAllQuestsAreCompleted())
+                        {
+                            questManager.ShowNextLevelPortal();
+                            if(questManager.GetPortal().IsPlayerOnPortal()) isLoadingScene = true;
+                        }  //Si las quests están completas, se mostrará el portal para acceder al siguiente nivel
+                        else questManager.QuestChecker();
+                    }
+                    else // En caso de que el personaje esté muerto, Game Over
+                    {
+                        failCondiction = true;
+                    }
+                }
 
-                if(failCondiction)
+                else // Corrutina que carga la pantalla de Game Over
                 {
-                    LoadNextScene(loseScene);
                     isLoadingScene = true;
+                    StartCoroutine(LoseSceneCo());
                     return;
                 }
-                if(player.IsDead())
+            }
+            else
+            {
+                if(currentScene != sceneLoader.GetCurrentScene())
                 {
-                    victoryCondition = false;
-                    failCondiction = true;
-                } 
-
-                if(boss.IsDead())
-                {
-                    victoryCondition = true;
-                    failCondiction = false;
+                    SetLevelSettings();
                 }
             }
 
         }
-        void MenuContinue() 
+
+        public IEnumerator LoseSceneCo()
         {
-            pauseMenuUI.SetActive(false); ;
-            Time.timeScale = 1;
-            GameIsPaused = false;
-        }
-        void MenuPause()
-        {
-            pauseMenuUI.SetActive(true);
-            Time.timeScale = 0f;
-            GameIsPaused = true;
-        }
-        private void LoadNextScene(string newScene)
-        {
-            StartCoroutine(NextSceneCo(newScene));
+            sceneLoader.SetSceneToLoad(loseScene);
+            yield return sceneLoader.TransitionBeginCo();
+            yield return sceneLoader.TransitionEndCo();
         }
 
-        private IEnumerator NextSceneCo(string newScene)
+        void SetLevelSettings()
         {
-            rpgSceneManager.SetSceneToLoad(newScene);
-            yield return new WaitForSeconds(2.5f);
-            rpgSceneManager.LoadScene();
             isLoadingScene = false;
+            failCondiction = false;
+            currentScene = sceneLoader.GetCurrentScene();
+            questManager = GameObject.FindObjectOfType<QuestManager>();
+            player.SetStartingHealthSettings();
+            player.GetComponent<MagicPoints>().SetStartingMagicPointsSettings();
+            CamaraFollower camaraFollower = GameObject.FindObjectOfType<CamaraFollower>();
+            camaraFollower.SetCameraStartingSettings();
         }
     }
 }
