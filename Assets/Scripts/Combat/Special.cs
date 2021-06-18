@@ -11,9 +11,9 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform;
         [SerializeField] Transform leftHandTransform;
         Animator anim;
-        MagicPoints magicPoints;
+       protected MagicPoints magicPoints;
         [SerializeField] Magic defaultMagic = null;
-        [SerializeField] Magic currentMagic = null;
+        [SerializeField] protected Magic currentMagic = null;
 
         float timeToActivateMagic = Mathf.Infinity;
 
@@ -24,7 +24,7 @@ namespace RPG.Combat
             setCurrentMagic(defaultMagic);
         }
 
-        private void Update()
+        protected void Update()
         {
             if(currentMagic == null) return;
             timeToActivateMagic += Time.deltaTime;    
@@ -53,7 +53,7 @@ namespace RPG.Combat
             }
             
         }
-        private bool CheckIfCanUseMagic()
+        protected bool CheckIfCanUseMagic()
         {
             bool firstCondition = currentMagic.GetMpToConsume() <= magicPoints.GetMagicPoints();
             bool secondCondition = timeToActivateMagic >= currentMagic.GetMagicCooldown();
@@ -61,7 +61,7 @@ namespace RPG.Combat
             else return false;
         }
 
-        public void InstantiateMagic()
+        public virtual void InstantiateMagic()
         {
             magicPoints.ConsumeMagicPoints(currentMagic.GetMpToConsume());
             if(currentMagic.GetMagicType() == MagicType.Expansive)

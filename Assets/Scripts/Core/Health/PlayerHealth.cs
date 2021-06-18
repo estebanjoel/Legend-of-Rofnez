@@ -13,9 +13,9 @@ namespace RPG.Core
         private void Start()
         {
             HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
-            for(int i = 0; i < healbars.Length; i++)
+            for (int i = 0; i < healbars.Length; i++)
             {
-                if(healbars[i].gameObject.name == "Health")
+                if (healbars[i].gameObject.name == "Health")
                 {
                     bar = healbars[i];
                     break;
@@ -54,5 +54,6 @@ namespace RPG.Core
             yield return new WaitForSeconds(2f);
             HealDiActiv();
         }
+
     }
 }

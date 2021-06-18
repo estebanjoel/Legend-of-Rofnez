@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +9,8 @@ namespace RPG.Core
     {
         [SerializeField] float healthPoints = 100f;
         [SerializeField] float maxHealthPoints = 100f;
+        [SerializeField] float currentTime;
+        [SerializeField] float time;
         public AudioSource deadSound;
         public AudioClip deadClipSound;
         public AudioSource damageSound;
@@ -14,10 +18,12 @@ namespace RPG.Core
         public AudioSource impactSound;
         public AudioClip impactClipSound;
         private bool isDead;
+        public bool poisoned;
+        public int tikDamage;
         
         private void Start()
         {
-            healthPoints = maxHealthPoints;            
+            healthPoints = maxHealthPoints;
         }
 
 
@@ -32,12 +38,13 @@ namespace RPG.Core
             ShowVisualChanges();
             damageSound.PlayOneShot(damageClipSound);
             impactSound.PlayOneShot(impactClipSound);
-
             if (healthPoints == 0)
             {
                 Die();
             }
+
         }
+        
 
         public abstract void ShowVisualChanges();
         public abstract void HealShader();
