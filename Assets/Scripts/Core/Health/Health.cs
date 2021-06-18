@@ -9,8 +9,6 @@ namespace RPG.Core
     {
         [SerializeField] float healthPoints = 100f;
         [SerializeField] float maxHealthPoints = 100f;
-        [SerializeField] float currentTime;
-        [SerializeField] float time;
         public AudioSource deadSound;
         public AudioClip deadClipSound;
         public AudioSource damageSound;
@@ -19,7 +17,9 @@ namespace RPG.Core
         public AudioClip impactClipSound;
         private bool isDead;
         public bool poisoned;
-        public int tikDamage;
+        public int damagetik;
+        public float poisonDamage;
+        public Renderer poisonedColor;
         
         private void Start()
         {
@@ -44,7 +44,25 @@ namespace RPG.Core
             }
 
         }
-        
+        public void poisonDamages(int tik,float damage)
+        {
+            poisonDamage = damage;
+            damagetik = tik;
+            poisoned = true;
+            poisonedColor.material.color = Color.green;
+            StartCoroutine("tikDamage");
+        }
+        IEnumerator tikDamage()
+        {
+            for(int i = 0; i < damagetik; i++)
+            {
+                yield return new WaitForSeconds(1f);
+                TakeDamage(poisonDamage);
+
+            }
+            poisoned = false;
+            poisonedColor.material.color = Color.white;
+        }
 
         public abstract void ShowVisualChanges();
         public abstract void HealShader();

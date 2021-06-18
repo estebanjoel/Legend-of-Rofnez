@@ -6,16 +6,15 @@ using RPG.Core;
 public  class poison : MonoBehaviour
 {
     [SerializeField] int damageTik = 5;
-    [SerializeField] int damage = 10;
+    [SerializeField] float damage = 2.5f;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<PlayerHealth>() != null)
         {
             Health isPoison = other.gameObject.GetComponent<Health>();
-            isPoison.poisoned = true;
-            isPoison.tikDamage = damageTik;
-            isPoison.TakeDamage(10);
+            if (!isPoison.poisoned)
+                isPoison.poisonDamages(damageTik,damage);
         }
 
     }
