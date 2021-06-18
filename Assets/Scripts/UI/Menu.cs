@@ -30,6 +30,7 @@ public class Menu : MonoBehaviour
     }
     public void MenuContinue()
     {
+        Debug.Log("MIERDA PUTA CARRAGO");
         pauseMenuUI.SetActive(false); ;
         Time.timeScale = 1;
         GameIsPaused = false;
