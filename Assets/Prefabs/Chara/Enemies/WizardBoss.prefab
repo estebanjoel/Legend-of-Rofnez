@@ -645,6 +645,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2239894204597751609}
   - component: {fileID: 8187456337481163331}
+  - component: {fileID: -1409055948083712504}
+  - component: {fileID: -5540047740425208051}
+  - component: {fileID: 4971134098504162958}
+  - component: {fileID: 6619514716377133857}
+  - component: {fileID: -8564096813609888383}
+  - component: {fileID: 3527719769679432659}
   m_Layer: 0
   m_Name: WizardBoss
   m_TagString: Untagged
@@ -698,6 +704,107 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-1409055948083712504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976573902867119402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fe1a05800091b40bb1dde11c052948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5540047740425208051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976573902867119402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232e62d93cbcfc041b29a5fc9d28ea53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
+  maxHealthPoints: 100
+  deadSound: {fileID: 7659795842976696911, guid: b201d4b6c9db2264fa86ea3e9eff225f,
+    type: 3}
+  deadClipSound: {fileID: 8300000, guid: 3aa8b26622ee8e74895db604c5342b2b, type: 3}
+  damageSound: {fileID: 6100616220475907069, guid: b201d4b6c9db2264fa86ea3e9eff225f,
+    type: 3}
+  damageClipSound: {fileID: 8300000, guid: da4f5695bff34bf4b88959334d31f55f, type: 3}
+  impactSound: {fileID: 4196868052469498199, guid: b201d4b6c9db2264fa86ea3e9eff225f,
+    type: 3}
+  impactClipSound: {fileID: 8300000, guid: dc5c98755448cdd48a680d017cb8ceb5, type: 3}
+  poisoned: 0
+  damagetik: 0
+  poisonDamage: 0
+  poisonedColor: {fileID: 0}
+--- !u!114 &4971134098504162958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976573902867119402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e86edac0631104a822f5c90b878eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 4
+  suspicionTime: 1
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
+  waypointDwellTime: 5
+--- !u!114 &6619514716377133857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976573902867119402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6335080c96fd41c4f8df7d13bd8b0e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8564096813609888383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976573902867119402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5584445326ddab4ab604f7665f452ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runsound: {fileID: 5252457691317169164, guid: b201d4b6c9db2264fa86ea3e9eff225f,
+    type: 3}
+--- !u!114 &3527719769679432659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976573902867119402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536d9eb751575d1418dfbf2d78e8466e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHandTransform: {fileID: 5559715023702279569, guid: b201d4b6c9db2264fa86ea3e9eff225f,
+    type: 3}
+  leftHandTransform: {fileID: 8120977804482690127, guid: b201d4b6c9db2264fa86ea3e9eff225f,
+    type: 3}
+  defaultWeapon: {fileID: 11400000, guid: 3f63878560f27094a9df9f11477f8394, type: 2}
+  currentWeapon: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &2987959091454708047
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +947,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 00d15e9501462ba459689c3d6bcbbbf7, type: 2}
-  - {fileID: 2100000, guid: 963238fa65d5eb24f959ae15008371da, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
