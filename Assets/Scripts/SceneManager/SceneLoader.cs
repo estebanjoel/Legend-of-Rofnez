@@ -40,8 +40,6 @@ namespace RPG.SceneManagement
         {
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
-            
-            if(GetCurrentScene() == 0 || GetCurrentScene() > lastPlayableScene) persistantObjectDestroyer.RestartSpawner();
             UIFade fader = FindObjectOfType<UIFade>();
 
             yield return fader.FadeOut(fadeOutTime);
@@ -53,9 +51,18 @@ namespace RPG.SceneManagement
             UIFade fader = FindObjectOfType<UIFade>();
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
-            persistantObjectDestroyer.CheckIfPersistantMustBeDestroyed();
-            if(GameObject.FindGameObjectWithTag("Player") == null) Destroy(gameObject);
-            else transform.parent = Singleton.instance.transform;
+            if(GetCurrentScene() == 0 || GetCurrentScene() > lastPlayableScene)
+            {
+                Debug.Log(GetCurrentScene());
+                persistantObjectDestroyer.RestartSpawner();
+                persistantObjectDestroyer.CheckIfPersistantMustBeDestroyed();
+                Destroy(Singleton.instance.gameObject);
+                Destroy(gameObject);
+            } 
+            else
+            {
+                transform.parent = Singleton.instance.transform;
+            } 
         }
 
     }

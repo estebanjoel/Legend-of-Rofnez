@@ -9,7 +9,7 @@ namespace RPG.SceneManagement
     {
         public void CheckIfPersistantMustBeDestroyed()
         {
-            if(GameObject.FindGameObjectWithTag("Player") == null)
+            if(GameObject.FindGameObjectWithTag("Player") == null || !GameObject.FindObjectOfType<PersistentObjectsSpawner>().CheckIfPersistentObjectIsSpawned())
             {
                 Destroy(gameObject);
             }
