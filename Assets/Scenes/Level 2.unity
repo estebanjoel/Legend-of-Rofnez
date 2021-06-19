@@ -16594,5 +16594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WizardBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 5111574907445859955, guid: e7f1af7c6c2b71b468b7bab401bbac24,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 963238fa65d5eb24f959ae15008371da, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f1af7c6c2b71b468b7bab401bbac24, type: 3}
