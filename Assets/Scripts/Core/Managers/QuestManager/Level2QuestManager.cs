@@ -14,7 +14,7 @@ namespace RPG.Core
 
         public override void QuestChecker()
         {
-            Debug.Log("Checking Quests");
+            // Debug.Log("Checking Quests");
         }
     }
 }
