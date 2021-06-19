@@ -43,7 +43,7 @@ namespace RPG.SceneManagement
             yield return sceneLoader.TransitionBeginCo();
 
             Portal otherPortal = GetOtherPortal();
-            UpdatePlayer(otherPortal);
+            if(otherPortal != null) UpdatePlayer(otherPortal);
             yield return sceneLoader.TransitionEndCo();
             Destroy(gameObject);
         }
