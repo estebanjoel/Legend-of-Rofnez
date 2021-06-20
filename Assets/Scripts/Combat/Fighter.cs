@@ -32,15 +32,17 @@ namespace RPG.Combat
             if(target.IsDead()) return;
 
             //Si estoy en el rango de ataque, ataco y sino me muevo hasta el objetivo
-
-            if(!GetIsInRange())
+            if(GetComponent<ActionScheduler>().GetCurrentAction() != (IAction)GetComponent<Special>())
             {
-                mover.MoveTo(target.transform.position);
-            }
-            else
-            {
-                AttackBehaviour();
-                mover.Cancel();
+                if(!GetIsInRange())
+                {
+                    mover.MoveTo(target.transform.position);
+                }
+                else
+                {
+                    AttackBehaviour();
+                    mover.Cancel();
+                }
             }
         }
 

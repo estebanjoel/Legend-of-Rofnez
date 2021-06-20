@@ -407,11 +407,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 540004773825614262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6e86edac0631104a822f5c90b878eb9, type: 3}
+  m_Script: {fileID: 11500000, guid: eae9733bc2848794fb263e62254a6027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
-  suspicionTime: 3
+  suspicionTime: 5
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 5
@@ -447,6 +447,11 @@ MonoBehaviour:
   damageClipSound: {fileID: 8300000, guid: e7a068fc894ced2438c719feae89ea40, type: 3}
   impactSound: {fileID: 6434913093577472443}
   impactClipSound: {fileID: 8300000, guid: 379e40c9ee994864fa1cbcd90934c6a9, type: 3}
+  poisoned: 0
+  damagetik: 0
+  poisonDamage: 0
+  poisonedColor: {fileID: 0}
+  shaderSpawnpoint: {fileID: 0}
 --- !u!1 &5571729426969504652
 GameObject:
   m_ObjectHideFlags: 0

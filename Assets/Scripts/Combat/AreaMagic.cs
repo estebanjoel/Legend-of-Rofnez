@@ -15,13 +15,7 @@ namespace RPG.Combat
         {
             particle = transform.GetComponentInChildren<ParticleSystem>();
             lifeSpan = particle.duration;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            lifeTime += Time.deltaTime;
-            if(lifeTime >= lifeSpan) Destroy(this.gameObject);
+            StartCoroutine(DestroyMagic());
         }
 
         public void SetAreaDamage(float damage)
@@ -33,8 +27,14 @@ namespace RPG.Combat
         {
             if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "DestroyableObstacle")
             {
-                other.GetComponent<Health>().TakeDamage(areaDamage);
+                if(!other.GetComponent<Health>().IsDead()) other.GetComponent<Health>().TakeDamage(areaDamage);
             }
+        }
+
+        private IEnumerator DestroyMagic()
+        {
+            yield return new WaitForSeconds(lifeSpan);
+            Destroy(gameObject);
         }
     }
 }

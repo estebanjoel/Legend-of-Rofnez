@@ -143,11 +143,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2162399171727863636}
     m_Modifications:
-    - target: {fileID: -1981060722223640837, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: poisonedColor
-      value: 
-      objectReference: {fileID: 3089553515103796912}
     - target: {fileID: 3810658928676046818, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
         type: 3}
       propertyPath: runsound
@@ -213,22 +208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6104651411220295137, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 151fa7778dc9cf14ba998127d188283b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b16a1dadcb1385646a1cc6f61c1cbeb0, type: 3}
 --- !u!4 &3089553515103796914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3810658928676046843, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2162399170122103113}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &3089553515103796912 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3810658928676046841, guid: b16a1dadcb1385646a1cc6f61c1cbeb0,
     type: 3}
   m_PrefabInstance: {fileID: 2162399170122103113}
   m_PrefabAsset: {fileID: 0}

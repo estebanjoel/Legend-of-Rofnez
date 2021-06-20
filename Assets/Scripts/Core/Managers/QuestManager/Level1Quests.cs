@@ -13,6 +13,7 @@ namespace RPG.Core
         Deathcounter deathcounter;
         BossHealth boss;
         EventText eventText;
+        GameObject bossHealthBar;
 
         void Start()
         {
@@ -20,7 +21,9 @@ namespace RPG.Core
             boss = GameObject.FindObjectOfType<BossHealth>();
             key.SetActive(false);
             eventText = GameObject.FindObjectOfType<EventText>();
+            bossHealthBar = GameObject.Find("BossHealthBar");
             ParentStartingSettings();
+            bossHealthBar.SetActive(false);
         }
         
         public override void QuestChecker()
@@ -32,6 +35,7 @@ namespace RPG.Core
                     eventText.SetEventText("You can get the Key hidden in the forest!");
                     key.SetActive(true);
                     keyHasAppeared = true;
+                    bossHealthBar.SetActive(true);
                 }   
             }
             else

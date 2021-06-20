@@ -83,5 +83,10 @@ PrefabInstance:
       propertyPath: maxHealthPoints
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 4020652134336385471, guid: 78698cf7a23a12347a02382a2e58bf96,
+        type: 3}
+      propertyPath: suspicionTime
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78698cf7a23a12347a02382a2e58bf96, type: 3}

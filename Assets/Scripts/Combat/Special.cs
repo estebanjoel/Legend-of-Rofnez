@@ -11,7 +11,7 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform;
         [SerializeField] Transform leftHandTransform;
         Animator anim;
-       protected MagicPoints magicPoints;
+        protected MagicPoints magicPoints;
         [SerializeField] Magic defaultMagic = null;
         [SerializeField] protected Magic currentMagic = null;
 
@@ -48,7 +48,6 @@ namespace RPG.Combat
                 GetComponent<ActionScheduler>().StartAction(this);
                 anim.ResetTrigger("StopMagicAttack");
                 anim.SetTrigger("MagicAttack");
-                // InstantiateMagic();
                 timeToActivateMagic = 0f;
             }
             
@@ -72,6 +71,8 @@ namespace RPG.Combat
             if(currentMagic.GetMagicType() == MagicType.Projectile)
             {
                 GameObject projectileMagic = Instantiate(currentMagic.GetEquippedPrefab(), leftHandTransform.position, leftHandTransform.rotation);
+                projectileMagic.GetComponent<Projectile>().SetTarget(GameObject.FindObjectOfType<PlayerHealth>(), currentMagic.GetMagicDamage());
+                transform.rotation = GameObject.FindObjectOfType<PlayerHealth>().transform.rotation;
             }
         }
 

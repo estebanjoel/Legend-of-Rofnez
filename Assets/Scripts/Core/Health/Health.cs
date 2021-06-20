@@ -28,7 +28,6 @@ namespace RPG.Core
             healthPoints = maxHealthPoints;
         }
 
-
         public bool IsDead()
         {
             return isDead;
@@ -38,8 +37,8 @@ namespace RPG.Core
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             ShowVisualChanges();
-            damageSound.PlayOneShot(damageClipSound);
             impactSound.PlayOneShot(impactClipSound);
+            damageSound.PlayOneShot(damageClipSound);
             if (healthPoints == 0)
             {
                 Die();
@@ -66,8 +65,6 @@ namespace RPG.Core
         }
 
         public abstract void ShowVisualChanges();
-        // public abstract void HealShader();
-
         public void Heal(float healPoints)
         {
             healthPoints = Mathf.Min(healthPoints + healPoints, maxHealthPoints);

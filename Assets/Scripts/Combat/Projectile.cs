@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         transform.LookAt(GetAimLocation());
+        StartCoroutine(DestroyProjectileByLifeSpan());
     }
 
     public void SetTarget(Health t, float d)
@@ -28,18 +29,9 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lifeTime += Time.deltaTime;
-        if(lifeTime < lifeSpan)
-        {
-            if(target == null) return;
-            if(isHoming && !target.IsDead()) transform.LookAt(GetAimLocation());
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-        
+        if(target == null) return;
+        if(isHoming && !target.IsDead()) transform.LookAt(GetAimLocation());
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     private Vector3 GetAimLocation()
@@ -55,24 +47,40 @@ public class Projectile : MonoBehaviour
         if(other.gameObject == target.gameObject)
         {
             if(!target.IsDead()) target.TakeDamage(damage);
-            if(hitEffect != null)
-            {
-                Instantiate(hitEffect, GetAimLocation(), transform.rotation);
-                impactSound.Play();
-            }
-            canBeDestroyed = true;
+            canBeDestroyed = ImpactEffect();
         }
-        else if(other.gameObject.tag == "Prop" || other.gameObject.tag == "Obstacle")
+        else if(other.gameObject.tag == "Prop" || other.gameObject.tag == "DestroyableObstacle")
         {
-            canBeDestroyed = true;
-            if(hitEffect != null)
-            {
-                Instantiate(hitEffect, transform.position, transform.rotation);
-            }
+            canBeDestroyed = ImpactEffect();
         }
         if(canBeDestroyed)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(DestroyProjectileByImpact());
         }
+    }
+
+    private bool ImpactEffect()
+    {
+        impactSound.Play();
+        if(hitEffect != null)
+        {
+            Instantiate(hitEffect, GetAimLocation(), transform.rotation);
+        }
+        return true;
+    }  
+
+    private IEnumerator DestroyProjectileByLifeSpan()
+    {
+        yield return new WaitForSeconds(lifeSpan);
+        Destroy(gameObject);
+    }
+
+    private IEnumerator DestroyProjectileByImpact()
+    {
+        speed = 0;
+        StopCoroutine(DestroyProjectileByLifeSpan());
+        yield return new WaitForSeconds(impactSound.clip.length);
+        Destroy(gameObject);
+        
     }
 }

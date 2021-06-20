@@ -21,6 +21,11 @@ namespace RPG.Core
         {
             StartAction(null);
         }
+
+        public IAction GetCurrentAction()
+        {
+            return currentAction;
+        }
     }
     
 }
