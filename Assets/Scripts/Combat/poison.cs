@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Core;
 
-public  class poison : MonoBehaviour
+namespace RPG.Combat
 {
-    [SerializeField] int damageTik = 5;
-    [SerializeField] float damage = 2.5f;
-
-    private void OnTriggerEnter(Collider other)
+    public class poison : MonoBehaviour
     {
-        if(other.GetComponent<PlayerHealth>() != null)
+        [SerializeField] int damageTik = 5;
+        [SerializeField] float damage = 2.5f;
+        [SerializeField] GameObject posionVFX;
+
+        private void OnTriggerEnter(Collider other)
         {
-            Health isPoison = other.gameObject.GetComponent<Health>();
-            if (!isPoison.poisoned)
-                isPoison.poisonDamages(damageTik,damage);
+            if(other.GetComponent<PlayerHealth>() != null)
+            {
+                Health isPoison = other.gameObject.GetComponent<Health>();
+                if (!isPoison.poisoned)
+                    isPoison.poisonDamages(damageTik,damage);
+                isPoison.SpawnShader(posionVFX);
+            }
         }
 
     }
-
 }

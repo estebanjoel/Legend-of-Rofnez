@@ -19,7 +19,8 @@ namespace RPG.Core
         public bool poisoned;
         public int damagetik;
         public float poisonDamage;
-        public Renderer poisonedColor;
+        [SerializeField] Renderer poisonedColor;
+        [SerializeField] Transform shaderSpawnpoint;
     
 
         public void ParentStartingSettings()
@@ -43,7 +44,6 @@ namespace RPG.Core
             {
                 Die();
             }
-
         }
         public void poisonDamages(int tik,float damage)
         {
@@ -93,6 +93,12 @@ namespace RPG.Core
 
         public abstract void DeathBehaviour();
 
-        
+        public void SpawnShader(GameObject shader)
+        {
+            GameObject newShader = GameObject.Instantiate(shader);
+            newShader.transform.parent = shaderSpawnpoint;
+            newShader.transform.position = shaderSpawnpoint.position;
+            newShader.transform.rotation = shaderSpawnpoint.rotation;
+        }        
     }
 }
