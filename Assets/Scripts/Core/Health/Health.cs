@@ -66,13 +66,12 @@ namespace RPG.Core
         }
 
         public abstract void ShowVisualChanges();
-        public abstract void HealShader();
+        // public abstract void HealShader();
 
         public void Heal(float healPoints)
         {
             healthPoints = Mathf.Min(healthPoints + healPoints, maxHealthPoints);
             ShowVisualChanges();
-            HealShader();
         }
 
         public float GetHP()

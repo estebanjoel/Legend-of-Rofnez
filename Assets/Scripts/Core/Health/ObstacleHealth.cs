@@ -18,10 +18,5 @@ namespace RPG.Core
             GetComponent<MeshFilter>().mesh = null;
             transform.GetChild(0).gameObject.SetActive(false);
         }
-
-        public override void HealShader()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

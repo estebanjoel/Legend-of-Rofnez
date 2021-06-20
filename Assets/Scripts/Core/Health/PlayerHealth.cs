@@ -8,7 +8,6 @@ namespace RPG.Core
     public class PlayerHealth : Health
     {
         HealBar bar;
-        [SerializeField] GameObject healShader;
 
         private void Start()
         {
@@ -41,26 +40,26 @@ namespace RPG.Core
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
-        public void HealActiv()
-        {
-            healShader.gameObject.SetActive(true);
-        }
-        public void HealDiActiv()
-        {
-            healShader.gameObject.SetActive(false);
-        }
+        // public void HealActiv()
+        // {
+        //     healShader.gameObject.SetActive(true);
+        // }
+        // public void HealDiActiv()
+        // {
+        //     healShader.gameObject.SetActive(false);
+        // }
 
-        public override void HealShader()
-        {
-            HealActiv();
-            StartCoroutine(DeactivateShader());
-        }
+        // public override void HealShader()
+        // {
+        //     HealActiv();
+        //     StartCoroutine(DeactivateShader());
+        // }
 
-        IEnumerator DeactivateShader()
-        {
-            yield return new WaitForSeconds(2f);
-            HealDiActiv();
-        }
+        // IEnumerator DeactivateShader()
+        // {
+        //     yield return new WaitForSeconds(2f);
+        //     HealDiActiv();
+        // }
 
     }
 }

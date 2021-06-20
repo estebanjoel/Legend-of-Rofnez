@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemClip: {fileID: 8300000, guid: 136a21330c4e00a4a89a64b01e15607f, type: 3}
   pointToHeal: 50
+  healVFX: {fileID: 8375701483854294788, guid: fe7f5ca6ac85cbe4095c054c43ebabc4, type: 3}
 --- !u!95 &4204261510043620294
 Animator:
   serializedVersion: 3
@@ -253,18 +254,6 @@ PrefabInstance:
     - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4000013521377066, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalPosition.y

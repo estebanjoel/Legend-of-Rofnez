@@ -32,10 +32,10 @@ namespace RPG.Core
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
-        public override void HealShader()
-        {
-            throw new System.NotImplementedException();
-        }
+        // public override void HealShader()
+        // {
+        //     throw new System.NotImplementedException();
+        // }
 
         IEnumerator BackToNormal()
         {
