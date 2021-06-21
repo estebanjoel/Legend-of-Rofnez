@@ -27,7 +27,7 @@ namespace RPG.Combat
         {
             if(other.gameObject.tag == "Enemy" || other.gameObject.tag == "DestroyableObstacle")
             {
-                if(!other.GetComponent<Health>().IsDead()) other.GetComponent<Health>().TakeDamage(areaDamage);
+                if(!other.GetComponent<Health>().IsDead() && !other.GetComponent<Health>().CheckInvencibility()) other.GetComponent<Health>().TakeDamage(areaDamage);
             }
         }
 

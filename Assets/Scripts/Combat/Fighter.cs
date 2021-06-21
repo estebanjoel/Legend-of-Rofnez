@@ -59,8 +59,8 @@ namespace RPG.Combat
         {
             if(target == null) return;
 
-            if(currentWeapon.HasProjectile()) currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
-            else target.TakeDamage(currentWeapon.GetWeaponDamage());
+            if(currentWeapon.HasProjectile()) currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); //Chequeo si es un proyectil
+            else if(!target.CheckInvencibility()) target.TakeDamage(currentWeapon.GetWeaponDamage()); //Chequeo si no es invencible, si es falso, ejecuto el daño
         }
 
         void Shoot()

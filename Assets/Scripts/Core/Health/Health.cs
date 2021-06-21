@@ -21,6 +21,7 @@ namespace RPG.Core
         public float poisonDamage;
         [SerializeField] Renderer poisonedColor;
         [SerializeField] Transform shaderSpawnpoint;
+        bool isInvencible;
     
 
         public void ParentStartingSettings()
@@ -44,7 +45,7 @@ namespace RPG.Core
                 Die();
             }
         }
-        public void poisonDamages(int tik,float damage)
+        public void poisonDamages(int tik,float damage) // Función que setea el daño y el tik del veneno y ejecuta la corrutina tikDamage()
         {
             poisonDamage = damage;
             damagetik = tik;
@@ -52,7 +53,7 @@ namespace RPG.Core
             poisonedColor.material.color = Color.green;
             StartCoroutine("tikDamage");
         }
-        IEnumerator tikDamage()
+        IEnumerator tikDamage() //Corrutina que restará daño al personaje por una cantidad igual al valor de 'damageTik'
         {
             for(int i = 0; i < damagetik; i++)
             {
@@ -89,12 +90,24 @@ namespace RPG.Core
 
         public abstract void DeathBehaviour();
 
-        public void SpawnShader(GameObject shader)
+        public void SpawnShader(GameObject shader) // Función para spawnear un efecto visual
         {
             GameObject newShader = GameObject.Instantiate(shader);
             newShader.transform.parent = shaderSpawnpoint;
             newShader.transform.position = shaderSpawnpoint.position;
-            newShader.transform.rotation = shaderSpawnpoint.rotation;
-        }        
+            // newShader.transform.rotation = shaderSpawnpoint.rotation;
+        }
+
+        // Función para la invensibilidad
+
+        public bool CheckInvencibility()
+        {
+            return isInvencible;
+        }
+
+        public void SetInvencibility(bool invencibility)
+        {
+            isInvencible = invencibility;
+        }
     }
 }

@@ -46,7 +46,7 @@ public class Projectile : MonoBehaviour
         bool canBeDestroyed = false;
         if(other.gameObject == target.gameObject)
         {
-            if(!target.IsDead()) target.TakeDamage(damage);
+            if(!target.IsDead() && !target.CheckInvencibility()) target.TakeDamage(damage);
             canBeDestroyed = ImpactEffect();
         }
         else if(other.gameObject.tag == "Prop" || other.gameObject.tag == "DestroyableObstacle")
