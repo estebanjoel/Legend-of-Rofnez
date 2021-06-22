@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 933468273548565123, guid: c164e7595f80f254bb31a3fb6daa3c3c,
+        type: 3}
+      propertyPath: weaponToEquip
+      value: 
+      objectReference: {fileID: 11400000, guid: 049cc199c0498134d868e1d73fca4d41,
+        type: 2}
     - target: {fileID: 4027107086955700234, guid: c164e7595f80f254bb31a3fb6daa3c3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 4255339391964545377, guid: c164e7595f80f254bb31a3fb6daa3c3c,
         type: 3}
       propertyPath: m_Name
-      value: SwordPickup
+      value: SwordLV2Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 6237838683054483208, guid: c164e7595f80f254bb31a3fb6daa3c3c,
         type: 3}
