@@ -13,9 +13,7 @@ namespace RPG.Item
         {
             player.GetComponent<Health>().Heal(pointToHeal);
             player.GetComponent<Health>().SpawnShader(healVFX);
-            // player.GetComponent<Animator>().SetTrigger("Heal");
             player.GetComponent<ActionScheduler>().CancelCurrentAction();
-            // transform.GetChild(0).GetComponent<ParticleSystem>().startLifetime = 0f;
         }
     }
 }
