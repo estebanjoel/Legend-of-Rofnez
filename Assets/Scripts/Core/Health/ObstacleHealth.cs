@@ -15,8 +15,9 @@ namespace RPG.Core
         public override void DeathBehaviour()
         {
             GetComponent<NavMeshObstacle>().enabled = false;
-            GetComponent<MeshFilter>().mesh = null;
-            transform.GetChild(0).gameObject.SetActive(false);
+            Destroy(gameObject);
+            // GetComponent<MeshFilter>().mesh = null;
+            // transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
