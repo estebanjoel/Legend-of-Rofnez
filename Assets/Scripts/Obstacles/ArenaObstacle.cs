@@ -23,8 +23,11 @@ namespace RPG.Obstacle
             if(hasPlayerPickedUpTheKey)
             {
                 Quaternion worldRotation = transform.rotation * door.rotation;
+                Debug.Log(worldRotation.y * newYRotation);
+                Debug.Log(newYRotation/4);
                 if(worldRotation.y * newYRotation >= newYRotation/4)
                 {
+                    Debug.Log("rotating");
                     door.Rotate(new Vector3(0, -1 * rotationSpeed * Time.deltaTime, 0));
                 }
             }
