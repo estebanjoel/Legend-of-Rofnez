@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6278867576472954872}
   - component: {fileID: 6278867576472954879}
   - component: {fileID: 6278867576472954878}
-  m_Layer: 0
+  - component: {fileID: 8777822532611418862}
+  m_Layer: 9
   m_Name: FireTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,6 +61,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 4
+  trapDamage: 10
+--- !u!114 &8777822532611418862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278867576472954877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 6278867575867718534}
+  - {fileID: 6278867575994627488}
 --- !u!1001 &6278867575869999214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,6 +87,10 @@ PrefabInstance:
     - target: {fileID: 160796, guid: b955daae02e019d45a8fb68cfd843784, type: 3}
       propertyPath: m_Name
       value: FX_GunFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 160796, guid: b955daae02e019d45a8fb68cfd843784, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 447148, guid: b955daae02e019d45a8fb68cfd843784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -139,6 +160,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6278867575869999214}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &6278867575867718534 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2307048, guid: b955daae02e019d45a8fb68cfd843784,
+    type: 3}
+  m_PrefabInstance: {fileID: 6278867575869999214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6278867576010249152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,8 +178,8 @@ PrefabInstance:
       value: FX_Fire
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 756d99540142b5e4a8d174e18a6310d9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 756d99540142b5e4a8d174e18a6310d9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -207,22 +234,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19800000, guid: 756d99540142b5e4a8d174e18a6310d9, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 756d99540142b5e4a8d174e18a6310d9, type: 3}
       propertyPath: CollisionModule.type
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 756d99540142b5e4a8d174e18a6310d9, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756d99540142b5e4a8d174e18a6310d9, type: 3}
 --- !u!4 &6278867576009853248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 756d99540142b5e4a8d174e18a6310d9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6278867576010249152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &6278867575994627488 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 19900000, guid: 756d99540142b5e4a8d174e18a6310d9,
     type: 3}
   m_PrefabInstance: {fileID: 6278867576010249152}
   m_PrefabAsset: {fileID: 0}
