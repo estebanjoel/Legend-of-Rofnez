@@ -135,6 +135,11 @@ MonoBehaviour:
   damageClipSound: {fileID: 8300000, guid: 35ea60cc5be64c24cbb54146158b100d, type: 3}
   impactSound: {fileID: 2731295837708022014}
   impactClipSound: {fileID: 8300000, guid: 35ea60cc5be64c24cbb54146158b100d, type: 3}
+  poisoned: 0
+  damagetik: 0
+  poisonDamage: 0
+  poisonedColor: {fileID: 0}
+  shaderSpawnpoint: {fileID: 0}
 --- !u!114 &2084990403842373004
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,10 +14,19 @@ public class FogOfWar : MonoBehaviour
     private Color[] colors;
     void Start()
     {
-        Initialize();
+       // Initialize();
+    }
+    void Update()
+    {
+        
     }
 
-    // Update is called once per frame
+
+
+
+
+
+    /*// Update is called once per frame
     void Update()
     {
         Ray r = new Ray(transform.position, playerRef.position - transform.position);
@@ -33,7 +42,8 @@ public class FogOfWar : MonoBehaviour
                         colors[i].a = alpha;
                     }
             }
-        
+            UpdateColor();
+            Debug.Log("pintar de transparente");
         }
     }
     void Initialize()//pintar todado los vertises de la niebla de guerra de negro
@@ -50,5 +60,6 @@ public class FogOfWar : MonoBehaviour
     void UpdateColor()
     {
         mesh.colors =colors;
-    }
+        Debug.Log("pintar funcion");
+    }*/
 }
