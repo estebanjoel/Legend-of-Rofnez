@@ -66,7 +66,7 @@ namespace RPG.Core
             {
                 if(currentScene != sceneLoader.GetCurrentScene())
                 {
-                    SetLevelSettings();
+                    if(sceneLoader.GetLevelSetChecker()) SetLevelSettings();
                 }
             }
 
@@ -84,13 +84,13 @@ namespace RPG.Core
             isLoadingScene = false;
             failCondiction = false;
             currentScene = sceneLoader.GetCurrentScene();
-            questManager = GameObject.FindObjectOfType<QuestManager>();
             player.SetStartingHealthSettings();
             player.GetComponent<MagicPoints>().SetStartingMagicPointsSettings();
             player.GetComponentInChildren<FieldOfView>().SetFogProjectorToView();
-            Debug.Log(player.GetComponentInChildren<FieldOfView>().fogProjector == GameObject.FindObjectOfType<FogProjector>());
             CamaraFollower camaraFollower = GameObject.FindObjectOfType<CamaraFollower>();
             camaraFollower.SetCameraStartingSettings();
+            questManager = GameObject.FindObjectOfType<QuestManager>();
+            GameObject.FindObjectOfType<QuestManager>().StartingSettings();
         }
     }
 }

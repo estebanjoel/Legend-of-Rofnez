@@ -15,14 +15,14 @@ namespace RPG.Core
         EventText eventText;
         GameObject bossHealthBar;
 
-        void Start()
+        public override void LevelStartingSettings()
         {
             deathcounter = GameObject.FindObjectOfType<Deathcounter>();
             boss = GameObject.FindObjectOfType<BossHealth>();
+            boss.SetHealthBar();
             key.SetActive(false);
             eventText = GameObject.FindObjectOfType<EventText>();
             bossHealthBar = GameObject.Find("BossHealthBar");
-            ParentStartingSettings();
             bossHealthBar.SetActive(false);
         }
         

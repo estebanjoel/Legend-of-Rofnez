@@ -12,16 +12,18 @@ namespace RPG.Core
         bool destroyableHasBeenActivated;
         [SerializeField] GameObject key;
         bool keyHasAppeared;
-        [SerializeField] Health boss;
+        [SerializeField] BossHealth boss;
+        GameObject bossHealthBar;
         // Start is called before the first frame update
-        void Start()
+        public override void LevelStartingSettings()
         {
             collectableIdols = GetComponent<CollectableIdols>();
             angelStatueDestroyable.SetActive(false);
             key.SetActive(false);
-            collectableIdols.IdolsRemainingText();
+            bossHealthBar = GameObject.Find("BossHealthBar");
+            bossHealthBar.SetActive(false);
+            collectableIdols.SetEventText();
         }
-
         public override void QuestChecker()
         {
             if(collectableIdols.CheckIfAllIdolsWereCollected()) // Chequea si todos los ídolos fueron recolectados

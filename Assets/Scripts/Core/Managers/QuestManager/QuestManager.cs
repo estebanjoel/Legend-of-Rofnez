@@ -9,10 +9,14 @@ namespace RPG.Core
     {
         [SerializeField] GameObject nextLevelPortal;
         bool allQuestsAreCompleted = false;
-        public void ParentStartingSettings()
+        public void StartingSettings()
         {
+            Debug.Log("starting quest");
             nextLevelPortal.SetActive(false);
+            LevelStartingSettings();
         }
+
+        public abstract void LevelStartingSettings();
 
         public bool CheckIfAllQuestsAreCompleted()
         {

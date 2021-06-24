@@ -17,6 +17,6 @@ MonoBehaviour:
   timeBetweenAttacks: 1
   equippedPrefab: {fileID: 1549816252230820136, guid: e348097846d3c4e48b9c240b2b42677f,
     type: 3}
-  animatorOverride: {fileID: 0}
+  animatorOverride: {fileID: 22100000, guid: 8e030bc255f368349bda76646a9c969e, type: 2}
   isRightHanded: 1
   projectile: {fileID: 0}

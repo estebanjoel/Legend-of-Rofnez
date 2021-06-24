@@ -7,11 +7,16 @@ namespace RPG.Core
 {
     public class BossHealth : Health
     {
-        HealBar bar;
+        [SerializeField] HealBar bar;
 
         private void Start()
         {
             ParentStartingSettings();
+            // ShowVisualChanges();
+        }
+
+        public void SetHealthBar()
+        {
             HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
             for (int i = 0; i < healbars.Length; i++)
             {
@@ -21,7 +26,6 @@ namespace RPG.Core
                     break;
                 }
             }
-            ShowVisualChanges();
         }
         
         public override void ShowVisualChanges()

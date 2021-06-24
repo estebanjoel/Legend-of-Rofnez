@@ -15,6 +15,8 @@ namespace RPG.SceneManagement
         [SerializeField] float fadeWaitTime = 0.5f;
         [SerializeField] PersistantObjectDestroyer persistantObjectDestroyer;
         [SerializeField] int lastPlayableScene;
+        
+        bool canSetLevelSettings;
 
         public void SetPersistantObjectDestroyer(PersistantObjectDestroyer newObjectDestroyer)
         {
@@ -51,6 +53,7 @@ namespace RPG.SceneManagement
             UIFade fader = FindObjectOfType<UIFade>();
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
+            SetLevelSetChecker(true);
             if(GetCurrentScene() == 0 || GetCurrentScene() > lastPlayableScene)
             {
                 Debug.Log(GetCurrentScene());
@@ -62,7 +65,19 @@ namespace RPG.SceneManagement
             else
             {
                 transform.parent = Singleton.instance.transform;
-            } 
+            }
+            yield return new WaitForSeconds(0.1f);
+            SetLevelSetChecker(false);
+        }
+
+        private void SetLevelSetChecker(bool checker)
+        {
+            canSetLevelSettings = checker;
+        }
+
+        public bool GetLevelSetChecker()
+        {
+            return canSetLevelSettings;
         }
 
     }
