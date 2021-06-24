@@ -17,12 +17,10 @@ public class FogCoverable : MonoBehaviour
     void OnDestroy()
     {
         FieldOfView.OnTargetsVisibilityChange -= FieldOfViewOnTargetsVisibilityChange;
-        Debug.Log("no render?");
     }
 
     void FieldOfViewOnTargetsVisibilityChange(List<Transform> newTargets)
     {
         renderer.enabled = newTargets.Contains(transform);
-        Debug.Log("render?");
     }
 }

@@ -39,6 +39,11 @@ public class FieldOfView : MonoBehaviour
 
     void OnEnable()
     {
+        
+    }
+
+    public void SetFogProjectorToView()
+    {
         viewMesh = new Mesh {name = "View Mesh"};
         viewMeshFilter.mesh = viewMesh;
 

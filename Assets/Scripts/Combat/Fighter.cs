@@ -90,7 +90,6 @@ namespace RPG.Combat
         //Devuelve la distancia entre mi posición y la del objetivo y chequea que sea menor al rango del arma
         private bool GetIsInRange()
         {
-            Debug.Log(Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetWeaponRange());
             return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetWeaponRange();
         }
 
