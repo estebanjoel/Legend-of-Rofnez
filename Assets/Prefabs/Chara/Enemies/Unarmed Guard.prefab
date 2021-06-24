@@ -172,6 +172,19 @@ MonoBehaviour:
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 5
+--- !u!114 &6695560333957209406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540004773825614262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 3529686434512483210}
 --- !u!114 &7865442223320813579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,19 +222,6 @@ MonoBehaviour:
   poisonDamage: 0
   poisonedColor: {fileID: 0}
   shaderSpawnpoint: {fileID: 0}
---- !u!114 &6695560333957209406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540004773825614262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
 --- !u!1 &2411148135607963247
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,17 +650,17 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.206078
+      value: 19.85847
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.6096325
+      value: -8.609631
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.892413
+      value: -1.3055477
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -670,7 +670,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.039609294
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -680,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99921525
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -695,7 +695,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -4.5400004
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -705,7 +705,12 @@ PrefabInstance:
     - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_Name
-      value: Unarmed Guard
+      value: Unarmed Guard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
