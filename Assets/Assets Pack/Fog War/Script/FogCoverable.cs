@@ -5,22 +5,24 @@ using UnityEngine;
 
 public class FogCoverable : MonoBehaviour
 {
-    Renderer renderer;
+   [SerializeField] Renderer renderer;
 
 
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        //renderer = GetComponent<Renderer>();
         FieldOfView.OnTargetsVisibilityChange += FieldOfViewOnTargetsVisibilityChange;
     }
 
     void OnDestroy()
     {
         FieldOfView.OnTargetsVisibilityChange -= FieldOfViewOnTargetsVisibilityChange;
+        Debug.Log("no render?");
     }
 
     void FieldOfViewOnTargetsVisibilityChange(List<Transform> newTargets)
     {
         renderer.enabled = newTargets.Contains(transform);
+        Debug.Log("render?");
     }
 }

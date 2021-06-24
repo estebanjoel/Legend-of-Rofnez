@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4567717018958838}
   - component: {fileID: 33045905030979236}
   - component: {fileID: 23678108832096228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spiked_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4489140927154420}
   - component: {fileID: 65243921997604636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spiked Wall Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
