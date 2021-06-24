@@ -87,6 +87,8 @@ namespace RPG.Core
             questManager = GameObject.FindObjectOfType<QuestManager>();
             player.SetStartingHealthSettings();
             player.GetComponent<MagicPoints>().SetStartingMagicPointsSettings();
+            player.GetComponentInChildren<FieldOfView>().SetFogProjectorToView();
+            Debug.Log(player.GetComponentInChildren<FieldOfView>().fogProjector == GameObject.FindObjectOfType<FogProjector>());
             CamaraFollower camaraFollower = GameObject.FindObjectOfType<CamaraFollower>();
             camaraFollower.SetCameraStartingSettings();
         }

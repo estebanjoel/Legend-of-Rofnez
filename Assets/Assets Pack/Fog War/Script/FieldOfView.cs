@@ -39,7 +39,7 @@ public class FieldOfView : MonoBehaviour
 
     void OnEnable()
     {
-        
+        SetFogProjectorToView();
     }
 
     public void SetFogProjectorToView()
@@ -47,7 +47,7 @@ public class FieldOfView : MonoBehaviour
         viewMesh = new Mesh {name = "View Mesh"};
         viewMeshFilter.mesh = viewMesh;
 
-        fogProjector = fogProjector ?? FindObjectOfType<FogProjector>();
+        fogProjector = FindObjectOfType<FogProjector>();
 
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
