@@ -9,11 +9,6 @@ namespace RPG.Core
     {
         HealBar bar;
 
-        private void Start()
-        {
-            // SetStartingHealthSettings();
-        }
-
         public void SetStartingHealthSettings()
         {
             ParentStartingSettings();
@@ -39,27 +34,5 @@ namespace RPG.Core
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
-
-        // public void HealActiv()
-        // {
-        //     healShader.gameObject.SetActive(true);
-        // }
-        // public void HealDiActiv()
-        // {
-        //     healShader.gameObject.SetActive(false);
-        // }
-
-        // public override void HealShader()
-        // {
-        //     HealActiv();
-        //     StartCoroutine(DeactivateShader());
-        // }
-
-        // IEnumerator DeactivateShader()
-        // {
-        //     yield return new WaitForSeconds(2f);
-        //     HealDiActiv();
-        // }
-
     }
 }
