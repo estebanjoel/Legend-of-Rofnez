@@ -71,6 +71,7 @@ namespace RPG.Combat
         //Lo que hago al atacar
         private void AttackBehaviour()
         {
+            Debug.Log("attack");
             transform.LookAt(target.transform); //Roto hacia mi objetivo
             if(timeSinceLastAttack >= currentWeapon.GetTimeBetweenAttacks())
             {

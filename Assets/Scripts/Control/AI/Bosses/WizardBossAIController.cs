@@ -52,7 +52,7 @@ namespace RPG.Control
                 }
                 else
                 {
-                    if(timeSinceTeleport >= teleportTimer) TeleportBehaviour();
+                    if(timeSinceTeleport >= teleportTimer && !madeATornado) TeleportBehaviour();
                     if(AtWaypoint())
                     {
                         if(canTeleport) StartCoroutine(Appear());
@@ -99,7 +99,6 @@ namespace RPG.Control
 
         private IEnumerator Appear()
         {
-            Debug.Log("appear");
             canTeleport = false;
             GetHealth().SpawnShader(teleportVFX);
             GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, teleportVFXPosY, transform.position.z);
@@ -128,6 +127,7 @@ namespace RPG.Control
 
         private void TornadoBehaviour() //Ataque de Tornado
         {
+            GetComponent<ActionScheduler>().StartAction(null);
             Debug.Log("Tornado");
             madeATornado = true;
             GetHealth().SetInvencibility(true);

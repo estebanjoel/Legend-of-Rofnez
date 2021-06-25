@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466499690001198076}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.32, z: -0.07999993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 6262616011493075316}
   m_RootOrder: 1
@@ -59,6 +59,13 @@ MonoBehaviour:
   chaseDistance: 10
   tornadoVFX: {fileID: 2524120759994607432, guid: 9397211c33b25bc46b26be1a77f2def9,
     type: 3}
+  bossWaypoints: {fileID: 0}
+  waypointTolerance: 0.5
+  bossCharacter: {fileID: 7730042626425270195}
+  teleportTimer: 5
+  teleportVFX: {fileID: 3080725970149129262, guid: 20091e6578b062c4aac66d7f1bf6ad9c,
+    type: 3}
+  teleportVFXPosY: 1
 --- !u!114 &301880252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +173,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f1af7c6c2b71b468b7bab401bbac24, type: 3}
+--- !u!1 &7730042626425270195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2976573902867119402, guid: e7f1af7c6c2b71b468b7bab401bbac24,
+    type: 3}
+  m_PrefabInstance: {fileID: 4758135339206513305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4266410016405212140 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8736173691477645685, guid: e7f1af7c6c2b71b468b7bab401bbac24,
@@ -245,6 +258,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WizardBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 2994264039517231214, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: m_Speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: rightHandTransform
@@ -255,6 +273,12 @@ PrefabInstance:
       propertyPath: leftHandTransform
       value: 
       objectReference: {fileID: 1858515757704617643}
+    - target: {fileID: 2994264039517231216, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: ebcff99bf35e57542a45814eea21ce08,
+        type: 2}
     - target: {fileID: 4965953973684990779, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_Avatar

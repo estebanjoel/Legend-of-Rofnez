@@ -44,12 +44,12 @@ namespace RPG.Core
 
         public override void DeathBehaviour()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void ShowVisualChanges()
         {
-            throw new System.NotImplementedException();
+            
         }
 
     }
