@@ -644,7 +644,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2239894204597751609}
-  - component: {fileID: 8187456337481163331}
   m_Layer: 0
   m_Name: WizardCharcater
   m_TagString: Untagged
@@ -679,25 +678,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!95 &8187456337481163331
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2976573902867119402}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ce78d17dc77c67549b507f924d2604a9, type: 3}
-  m_Controller: {fileID: 9100000, guid: 7292434bea221804c82a785b1d192b91, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2987959091454708047
 GameObject:
   m_ObjectHideFlags: 0

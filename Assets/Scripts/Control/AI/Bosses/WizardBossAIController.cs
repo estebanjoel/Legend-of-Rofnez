@@ -10,6 +10,7 @@ namespace RPG.Control
         WizardBossHealth wizardBossHealth;
         [Header("Tornado Variables")]
         [SerializeField] GameObject tornadoVFX;
+        [SerializeField] GameObject tornadoTrigger;
         bool canDoATornado;
         bool madeATornado;
         Animator animator;
@@ -26,9 +27,12 @@ namespace RPG.Control
         [SerializeField] GameObject teleportVFX;
         [SerializeField] float teleportVFXPosY;
         float teleportVFXDuration;
+        [Header("Spark Attack")]
+        [SerializeField] GameObject sparkVFX;
         void Start()
         {
             ParentStartingSettings();
+            tornadoTrigger.SetActive(false);
             wizardBossHealth = GetComponent<WizardBossHealth>();
             animator = GetComponent<Animator>();
             lastWaypoint = bossWaypoints.transform.GetChild(bossWaypoints.transform.childCount-1);
@@ -131,24 +135,33 @@ namespace RPG.Control
             Debug.Log("Tornado");
             madeATornado = true;
             GetHealth().SetInvencibility(true);
-            GetHealth().SpawnShader(tornadoVFX);
             animator.SetBool("isKicking", true);
             StartCoroutine(StopTornado());
         }
         private IEnumerator StopTornado() // Corrutina para parar el ataque de tornado
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
+            GetHealth().SpawnShader(tornadoVFX);
+            yield return new WaitForSeconds(0.5f);
+            tornadoTrigger.SetActive(true);
+            yield return new WaitForSeconds(3f);
             madeATornado = false;
             ParticleSystem tornado = GameObject.Find(tornadoVFX.name+"(Clone)").GetComponent<ParticleSystem>();
             tornado.loop = false;
             animator.SetBool("isKicking", false);
             yield return new WaitForSeconds(tornado.duration);
+            tornadoTrigger.SetActive(false);
             GetHealth().SetInvencibility(false);
             Destroy(tornado.gameObject);
         }
         public override void AttackBehaviour()
         {
             GetFighter().Attack(GetPlayer());
+        }
+
+        void Sparks()
+        {
+            GetPlayer().GetComponent<Health>().SpawnShader(sparkVFX);
         }
 
 

@@ -128,6 +128,64 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1111155808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1111155809}
+  - component: {fileID: 1111155810}
+  - component: {fileID: 1111155811}
+  m_Layer: 0
+  m_Name: TornadoTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1111155809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111155808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6262616011493075316}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1111155810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111155808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2, z: 4}
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1111155811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111155808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336d66d13c93c1d498f6e8e2c9d0e761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToDeal: 20
 --- !u!1 &1658050550
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +663,7 @@ MonoBehaviour:
   chaseDistance: 10
   tornadoVFX: {fileID: 2524120759994607432, guid: 9397211c33b25bc46b26be1a77f2def9,
     type: 3}
+  tornadoTrigger: {fileID: 1111155808}
   bossWaypoints: {fileID: 0}
   waypointTolerance: 0.5
   bossCharacter: {fileID: 7730042626425270195}
@@ -612,6 +671,8 @@ MonoBehaviour:
   teleportVFX: {fileID: 3080725970149129262, guid: 20091e6578b062c4aac66d7f1bf6ad9c,
     type: 3}
   teleportVFXPosY: 1
+  sparkVFX: {fileID: 1857133050790566110, guid: 13a7f2452a4183a438b4c210f9149d64,
+    type: 3}
 --- !u!114 &301880252
 MonoBehaviour:
   m_ObjectHideFlags: 0
