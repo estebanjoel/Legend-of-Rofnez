@@ -654,17 +654,17 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.143663
+      value: 19.85847
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0051226616
+      value: -8.609631
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 25.133581
+      value: -1.3055477
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -674,7 +674,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.97246325
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -684,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.23305641
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -699,7 +699,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -153.046
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231210, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
@@ -709,7 +709,7 @@ PrefabInstance:
     - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
       propertyPath: m_Name
-      value: Unarmed Guard
+      value: Unarmed Guard (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}
