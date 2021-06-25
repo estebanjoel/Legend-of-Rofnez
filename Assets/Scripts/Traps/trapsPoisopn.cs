@@ -25,7 +25,7 @@ public class trapsPoisopn : poison
         distance();
         if(distanceToPlayer< distanceToExlpote)
         {
-            getPoisoned();
+            getPoisoned(character);
         }
     }
 
@@ -38,13 +38,13 @@ public class trapsPoisopn : poison
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, distanceToExlpote);
     }
-    public override void getPoisoned()
+    public override void getPoisoned(Health isPoison)
     {
         currentTime -= Time.deltaTime;
         if(currentTime <= 0)
         {
             vFX.SetActive(true);
-            base.getPoisoned();
+            base.getPoisoned(isPoison);
             Destroy(this.gameObject, 1.7f);
         }
 

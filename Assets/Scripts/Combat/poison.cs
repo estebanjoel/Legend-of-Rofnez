@@ -15,13 +15,14 @@ namespace RPG.Combat
         {
             if(other.GetComponent<PlayerHealth>() != null)
             {
-                getPoisoned();
+                Health player = other.GetComponent<Health>();
+                getPoisoned(player);
             }
         }
 
-        public virtual void getPoisoned()
+        public virtual void getPoisoned(Health isPoison)
         {
-            Health isPoison = FindObjectOfType<Health>();
+            // isPoison = FindObjectOfType<Health>();
             if (!isPoison.poisoned)
                 isPoison.poisonDamages(damageTik, damage);
             isPoison.SpawnShader(posionVFX);
