@@ -21,5 +21,11 @@ namespace RPG.Core
             return counter;
         }
 
+        public void RestartCounter()
+        {
+            counter = 0;
+            GameObject.FindObjectOfType<KillCounterText>().SetKillText(counter);
+        }
+
 }
 }

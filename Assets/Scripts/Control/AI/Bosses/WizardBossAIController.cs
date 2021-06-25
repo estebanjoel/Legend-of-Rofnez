@@ -132,7 +132,6 @@ namespace RPG.Control
         private void TornadoBehaviour() //Ataque de Tornado
         {
             GetComponent<ActionScheduler>().StartAction(null);
-            Debug.Log("Tornado");
             madeATornado = true;
             GetHealth().SetInvencibility(true);
             animator.SetBool("isKicking", true);

@@ -11,6 +11,13 @@ namespace RPG.UI
         [SerializeField] GameObject pauseMenuUI;
         [SerializeField] bool GameIsPaused = false;
         [SerializeField] int retryLevel;
+        Button[] buttons;
+
+        void Start()
+        {
+            buttons = GameObject.FindObjectsOfType<Button>();
+            StartCoroutine(buttonsCo());
+        }
 
         public void SetRetryLevel(int level)
         {
@@ -53,6 +60,19 @@ namespace RPG.UI
         public void RetryButton()
         {
             SceneManager.LoadScene(retryLevel);
+        }
+
+        private IEnumerator buttonsCo()
+        {
+            for(int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].gameObject.SetActive(false);
+            }
+            yield return new WaitForSeconds(4f);
+            for(int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].gameObject.SetActive(true);
+            }
         }
     }
 }

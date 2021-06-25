@@ -13,7 +13,7 @@ namespace RPG.Core
         // Start is called before the first frame update
         void Start()
         {
-            SetStartingMagicPointsSettings();
+            // SetStartingMagicPointsSettings();
         }
 
         public void SetStartingMagicPointsSettings()
@@ -39,7 +39,7 @@ namespace RPG.Core
         public void ConsumeMagicPoints(float mpToConsume)
         {
             magicPoints = Mathf.Max(magicPoints - mpToConsume, 0);
-            bar.ChangeBarFiller(magicPoints, maxMagicPoints);
+            if(bar != null) bar.ChangeBarFiller(magicPoints, maxMagicPoints);
         }
 
         public void RestoreMagicPoints(float mptToRestore)

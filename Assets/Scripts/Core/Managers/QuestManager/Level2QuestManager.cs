@@ -14,6 +14,7 @@ namespace RPG.Core
         bool keyHasAppeared;
         [SerializeField] WizardBossHealth boss;
         GameObject bossHealthBar;
+        [SerializeField] PoisonTrapContainer poisonTrapContainer;
         // Start is called before the first frame update
         public override void LevelStartingSettings()
         {
@@ -21,9 +22,15 @@ namespace RPG.Core
             angelStatueDestroyable.SetActive(false);
             key.SetActive(false);
             boss = GameObject.FindObjectOfType<WizardBossHealth>();
+            boss.StartSettings();
             bossHealthBar = GameObject.Find("BossHealthBar");
             bossHealthBar.SetActive(false);
             collectableIdols.SetEventText();
+            foreach(trapsPoisopn trap in poisonTrapContainer.GetTrapsPoisopns())
+            {
+                trap.gameObject.SetActive(true);
+                trap.SetTarget();
+            }
         }
         public override void QuestChecker()
         {

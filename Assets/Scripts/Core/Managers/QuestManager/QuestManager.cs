@@ -11,7 +11,6 @@ namespace RPG.Core
         bool allQuestsAreCompleted = false;
         public void StartingSettings()
         {
-            Debug.Log("starting quest");
             nextLevelPortal.SetActive(false);
             LevelStartingSettings();
         }

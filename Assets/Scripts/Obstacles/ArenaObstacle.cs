@@ -13,7 +13,7 @@ namespace RPG.Obstacle
         [SerializeField] bool hasPlayerPickedUpTheKey = false;
         EventText eventText;
 
-        private void Start()
+        public void SetEventText()
         {
             eventText = GameObject.FindObjectOfType<EventText>();
         }

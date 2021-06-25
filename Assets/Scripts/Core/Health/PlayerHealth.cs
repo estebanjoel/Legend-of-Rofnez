@@ -11,7 +11,7 @@ namespace RPG.Core
 
         private void Start()
         {
-            SetStartingHealthSettings();
+            // SetStartingHealthSettings();
         }
 
         public void SetStartingHealthSettings()

@@ -15,17 +15,24 @@ public class trapsPoisopn : poison
     
     void Start()
     {
-        character = FindObjectOfType<PlayerHealth>();
         currentTime = time;
+    }
+
+    public void SetTarget()
+    {
+        character = FindObjectOfType<PlayerHealth>();
     }
 
     
     void Update()
     {
-        distance();
-        if(distanceToPlayer< distanceToExlpote)
+        if(character != null)
         {
-            getPoisoned(character);
+            distance();
+            if(distanceToPlayer< distanceToExlpote)
+            {
+                getPoisoned(character);
+            }
         }
     }
 

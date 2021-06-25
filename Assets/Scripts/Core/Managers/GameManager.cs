@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.UI;
 using RPG.SceneManagement;
+using RPG.Obstacle;
 
 namespace RPG.Core
 {
@@ -91,6 +92,8 @@ namespace RPG.Core
             camaraFollower.SetCameraStartingSettings();
             questManager = GameObject.FindObjectOfType<QuestManager>();
             GameObject.FindObjectOfType<QuestManager>().StartingSettings();
+            GetComponent<Deathcounter>().RestartCounter();
+            GameObject.FindObjectOfType<ArenaObstacle>().SetEventText();
         }
     }
 }

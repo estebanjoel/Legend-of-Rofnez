@@ -14,10 +14,11 @@ namespace RPG.Core
         float timesTornadoWasMade = 0; // Veces que el tornado se haya ejecutado
         [Header("Health Bar")]
         [SerializeField] HealBar bar;
-        void Start()
+
+        public void StartSettings()
         {
             ParentStartingSettings();
-            currentHP = GetHP();
+            currentHP = GetMaxHP();
             SetHealthBar();
         }
 
@@ -55,7 +56,6 @@ namespace RPG.Core
         {
             currentAmount += GetMaxHP() - GetHP() - currentAmount - hpAmountToDoATornado * timesTornadoWasMade;
             currentHP = GetHP();
-            Debug.Log(currentAmount);
             
         }
 
