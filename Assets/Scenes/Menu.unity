@@ -1257,6 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   GameIsPaused: 0
+  retryLevel: 0
 --- !u!82 &1883078861
 AudioSource:
   m_ObjectHideFlags: 0
