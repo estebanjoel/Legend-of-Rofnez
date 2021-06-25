@@ -12,7 +12,7 @@ namespace RPG.Core
         bool destroyableHasBeenActivated;
         [SerializeField] GameObject key;
         bool keyHasAppeared;
-        [SerializeField] BossHealth boss;
+        [SerializeField] WizardBossHealth boss;
         GameObject bossHealthBar;
         // Start is called before the first frame update
         public override void LevelStartingSettings()
@@ -20,6 +20,7 @@ namespace RPG.Core
             collectableIdols = GetComponent<CollectableIdols>();
             angelStatueDestroyable.SetActive(false);
             key.SetActive(false);
+            boss = GameObject.FindObjectOfType<WizardBossHealth>();
             bossHealthBar = GameObject.Find("BossHealthBar");
             bossHealthBar.SetActive(false);
             collectableIdols.SetEventText();
@@ -43,6 +44,7 @@ namespace RPG.Core
                         {
                             key.SetActive(true);
                             keyHasAppeared = true;
+                            bossHealthBar.SetActive(true);
                         }
                         else
                         {

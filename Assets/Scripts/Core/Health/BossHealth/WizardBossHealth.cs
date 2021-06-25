@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.UI;
 
 namespace RPG.Core
 {
@@ -11,10 +12,26 @@ namespace RPG.Core
         float currentAmount = 0; //Cantidad actual para la acción del tornado
         [SerializeField] float hpAmountToDoATornado = 50f; // Cantidad necesaria para ejecutar el tornado
         float timesTornadoWasMade = 0; // Veces que el tornado se haya ejecutado
+        [Header("Health Bar")]
+        [SerializeField] HealBar bar;
         void Start()
         {
             ParentStartingSettings();
             currentHP = GetHP();
+            SetHealthBar();
+        }
+
+        public void SetHealthBar()
+        {
+            HealBar[] healbars = GameObject.FindObjectsOfType<HealBar>();
+            for (int i = 0; i < healbars.Length; i++)
+            {
+                if (healbars[i].gameObject.name == "BossHealthBar")
+                {
+                    bar = healbars[i];
+                    break;
+                }
+            }
         }
 
         public bool CheckIfICanDoATornadoMovement()
@@ -44,12 +61,13 @@ namespace RPG.Core
 
         public override void DeathBehaviour()
         {
-            
+            GetComponent<Animator>().SetTrigger("Die");
+            GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
         public override void ShowVisualChanges()
         {
-            
+            bar.ChangeBarFiller(GetHP(), GetMaxHP());
         }
 
     }
