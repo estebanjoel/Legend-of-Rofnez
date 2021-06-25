@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+using RPG.UI;
 
 namespace RPG.SceneManagement
 {
@@ -15,6 +16,7 @@ namespace RPG.SceneManagement
         [SerializeField] float fadeWaitTime = 0.5f;
         [SerializeField] PersistantObjectDestroyer persistantObjectDestroyer;
         [SerializeField] int lastPlayableScene;
+        int previousScene;
         
         bool canSetLevelSettings;
 
@@ -40,6 +42,7 @@ namespace RPG.SceneManagement
 
         public IEnumerator TransitionBeginCo()
         {
+            previousScene = GetCurrentScene();
             transform.parent = null;
             DontDestroyOnLoad(gameObject);
             UIFade fader = FindObjectOfType<UIFade>();
@@ -56,6 +59,7 @@ namespace RPG.SceneManagement
             SetLevelSetChecker(true);
             if(GetCurrentScene() == 0 || GetCurrentScene() > lastPlayableScene)
             {
+                if(GameObject.FindObjectOfType<Menu>() != null) GameObject.FindObjectOfType<Menu>().SetRetryLevel(previousScene);
                 Debug.Log(GetCurrentScene());
                 persistantObjectDestroyer.RestartSpawner();
                 persistantObjectDestroyer.CheckIfPersistantMustBeDestroyed();

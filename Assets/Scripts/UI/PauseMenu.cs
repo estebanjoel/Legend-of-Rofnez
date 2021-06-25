@@ -21,8 +21,6 @@ namespace RPG.UI
         public void ResumeButton()
         {
             pauseManager.SetPause(false);
-            menuController.HideUIObject(menuController.GetPauseMenu());
-            menuController.ShowUIObject(menuController.GetFader());
         }
 
         public void ReturnToMainMenuButton(int sceneToLoad)

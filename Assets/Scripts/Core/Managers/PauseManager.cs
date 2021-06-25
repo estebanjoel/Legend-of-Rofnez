@@ -33,6 +33,8 @@ namespace RPG.Core
             else
             {
                 Time.timeScale = 1f;
+                menuController.ShowUIObject(menuController.GetFader());
+                menuController.HideUIObject(menuController.GetPauseMenu());
             } 
         }
     }

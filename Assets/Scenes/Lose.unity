@@ -757,6 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   GameIsPaused: 0
+  retryLevel: 0
 --- !u!82 &1211072106
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1014,8 +1015,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1211072105}
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: RetryButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
