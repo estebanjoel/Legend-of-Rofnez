@@ -87,7 +87,6 @@ namespace RPG.Core
             currentScene = sceneLoader.GetCurrentScene();
             player.SetStartingHealthSettings();
             player.GetComponent<MagicPoints>().SetStartingMagicPointsSettings();
-            player.GetComponentInChildren<FieldOfView>().SetFogProjectorToView();
             CamaraFollower camaraFollower = GameObject.FindObjectOfType<CamaraFollower>();
             camaraFollower.SetCameraStartingSettings();
             questManager = GameObject.FindObjectOfType<QuestManager>();
