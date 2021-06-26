@@ -71,6 +71,21 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 1274521238936554486, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.45200002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274521238936554486, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.597819
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274521238936554486, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1349910666415691002, guid: 0cfff02477e1556418b7bc88f7524fe9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,6 +146,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5022157294450796952, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.2902758
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022157294450796952, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.43245688
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022157294450796952, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5099350286717503495, guid: 0cfff02477e1556418b7bc88f7524fe9,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -160,6 +190,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703518055115807647, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.12863788
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703518055115807647, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.2651811
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703518055115807647, guid: 0cfff02477e1556418b7bc88f7524fe9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7514646834171558291, guid: 0cfff02477e1556418b7bc88f7524fe9,
         type: 3}
