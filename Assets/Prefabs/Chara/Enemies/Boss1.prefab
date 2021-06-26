@@ -286,6 +286,27 @@ CapsuleCollider:
   m_Height: 2.25
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!114 &827846296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361842273920546948}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 5578022257495353395}
+  - {fileID: 6030334986026623593}
+  - {fileID: 8929354591764299926}
+  - {fileID: 6722645612210578833}
+  - {fileID: 5448671219961609035}
+  - {fileID: 695619332302652139}
+  - {fileID: 2383585853878800984}
+  - {fileID: 8632261943393555375}
 --- !u!114 &2084247880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +344,7 @@ MonoBehaviour:
   poisonDamage: 0
   poisonedColor: {fileID: 0}
   shaderSpawnpoint: {fileID: 0}
+  bar: {fileID: 0}
 --- !u!114 &2084247882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,27 +454,6 @@ MonoBehaviour:
   leftHandTransform: {fileID: 8120977804482690127}
   defaultMagic: {fileID: 11400000, guid: af896f36b3325194aaaadc8b003dd219, type: 2}
   currentMagic: {fileID: 0}
---- !u!114 &827846296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4361842273920546948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  renderers:
-  - {fileID: 5578022257495353395}
-  - {fileID: 6030334986026623593}
-  - {fileID: 8929354591764299926}
-  - {fileID: 6722645612210578833}
-  - {fileID: 5448671219961609035}
-  - {fileID: 695619332302652139}
-  - {fileID: 2383585853878800984}
-  - {fileID: 8632261943393555375}
 --- !u!1 &4648101969302458864
 GameObject:
   m_ObjectHideFlags: 0
