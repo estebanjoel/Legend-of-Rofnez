@@ -486,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 2521455894474687499, guid: 91d61ff96fc3727479f3ee776a81c27f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2521455894474687509, guid: 91d61ff96fc3727479f3ee776a81c27f,
         type: 3}
@@ -9882,6 +9882,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 827846296, guid: b201d4b6c9db2264fa86ea3e9eff225f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 780030557550938775, guid: b201d4b6c9db2264fa86ea3e9eff225f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10768,7 +10772,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19756
+  m_Name: pb_Mesh110574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11143,7 +11147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 71019978}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eeff59f765c91b4e9392def49c4f9f6, type: 3}
   m_Name: 
