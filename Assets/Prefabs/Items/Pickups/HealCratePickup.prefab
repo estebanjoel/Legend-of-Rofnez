@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 74154475075467197}
   - component: {fileID: 74154475075467198}
   - component: {fileID: 749305225}
+  - component: {fileID: 664378835}
   m_Layer: 9
   m_Name: HealCratePickup
   m_TagString: Untagged
@@ -101,6 +102,21 @@ MonoBehaviour:
   itemClip: {fileID: 8300000, guid: 136a21330c4e00a4a89a64b01e15607f, type: 3}
   pointToHeal: 50
   healVFX: {fileID: 8375701483854294788, guid: fe7f5ca6ac85cbe4095c054c43ebabc4, type: 3}
+--- !u!114 &664378835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74154475075467199}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderers:
+  - {fileID: 3324213870039795435}
+  - {fileID: 8444665275527595743}
 --- !u!95 &4204261510043620294
 Animator:
   serializedVersion: 3
@@ -230,6 +246,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2031405490271426610}
   m_PrefabAsset: {fileID: 0}
+--- !u!199 &8444665275527595743 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 7566182426419797741, guid: 717e9461c3b28bd42b67f81144f78369,
+    type: 3}
+  m_PrefabInstance: {fileID: 2031405490271426610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3346258654364557907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,10 +259,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 74154475075467187}
     m_Modifications:
-    - target: {fileID: 1000010142024812, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 1000011889971296, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -305,18 +323,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4000010770147514, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010770147514, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010770147514, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013521377066, guid: 7cafb89b5a0f61f479d0a748962abbbc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.69
@@ -344,6 +350,12 @@ GameObject:
 --- !u!4 &3350248734543969487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010690109084, guid: 7cafb89b5a0f61f479d0a748962abbbc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3346258654364557907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3324213870039795435 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23000010821985464, guid: 7cafb89b5a0f61f479d0a748962abbbc,
     type: 3}
   m_PrefabInstance: {fileID: 3346258654364557907}
   m_PrefabAsset: {fileID: 0}
