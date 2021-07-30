@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RPG.Core;
 using UnityEngine;
 
@@ -70,6 +70,11 @@ namespace RPG.Combat
         public float GetTimeBetweenAttacks()
         {
             return timeBetweenAttacks;
+        }
+
+        public bool CheckIsRightHanded()
+        {
+            return isRightHanded;
         }
     }
 }

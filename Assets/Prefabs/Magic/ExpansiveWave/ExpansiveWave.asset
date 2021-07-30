@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d479f6d49e05ba4d92af294f9fa5d32, type: 3}
   m_Name: ExpansiveWave
   m_EditorClassIdentifier: 
-  magicDamage: 20
-  mpToConsume: 5
+  magicDamage: 40
+  mpToConsume: 10
   magicCooldown: 2.5
   equippedPrefab: {fileID: 2331271551912489652, guid: 571d0c0c0c73d8f4fa94220a8c735234,
     type: 3}

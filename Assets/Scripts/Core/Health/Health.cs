@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using RPG.Combat;
 
 namespace RPG.Core
 {
@@ -36,13 +37,21 @@ namespace RPG.Core
 
         public void TakeDamage(float damage)
         {
-            healthPoints = Mathf.Max(healthPoints - damage, 0);
-            ShowVisualChanges();
-            impactSound.PlayOneShot(impactClipSound);
-            damageSound.PlayOneShot(damageClipSound);
-            if (healthPoints == 0)
+            //Antes de recibir daño, chequeo si puedo deflectar el daño en el caso de tener un escudo equipado
+            Shield myShield = GetComponent<Fighter>().GetCurrentShield();
+            if (myShield != null)
             {
-                Die();
+                if (!myShield.DeflectDamage())
+                {
+                    healthPoints = Mathf.Max(healthPoints - damage, 0);
+                    ShowVisualChanges();
+                    impactSound.PlayOneShot(impactClipSound);
+                    damageSound.PlayOneShot(damageClipSound);
+                    if (healthPoints == 0)
+                    {
+                        Die();
+                    }
+                }
             }
         }
         public void poisonDamages(int tik,float damage) // Función que setea el daño y el tik del veneno y ejecuta la corrutina tikDamage()
@@ -108,6 +117,12 @@ namespace RPG.Core
         public void SetInvencibility(bool invencibility)
         {
             isInvencible = invencibility;
+        }
+
+        public IEnumerator DisableInvencibilityCo(float seconds)
+        {
+            yield return new WaitForSeconds(seconds);
+            SetInvencibility(false);
         }
     }
 }

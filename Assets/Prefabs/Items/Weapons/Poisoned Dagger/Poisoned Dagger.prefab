@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 990470479326893556}
   - component: {fileID: 3306591673098491860}
   m_Layer: 0
-  m_Name: Dagger
+  m_Name: Poisoned Dagger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,3 +94,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageTik: 5
   damage: 2.5
+  posionVFX: {fileID: 0}

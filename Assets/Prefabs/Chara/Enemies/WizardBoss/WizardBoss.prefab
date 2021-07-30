@@ -667,7 +667,7 @@ MonoBehaviour:
   bossWaypoints: {fileID: 0}
   waypointTolerance: 0.5
   bossCharacter: {fileID: 7730042626425270195}
-  teleportTimer: 5
+  teleportTimer: 8
   teleportVFX: {fileID: 3080725970149129262, guid: 20091e6578b062c4aac66d7f1bf6ad9c,
     type: 3}
   teleportVFXPosY: 1
@@ -886,7 +886,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: ebcff99bf35e57542a45814eea21ce08,
+      objectReference: {fileID: 11400000, guid: 9dd1b4f11d22ed345b6330a01a95e47e,
         type: 2}
     - target: {fileID: 4965953973684990779, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}

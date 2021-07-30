@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.UI;
+using RPG.Combat;
 
 namespace RPG.Core
 {
@@ -68,6 +69,19 @@ namespace RPG.Core
         public override void ShowVisualChanges()
         {
             bar.ChangeBarFiller(GetHP(), GetMaxHP());
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.tag == "PlayerWeapon")
+            {
+                if (!CheckInvencibility())
+                {
+                    TakeDamage(other.transform.parent.GetComponent<AttackTrigger>().GetTriggerDamage());
+                    SetInvencibility(true);
+                    StartCoroutine(DisableInvencibilityCo(0.5f));
+                }
+            }
         }
 
     }

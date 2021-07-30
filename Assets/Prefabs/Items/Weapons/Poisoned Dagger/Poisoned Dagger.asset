@@ -15,7 +15,7 @@ MonoBehaviour:
   weaponRange: 2
   weaponDamage: 5
   timeBetweenAttacks: 1
-  equippedPrefab: {fileID: 1549816252230820136, guid: e348097846d3c4e48b9c240b2b42677f,
+  equippedPrefab: {fileID: 5206409882694286455, guid: 24712fba061e7ab4e9169a59d9ae0685,
     type: 3}
   animatorOverride: {fileID: 22100000, guid: 8e030bc255f368349bda76646a9c969e, type: 2}
   isRightHanded: 1

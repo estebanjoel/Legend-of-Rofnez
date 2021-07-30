@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5953904553036106883}
   m_Layer: 0
-  m_Name: Equipped Bow
-  m_TagString: Untagged
+  m_Name: Equipped Bow Enemy
+  m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

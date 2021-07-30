@@ -10,6 +10,8 @@ TagManager:
   - DestroyableObstacle
   - Prop
   - FxTemporaire
+  - EnemyWeapon
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX

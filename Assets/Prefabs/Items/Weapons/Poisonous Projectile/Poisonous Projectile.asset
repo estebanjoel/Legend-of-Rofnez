@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26458d6aee7f71b40986aa84abfd0de8, type: 3}
-  m_Name: Unarmed-Boss
+  m_Name: Poisonous Projectile
   m_EditorClassIdentifier: 
-  weaponRange: 2
+  weaponRange: 10
   weaponDamage: 7.5
-  timeBetweenAttacks: 4
-  equippedPrefab: {fileID: 1646692550931462815, guid: 0794dc291829078458aeb3f660b35386,
-    type: 3}
+  timeBetweenAttacks: 10
+  equippedPrefab: {fileID: 0}
   animatorOverride: {fileID: 0}
-  isRightHanded: 0
-  projectile: {fileID: 0}
+  isRightHanded: 1
+  projectile: {fileID: -9105509060241988544, guid: 873d82fe7776e8c40bce8a9604fecd21,
+    type: 3}

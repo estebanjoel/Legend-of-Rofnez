@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 2472454785597376198}
   - component: {fileID: 2472454785353927078}
   - component: {fileID: 2472454785353927082}
+  - component: {fileID: -9105509060241988544}
   m_Layer: 0
-  m_Name: FX_GunFlash 1
+  m_Name: PosionousProjetileTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,5 +106,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7c07336a405c1489cc7aadd35c8c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTik: 5
+  damageTik: 3
   damage: 10
+  poisonVFX: {fileID: 4122972946613161412, guid: dec5c73fc57a68c44a8094fcd2c92c1a,
+    type: 3}
+--- !u!114 &-9105509060241988544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472454785595228466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f69d3bca65f1e4fab00a177ca469e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 10
+  isHoming: 0
+  hitEffect: {fileID: 1845240806346120, guid: b395d5d6eb4b4b846acc021ee036b744, type: 3}
+  lifeSpan: 1
+  impactSound: {fileID: 0}

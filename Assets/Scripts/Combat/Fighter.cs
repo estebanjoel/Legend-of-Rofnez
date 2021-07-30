@@ -12,23 +12,28 @@ namespace RPG.Combat
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
         [SerializeField] Weapon currentWeapon = null;
+        [SerializeField] Shield defaultShield = null;
+        [SerializeField] Shield currentShield = null;
         Mover mover;
         Animator anim;
         [SerializeField] Health target;
         float timeSinceLastAttack = Mathf.Infinity;
+        AttackTrigger weaponAttackTrigger;
+
         private void Start()
         {
             mover = GetComponent<Mover>();  
             anim = GetComponent<Animator>();
             EquipWeapon(defaultWeapon);
+            EquipShield(defaultShield);
         }
         
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
-            
+
             //Chequeo si tengo un objetivo y si el objetivo está muerto            
-            if(target == null) return;
+            if (target == null) return;
             if(target.IsDead()) return;
 
             //Si estoy en el rango de ataque, ataco y sino me muevo hasta el objetivo
@@ -51,7 +56,27 @@ namespace RPG.Combat
             currentWeapon = weapon;
             if(weapon == null) return;
             weapon.Spawn(rightHandTransform, leftHandTransform, anim);
+            if(currentWeapon != null && !currentWeapon.HasProjectile())
+            {
+                if (currentWeapon.CheckIsRightHanded()) weaponAttackTrigger = rightHandTransform.GetChild(rightHandTransform.childCount - 1).GetComponent<AttackTrigger>();
+                else weaponAttackTrigger = leftHandTransform.GetChild(leftHandTransform.childCount - 1).GetComponent<AttackTrigger>();
 
+                weaponAttackTrigger.SetTriggerDamage(currentWeapon.GetWeaponDamage());
+                weaponAttackTrigger.DeactivateWeaponCollider();
+            }
+
+        }
+
+        public void EquipShield(Shield shield)
+        {
+            currentShield = shield;
+            if (shield == null) return;
+            shield.SpawnShield(leftHandTransform);
+        }
+
+        public Shield GetCurrentShield()
+        {
+            return currentShield;
         }
 
         //Evento en la animación de Attack. Realiza el daño al objetivo.
@@ -59,8 +84,14 @@ namespace RPG.Combat
         {
             if(target == null) return;
 
-            if(currentWeapon.HasProjectile()) currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); //Chequeo si es un proyectil
-            else if(!target.CheckInvencibility()) target.TakeDamage(currentWeapon.GetWeaponDamage()); //Chequeo si no es invencible, si es falso, ejecuto el daño
+            if (currentWeapon.HasProjectile()) currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); //Chequeo si es un proyectil
+            else weaponAttackTrigger.ActivateWeaponCollider();
+            //else if(!target.CheckInvencibility()) target.TakeDamage(currentWeapon.GetWeaponDamage()); //Chequeo si no es invencible, si es falso, ejecuto el daño            
+        }
+
+        void StopHit()
+        {
+            weaponAttackTrigger.DeactivateWeaponCollider();
         }
 
         void Shoot()
@@ -113,6 +144,7 @@ namespace RPG.Combat
         {
             target = null;
             AttackTriggers("Attack", "StopAttack");
+            if (weaponAttackTrigger != null) weaponAttackTrigger.DeactivateWeaponCollider();
         }
 
     }

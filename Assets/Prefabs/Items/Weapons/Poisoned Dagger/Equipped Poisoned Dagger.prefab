@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5206409882285690386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5206409882285690389}
+  - component: {fileID: 5206409882285690388}
+  m_Layer: 0
+  m_Name: WeaponCollider
+  m_TagString: EnemyWeapon
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5206409882285690389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206409882285690386}
+  m_LocalRotation: {x: -0.0016297564, y: 0.9723462, z: 0.0067884205, w: 0.23343979}
+  m_LocalPosition: {x: 0.198, y: 0.001, z: -0.43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5206409882694286454}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -0.8, y: 153, z: 0}
+--- !u!65 &5206409882285690388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206409882285690386}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07264471, y: 0.031752605, z: 0.6542907}
+  m_Center: {x: 0.0000007087623, y: 0.0020582613, z: 0.17105883}
+--- !u!1 &5206409882694286455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5206409882694286454}
+  - component: {fileID: 6104333616008702713}
+  m_Layer: 0
+  m_Name: Equipped Poisoned Dagger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5206409882694286454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206409882694286455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.131, y: 0.026, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7753428650357095865}
+  - {fileID: 5206409882285690389}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6104333616008702713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206409882694286455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc5425a95b306d40bc76d58d99af842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponCollider: {fileID: 5206409882285690386}
+  triggerDamage: 0
+--- !u!1001 &5206409883499392642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5206409882694286454}
+    m_Modifications:
+    - target: {fileID: 1549816252230820136, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_Name
+      value: Poisoned Dagger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0016297564
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.9723462
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0067884205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.23343979
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 153
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 55
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e348097846d3c4e48b9c240b2b42677f, type: 3}
+--- !u!4 &7753428650357095865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2583188715829367611, guid: e348097846d3c4e48b9c240b2b42677f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5206409883499392642}
+  m_PrefabAsset: {fileID: 0}

@@ -9,7 +9,7 @@ namespace RPG.Combat
     {
         [SerializeField] int damageTik = 5;
         [SerializeField] float damage = 2.5f;
-        [SerializeField] GameObject posionVFX;
+        [SerializeField] GameObject poisonVFX;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -17,6 +17,7 @@ namespace RPG.Combat
             {
                 Health player = other.GetComponent<Health>();
                 getPoisoned(player);
+                
             }
         }
 
@@ -25,7 +26,7 @@ namespace RPG.Combat
             // isPoison = FindObjectOfType<Health>();
             if (!isPoison.poisoned)
                 isPoison.poisonDamages(damageTik, damage);
-            isPoison.SpawnShader(posionVFX);
+            isPoison.SpawnShader(poisonVFX);
         }
 
     }

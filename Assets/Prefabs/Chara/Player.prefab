@@ -441,6 +441,8 @@ MonoBehaviour:
   defaultWeapon: {fileID: 11400000, guid: 0f8e3b67aea0fa54fa187a1964ea1178, type: 2}
   currentWeapon: {fileID: 0}
   target: {fileID: 0}
+  weaponAttackTrigger: {fileID: 0}
+  currentWeaponObject: {fileID: 0}
 --- !u!114 &3810658928676046816
 MonoBehaviour:
   m_ObjectHideFlags: 0
