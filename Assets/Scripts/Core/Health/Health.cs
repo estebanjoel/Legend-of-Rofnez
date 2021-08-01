@@ -38,22 +38,38 @@ namespace RPG.Core
         public void TakeDamage(float damage)
         {
             //Antes de recibir daño, chequeo si puedo deflectar el daño en el caso de tener un escudo equipado
-            Shield myShield = GetComponent<Fighter>().GetCurrentShield();
-            if (myShield != null)
+            if(GetComponent<Fighter>() == null)
             {
-                if (!myShield.DeflectDamage())
+                DamageBehavoiur(damage);
+            } 
+            else
+            {
+                if(GetComponent<Fighter>().GetCurrentShield() != null)
                 {
-                    healthPoints = Mathf.Max(healthPoints - damage, 0);
-                    ShowVisualChanges();
-                    impactSound.PlayOneShot(impactClipSound);
-                    damageSound.PlayOneShot(damageClipSound);
-                    if (healthPoints == 0)
+                    if (GetComponent<Fighter>().GetCurrentShield().DeflectDamage())
                     {
-                        Die();
+                        DamageBehavoiur(damage);
                     }
+                }
+                else
+                {
+                    DamageBehavoiur(damage);
                 }
             }
         }
+
+        private void DamageBehavoiur(float damage)
+        {
+            healthPoints = Mathf.Max(healthPoints - damage, 0);
+            ShowVisualChanges();
+            impactSound.PlayOneShot(impactClipSound);
+            damageSound.PlayOneShot(damageClipSound);
+            if (healthPoints == 0)
+            {
+                Die();
+            }
+        }
+
         public void poisonDamages(int tik,float damage) // Función que setea el daño y el tik del veneno y ejecuta la corrutina tikDamage()
         {
             poisonDamage = damage;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5206409882285690389}
   - component: {fileID: 5206409882285690388}
+  - component: {fileID: 1064396165368598887}
   m_Layer: 0
   m_Name: WeaponCollider
   m_TagString: EnemyWeapon
@@ -44,6 +45,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.07264471, y: 0.031752605, z: 0.6542907}
   m_Center: {x: 0.0000007087623, y: 0.0020582613, z: 0.17105883}
+--- !u!114 &1064396165368598887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206409882285690386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7c07336a405c1489cc7aadd35c8c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageTik: 4
+  damage: 1.25
+  poisonVFX: {fileID: 4122972946613161412, guid: dec5c73fc57a68c44a8094fcd2c92c1a,
+    type: 3}
 --- !u!1 &5206409882694286455
 GameObject:
   m_ObjectHideFlags: 0

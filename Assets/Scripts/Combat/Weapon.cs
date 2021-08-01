@@ -14,6 +14,7 @@ namespace RPG.Combat
         [SerializeField] AnimatorOverrideController animatorOverride = null;
         [SerializeField] private bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
+        [SerializeField] int ammo = 0;
 
         const string weaponName = "Weapon";
 
@@ -75,6 +76,11 @@ namespace RPG.Combat
         public bool CheckIsRightHanded()
         {
             return isRightHanded;
+        }
+
+        public int GetAmmo()
+        {
+            return ammo;
         }
     }
 }

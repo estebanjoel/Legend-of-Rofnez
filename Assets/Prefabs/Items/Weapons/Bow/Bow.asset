@@ -21,3 +21,4 @@ MonoBehaviour:
   isRightHanded: 0
   projectile: {fileID: 3513353533115854241, guid: 810b43de4f22d1b4eb78007bef568c94,
     type: 3}
+  ammo: 10

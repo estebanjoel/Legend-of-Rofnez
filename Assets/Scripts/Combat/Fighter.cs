@@ -16,6 +16,7 @@ namespace RPG.Combat
         [SerializeField] Shield currentShield = null;
         Mover mover;
         Animator anim;
+        RuntimeAnimatorController defaultRuntimeAnimatorController;
         [SerializeField] Health target;
         float timeSinceLastAttack = Mathf.Infinity;
         AttackTrigger weaponAttackTrigger;
@@ -24,7 +25,23 @@ namespace RPG.Combat
         {
             mover = GetComponent<Mover>();  
             anim = GetComponent<Animator>();
+            defaultRuntimeAnimatorController = anim.runtimeAnimatorController;
             EquipWeapon(defaultWeapon);
+            if(gameObject.tag == "Player")
+            {
+                WeaponInventory playerWeaponInventory = GetComponent<WeaponInventory>();
+                if(defaultWeapon.HasProjectile())
+                {
+                    playerWeaponInventory.SetRangedWeapon(defaultWeapon);
+                    playerWeaponInventory.SetActiveWeapon(playerWeaponInventory.GetRangedWeapon());
+                } 
+                else
+                {
+                    playerWeaponInventory.SetMeleeWeapon(defaultWeapon);
+                    playerWeaponInventory.SetActiveWeapon(playerWeaponInventory.GetMeleeWeapon());
+                } 
+                
+            }
             EquipShield(defaultShield);
         }
         
@@ -55,6 +72,7 @@ namespace RPG.Combat
         {
             currentWeapon = weapon;
             if(weapon == null) return;
+            anim.runtimeAnimatorController = defaultRuntimeAnimatorController;
             weapon.Spawn(rightHandTransform, leftHandTransform, anim);
             if(currentWeapon != null && !currentWeapon.HasProjectile())
             {
@@ -65,6 +83,11 @@ namespace RPG.Combat
                 weaponAttackTrigger.DeactivateWeaponCollider();
             }
 
+        }
+
+        public Weapon GetCurrentWeapon()
+        {
+            return currentWeapon;
         }
 
         public void EquipShield(Shield shield)
@@ -84,9 +107,23 @@ namespace RPG.Combat
         {
             if(target == null) return;
 
-            if (currentWeapon.HasProjectile()) currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); //Chequeo si es un proyectil
-            else weaponAttackTrigger.ActivateWeaponCollider();
-            //else if(!target.CheckInvencibility()) target.TakeDamage(currentWeapon.GetWeaponDamage()); //Chequeo si no es invencible, si es falso, ejecuto el daño            
+            if (currentWeapon.HasProjectile()) //Chequeo si es un proyectil
+            {
+                if(gameObject.tag == "Player")
+                {
+                    int currentAmmo = GetComponent<RangedWeaponAmmoInventory>().GetAmmo() - 1;
+                    GetComponent<RangedWeaponAmmoInventory>().SetAmmo(currentAmmo);
+                    currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); 
+                }
+                else
+                {
+                    currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); 
+                }
+            } 
+            else
+            {
+                weaponAttackTrigger.ActivateWeaponCollider();
+            } 
         }
 
         void StopHit()
@@ -107,7 +144,16 @@ namespace RPG.Combat
             {
                 //Esto invoca el evento Hit()
                 timeSinceLastAttack = 0f;
-                AttackTriggers("StopAttack", "Attack");
+                if(gameObject.tag == "Player")
+                {
+                    if(currentWeapon == GetComponent<WeaponInventory>().GetRangedWeapon() && GetComponent<RangedWeaponAmmoInventory>().GetAmmo() > 0) AttackTriggers("StopAttack", "Attack");
+                    else if(currentWeapon == GetComponent<WeaponInventory>().GetMeleeWeapon()) AttackTriggers("StopAttack", "Attack");
+                }
+                else
+                {
+                    AttackTriggers("StopAttack", "Attack");
+                }
+                
             }
         }
 

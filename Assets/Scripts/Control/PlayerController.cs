@@ -13,18 +13,23 @@ namespace RPG.Control
         Fighter fighter;
         Special special;
         Health health;
+        WeaponInventory weaponInventory;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
             special = GetComponent<Special>();
             health = GetComponent<Health>();
-            
+            weaponInventory = GetComponent<WeaponInventory>();
         }
         void Update()
         {
             if(health.IsDead()) return;
             if(ActivateSpecialAttack()) return;
             if(InteractWithCombat()) return;
+            if(Input.GetKeyDown(KeyCode.Q))
+            {
+                ChangePlayerActiveWeapon();
+            }
             if(InteractWithMovement()) return;
         }
 
@@ -76,6 +81,17 @@ namespace RPG.Control
         private static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
+
+        private void ChangePlayerActiveWeapon()
+        {
+            GetComponent<ActionScheduler>().CancelCurrentAction();
+            if(weaponInventory.GetActiveWeapon() == weaponInventory.GetMeleeWeapon() && weaponInventory.GetRangedWeapon() != null)
+            {
+                weaponInventory.SetActiveWeapon(weaponInventory.GetRangedWeapon());
+            } 
+            else if(weaponInventory.GetActiveWeapon() == weaponInventory.GetRangedWeapon() && weaponInventory.GetMeleeWeapon() != null) weaponInventory.SetActiveWeapon(weaponInventory.GetMeleeWeapon());
+            fighter.EquipWeapon(weaponInventory.GetActiveWeapon());
         }
     }
 }

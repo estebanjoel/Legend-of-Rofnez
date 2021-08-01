@@ -9,20 +9,27 @@ namespace RPG.Core
     {
         [SerializeField] Weapon equippedMeleeWeapon;
         [SerializeField] Weapon equippedRangedWeapon;
-        Weapon activeWeapon;
+        [SerializeField] Weapon activeWeapon;
 
-
+        public Weapon GetMeleeWeapon()
+        {
+            return equippedMeleeWeapon;
+        }
         public void SetMeleeWeapon(Weapon weapon)
         {
             equippedMeleeWeapon = weapon;
         }
 
+        public Weapon GetRangedWeapon()
+        {
+            return equippedRangedWeapon;
+        }
         public void SetRangedWeapon(Weapon weapon)
         {
             equippedRangedWeapon = weapon;
         }
 
-        public void SetActiveWeapon()
+        public void SetActiveWeapon(Weapon weapon)
         {
             if(activeWeapon == null)
             {
@@ -31,8 +38,7 @@ namespace RPG.Core
             }
             else
             {
-                if (activeWeapon == equippedMeleeWeapon && equippedRangedWeapon != null) activeWeapon = equippedRangedWeapon;
-                else if (activeWeapon == equippedRangedWeapon) activeWeapon = equippedMeleeWeapon;
+                activeWeapon = weapon;
             }
         }
 
