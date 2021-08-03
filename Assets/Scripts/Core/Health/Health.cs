@@ -16,6 +16,8 @@ namespace RPG.Core
         public AudioClip damageClipSound;
         public AudioSource impactSound;
         public AudioClip impactClipSound;
+        public ParticleSystem[] listFX;
+        [SerializeField] bool activeFX; 
         private bool isDead;
         public bool poisoned;
         public int damagetik;
@@ -48,6 +50,17 @@ namespace RPG.Core
                 {
                     if (GetComponent<Fighter>().GetCurrentShield().DeflectDamage())
                     {
+                        if(activeFX = false)
+                        {
+                            listFX[1].gameObject.SetActive(true);
+                            listFX[2].gameObject.SetActive(true);
+                            activeFX = true;
+                        }
+                        else
+                        {
+                            listFX[1].Play();
+                            listFX[2].Play();
+                        }
                         DamageBehavoiur(damage);
                     }
                 }
