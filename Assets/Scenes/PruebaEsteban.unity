@@ -121,104 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 8d2c86f225ca5a8408cad15cba59cd08, type: 2}
---- !u!1 &19105869
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 186418, guid: 19bf91be496fbea478d3040694446b87,
-    type: 3}
-  m_PrefabInstance: {fileID: 925866958}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 19105873}
-  - component: {fileID: 19105872}
-  - component: {fileID: 19105871}
-  - component: {fileID: 19105870}
-  m_Layer: 0
-  m_Name: SD_Prop_Shield_Rusty_01
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!64 &19105870
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 64135897063441098, guid: 19bf91be496fbea478d3040694446b87,
-    type: 3}
-  m_PrefabInstance: {fileID: 925866958}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19105869}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 43549513449472074, guid: 6adb09daa5e48a14c969ddeebaa912ad, type: 2}
---- !u!23 &19105871
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2375292, guid: 19bf91be496fbea478d3040694446b87,
-    type: 3}
-  m_PrefabInstance: {fileID: 925866958}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19105869}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 82e4de2985db4c8448893385cc8d2108, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &19105872
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 3357116, guid: 19bf91be496fbea478d3040694446b87,
-    type: 3}
-  m_PrefabInstance: {fileID: 925866958}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19105869}
-  m_Mesh: {fileID: 4300000, guid: 1e4dd3cc821e2ad4c83944eaae32f092, type: 3}
---- !u!4 &19105873
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 484722, guid: 19bf91be496fbea478d3040694446b87,
-    type: 3}
-  m_PrefabInstance: {fileID: 925866958}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19105869}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.565533, y: 0.022912264, z: 2.2623734}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &40017852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,6 +469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436050355}
+  - component: {fileID: 436050356}
   m_Layer: 0
   m_Name: SiegeTowerPilot
   m_TagString: Untagged
@@ -589,6 +492,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &436050356
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436050354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
+  m_Controller: {fileID: 9100000, guid: 55b0f7a4c22fe6143ba0fa4f5e6fda86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &502447237
 GameObject:
   m_ObjectHideFlags: 0
