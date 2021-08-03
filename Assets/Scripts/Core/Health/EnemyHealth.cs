@@ -35,6 +35,7 @@ namespace RPG.Core
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
             GameObject.FindObjectOfType<PlayerHealth>().GetComponent<MagicPoints>().RestoreMagicPoints(2.5f);
+            GetComponent<RewardDrop>().CheckIfCanDropReward();
         }
 
         IEnumerator BackToNormal()

@@ -14,6 +14,7 @@ namespace RPG.Combat
         [SerializeField] Weapon currentWeapon = null;
         [SerializeField] Shield defaultShield = null;
         [SerializeField] Shield currentShield = null;
+        GameObject shieldInstantiated;
         Mover mover;
         Animator anim;
         RuntimeAnimatorController defaultRuntimeAnimatorController;
@@ -95,11 +96,22 @@ namespace RPG.Combat
             currentShield = shield;
             if (shield == null) return;
             shield.SpawnShield(leftHandTransform);
+            shieldInstantiated = leftHandTransform.GetChild(leftHandTransform.childCount - 1).gameObject;
         }
 
         public Shield GetCurrentShield()
         {
             return currentShield;
+        }
+
+        public void ShowShield()
+        {
+            shieldInstantiated.SetActive(true);
+        }
+
+        public void HideShield()
+        {
+            shieldInstantiated.SetActive(false);
         }
 
         //Evento en la animación de Attack. Realiza el daño al objetivo.
