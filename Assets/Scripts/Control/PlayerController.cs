@@ -86,12 +86,17 @@ namespace RPG.Control
         private void ChangePlayerActiveWeapon()
         {
             GetComponent<ActionScheduler>().CancelCurrentAction();
-            if(weaponInventory.GetActiveWeapon() == weaponInventory.GetMeleeWeapon() && weaponInventory.GetRangedWeapon() != null)
+            if (weaponInventory.GetActiveWeapon() == weaponInventory.GetMeleeWeapon() && weaponInventory.GetRangedWeapon() != null)
             {
                 weaponInventory.SetActiveWeapon(weaponInventory.GetRangedWeapon());
-            } 
-            else if(weaponInventory.GetActiveWeapon() == weaponInventory.GetRangedWeapon() && weaponInventory.GetMeleeWeapon() != null) weaponInventory.SetActiveWeapon(weaponInventory.GetMeleeWeapon());
+            }
+            else if (weaponInventory.GetActiveWeapon() == weaponInventory.GetRangedWeapon() && weaponInventory.GetMeleeWeapon() != null)
+            {
+                weaponInventory.SetActiveWeapon(weaponInventory.GetMeleeWeapon());
+            }
             fighter.EquipWeapon(weaponInventory.GetActiveWeapon());
+            if (fighter.GetCurrentWeapon() == weaponInventory.GetMeleeWeapon()) fighter.ShowShield();
+            else fighter.HideShield();
         }
     }
 }
