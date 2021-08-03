@@ -456,20 +456,6 @@ MonoBehaviour:
   poisonDamage: 0
   poisonedColor: {fileID: 0}
   shaderSpawnpoint: {fileID: 0}
---- !u!114 &3428849089670857681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540004773825614262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9e07377fc056384c80fcf8d808e9485, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rewardToDrop: {fileID: 0}
-  dropRate: 200
 --- !u!1 &5571729426969504652
 GameObject:
   m_ObjectHideFlags: 0

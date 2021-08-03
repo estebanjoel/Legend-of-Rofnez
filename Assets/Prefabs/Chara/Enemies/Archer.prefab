@@ -83,17 +83,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 3428849089670857681, guid: 78698cf7a23a12347a02382a2e58bf96,
-        type: 3}
-      propertyPath: dropRate
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 3428849089670857681, guid: 78698cf7a23a12347a02382a2e58bf96,
-        type: 3}
-      propertyPath: rewardToDrop
-      value: 
-      objectReference: {fileID: 8524285580550210591, guid: 91498ac7257ec7b46affcea09a5aeff8,
-        type: 3}
     - target: {fileID: 3529686434512483210, guid: 78698cf7a23a12347a02382a2e58bf96,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

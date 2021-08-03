@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &320622488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923113035050633432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802879be87134724da090a197b68a02b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 923113035045403928}
 --- !u!1001 &4338225890602798738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90,6 +103,12 @@ PrefabInstance:
       objectReference: {fileID: 923113035045403928}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78698cf7a23a12347a02382a2e58bf96, type: 3}
+--- !u!1 &923113035050633432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3529686434509325898, guid: 78698cf7a23a12347a02382a2e58bf96,
+    type: 3}
+  m_PrefabInstance: {fileID: 4338225890602798738}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &923113035045403928 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3529686434512483210, guid: 78698cf7a23a12347a02382a2e58bf96,

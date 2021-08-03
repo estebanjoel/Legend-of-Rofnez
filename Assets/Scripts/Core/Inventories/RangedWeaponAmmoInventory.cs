@@ -7,7 +7,6 @@ namespace RPG.Core
     public class RangedWeaponAmmoInventory : MonoBehaviour
     {
         [SerializeField] int ammo;
-        int maxAmmo = 99;
 
         public int GetAmmo()
         {
@@ -16,8 +15,7 @@ namespace RPG.Core
 
         public void SetAmmo(int newAmmo)
         {
-            if (newAmmo > maxAmmo) ammo = maxAmmo;
-            else ammo = newAmmo;
+            ammo = newAmmo;
         }
     }
 

@@ -3,70 +3,10 @@ guid: 488df9f4a66e0844da46226c23646783
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Feathers.003
-    second: {fileID: 2100000, guid: 53eb6414af3a7e649ace88746b0a6074, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: c3ecf51cc8646c04fb765aee571d3aee, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal.003
-    second: {fileID: 2100000, guid: c7ce829920c28e042abc85291df04b21, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rope
-    second: {fileID: 2100000, guid: 61d9f5c7b176b5c44b6f83b96c2c67a8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rope.003
-    second: {fileID: 2100000, guid: 39e12d308bdff8a44b3ea9062d1275a6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood01.003
-    second: {fileID: 2100000, guid: 119fb8cfa0ed95b488f08de0c4c35b7b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood02.003
-    second: {fileID: 2100000, guid: 150b712e03fbed040865bd2762e5b588, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood02.004
-    second: {fileID: 2100000, guid: 4ad9d4fd16b29e24b8e91d6ab5b6a2fc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wood03.003
-    second: {fileID: 2100000, guid: 751b1244b19f74a478f82625718ed689, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WoodBeam
-    second: {fileID: 2100000, guid: 177d23eff8d219d4a807ea4ff6a8ba87, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WoodDark
-    second: {fileID: 2100000, guid: b0439b8be6cc8ca41a68fe320076616b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: WoodPlank
-    second: {fileID: 2100000, guid: 71b5b9ec16c13604db0e6ffd00c4e772, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
-    materialName: 1
+    materialName: 0
     materialSearch: 1
     materialLocation: 1
   animations:
