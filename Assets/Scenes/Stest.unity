@@ -1606,10 +1606,7 @@ MonoBehaviour:
   goToPlayer: 14.45
   distanceToPlayer: 1.95
   speed: 2
-  targetSpeed: 0
-  trapclosing: {fileID: 0}
-  closingPivot: {fileID: 0}
-  speedClosing: 50
+  speedClosing: 20
 --- !u!135 &1829872670
 SphereCollider:
   m_ObjectHideFlags: 0

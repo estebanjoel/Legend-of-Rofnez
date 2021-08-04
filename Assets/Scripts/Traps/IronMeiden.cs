@@ -10,10 +10,11 @@ public class IronMeiden : MonoBehaviour
     [SerializeField] float goToPlayer;
     [SerializeField] float distanceToPlayer;
     [SerializeField] float speed;
+    float closing;
     SphereCollider radius;
-    [SerializeField] float targetSpeed;
-    [SerializeField] Transform trapclosing;
-    [SerializeField] Transform closingPivot;
+    float targetSpeed;
+    Transform trapclosing;
+    Transform closingPivot;
     [SerializeField] float speedClosing;
 
 
@@ -25,6 +26,7 @@ public class IronMeiden : MonoBehaviour
         closingPivot = GameObject.FindWithTag("pivot").GetComponent<Transform>();
         radius.radius = goToPlayer;
         targetSpeed = player3.speed;
+        closing = -3;
     }
     //cuando el personaje quede atrapado la velocidad la velocidad del player3 debe igualarse a 0 y luego volver a la normalidad con la variable targert
     private void Update()
@@ -32,10 +34,6 @@ public class IronMeiden : MonoBehaviour
         distance();
         
     }
-
-    
-
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, goToPlayer);
@@ -70,7 +68,6 @@ public class IronMeiden : MonoBehaviour
 
     void glatony()
     {
-        float closing = -3;
         if(closing <= trapclosing.rotation.y)
         {
             trapclosing.RotateAround(closingPivot.position, Vector3.up, speedClosing * Time.deltaTime);
