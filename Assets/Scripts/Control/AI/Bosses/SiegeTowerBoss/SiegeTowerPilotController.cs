@@ -128,6 +128,7 @@ namespace RPG.Control
             {
                 //transform.LookAt(towerControlPosition);
                 onTowerControl = true;
+                transform.parent = siegeTowerController.transform;
             }
             else
             {
