@@ -12,6 +12,7 @@ TagManager:
   - FxTemporaire
   - EnemyWeapon
   - PlayerWeapon
+  - pivot
   layers:
   - Default
   - TransparentFX
