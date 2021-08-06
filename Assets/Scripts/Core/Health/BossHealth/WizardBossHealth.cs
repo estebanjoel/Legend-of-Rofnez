@@ -57,7 +57,6 @@ namespace RPG.Core
         {
             currentAmount += GetMaxHP() - GetHP() - currentAmount - hpAmountToDoATornado * timesTornadoWasMade;
             currentHP = GetHP();
-            
         }
 
         public override void DeathBehaviour()

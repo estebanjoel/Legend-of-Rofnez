@@ -9,23 +9,63 @@ namespace RPG.Control
     public class SiegeTowerController : MonoBehaviour
     {
         [SerializeField] SiegeTowerPilotController siegeTowerPilotController;
-        bool pilotOnTower;
+        [SerializeField] GameObject invisibleWall;
+        [SerializeField] GameObject wheels;
+        [SerializeField] GameObject cannonBomb;
+        SiegeTowerBossHealth siegeTowerBossHealth;
+        bool canStartAction;
+        BoxCollider boxCollider;
 
-        // Start is called before the first frame update
-        void Start()
+        [Header("Attack Variables")]
+        bool canAttack;
+        [SerializeField] float attackRate;
+        [SerializeField] int timesUntilStopAttack;
+        [SerializeField] int[] attackTimes;
+
+        private void Start()
         {
-
+            wheels.SetActive(false);
+            siegeTowerBossHealth = GetComponent<SiegeTowerBossHealth>();
+            boxCollider = GetComponent<BoxCollider>();
+            boxCollider.enabled = false;
         }
 
-        // Update is called once per frame
         void Update()
         {
+           if(!canStartAction)
+           {
+                if(siegeTowerPilotController.CheckIfIsOnTower())
+                {
+                    invisibleWall.SetActive(false);
+                    wheels.SetActive(true);
+                    canStartAction = true;
+                    boxCollider.enabled = true;
+                }
+           }
+           else
+           {
+               if(!siegeTowerBossHealth.IsDead())
+               {
+                   if(siegeTowerBossHealth.CheckInvencibility())
+                   {
+                       AttackBehaviour();
+                   }
+                   else
+                   {
+                       
+                   }
+               }
+           }
+        }
+
+        private void AttackBehaviour()
+        {
 
         }
 
-        private bool CheckIfPilotIsOnControl()
+        private void InvencibilityBehaviour()
         {
-            return false;
+
         }
     }
 

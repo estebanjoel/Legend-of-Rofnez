@@ -77,6 +77,11 @@ namespace RPG.Control
             }
         }
 
+        public bool CheckIfIsOnTower()
+        {
+            return onTowerControl;
+        }
+
         private bool CheckEncounterDistance()
         {
             float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
@@ -138,9 +143,7 @@ namespace RPG.Control
 
         private bool CheckIfTowerIsDestroyed()
         {
-            if (Input.GetKeyDown(KeyCode.W)) return true;
-            else return false;
-            //return siegeTowerController.GetComponent<Health>().IsDead();
+            return siegeTowerController.GetComponent<Health>().IsDead();
         }
 
         private void OnDrawGizmosSelected()
@@ -165,6 +168,16 @@ namespace RPG.Control
             navMeshAgent.enabled = false;
             onTower = true;
             anim.SetTrigger("onTower");
+        }
+
+        private void FallFromTower()
+        {
+            transform.parent = null;
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            rb.isKinematic = false;
+            rb.AddForce(new Vector3(Random.Range(-3f, 3f), 0, Random.Range(-3f,3f)), ForceMode.VelocityChange);
+            rb.AddExplosionForce(500, transform.position, 100, 100, ForceMode.Force);
         }
     }
 
