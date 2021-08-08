@@ -20,7 +20,9 @@ namespace RPG.Control
         bool canAttack;
         [SerializeField] float attackRate;
         [SerializeField] int timesUntilStopAttack;
+        int timesHasAttacked = 0;
         [SerializeField] int[] attackTimes;
+        int attackTimesIndex = 0;
 
         private void Start()
         {
@@ -28,6 +30,7 @@ namespace RPG.Control
             siegeTowerBossHealth = GetComponent<SiegeTowerBossHealth>();
             boxCollider = GetComponent<BoxCollider>();
             boxCollider.enabled = false;
+            SetTimesToAttack(attackTimesIndex);
         }
 
         void Update()
@@ -66,6 +69,11 @@ namespace RPG.Control
         private void InvencibilityBehaviour()
         {
 
+        }
+
+        public void SetTimesToAttack(int i)
+        {
+            timesUntilStopAttack = attackTimes[i];
         }
     }
 
