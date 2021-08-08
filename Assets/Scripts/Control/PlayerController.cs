@@ -4,6 +4,7 @@ using UnityEngine;
 using RPG.Movement;
 using RPG.Combat;
 using RPG.Core;
+using RPG.UI;
 using System;
 
 namespace RPG.Control
@@ -14,12 +15,14 @@ namespace RPG.Control
         Special special;
         Health health;
         WeaponInventory weaponInventory;
+        PlayerCursor playerCursor;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
             special = GetComponent<Special>();
             health = GetComponent<Health>();
             weaponInventory = GetComponent<WeaponInventory>();
+            playerCursor = GetComponent<PlayerCursor>();
         }
         void Update()
         {
@@ -50,6 +53,7 @@ namespace RPG.Control
             foreach(RaycastHit hit in hits)
             {
                 CombatTarget target = hit.transform.gameObject.GetComponent<CombatTarget>();
+                playerCursor.SetFightCursor();
                 if(target == null) continue;
                 if(!fighter.CanAttack(target.gameObject)) continue;
                 if(Input.GetMouseButtonDown(0))
@@ -58,6 +62,7 @@ namespace RPG.Control
                 } 
                 return true;
             }
+            playerCursor.SetDefaultCursor();
             return false;
         }
 
@@ -68,12 +73,14 @@ namespace RPG.Control
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
             if (hasHit)
             {
+                playerCursor.SetMoveCursor();
                 if (Input.GetMouseButtonDown(0))
                 {
                     GetComponent<Mover>().StartMoveAction(hit.point);
                 }
                 return true;
             }
+            playerCursor.SetDefaultCursor();
             return false;
         }
 

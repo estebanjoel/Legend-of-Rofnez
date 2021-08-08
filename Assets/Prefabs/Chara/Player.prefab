@@ -307,6 +307,9 @@ GameObject:
   - component: {fileID: 8009118991790829206}
   - component: {fileID: -1981060722223640837}
   - component: {fileID: 6980606017180765471}
+  - component: {fileID: 1968687643}
+  - component: {fileID: 1968687644}
+  - component: {fileID: 6062337603907622159}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -424,8 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5584445326ddab4ab604f7665f452ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runsound: {fileID: 5299480978435182180, guid: 9cf9ec8a43fc61c4b9bf374af0812e8f,
-    type: 3}
+  runsound: {fileID: 6307831454561449773}
 --- !u!114 &3810658928676046817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,8 +535,6 @@ MonoBehaviour:
   damageClipSound: {fileID: 8300000, guid: c67b8f28ccb1a184cba5b958315fb75f, type: 3}
   impactSound: {fileID: 6104651411220295137}
   impactClipSound: {fileID: 8300000, guid: 0d3d7afb5ec538343a9fd9d4235bdefa, type: 3}
-  listFX: []
-  activeFX: 0
   poisoned: 0
   damagetik: 0
   poisonDamage: 0
@@ -556,6 +556,49 @@ MonoBehaviour:
   leftHandTransform: {fileID: 1071873450652805763}
   defaultMagic: {fileID: 11400000, guid: 425433cc4815a344db4361185be150fa, type: 2}
   currentMagic: {fileID: 0}
+--- !u!114 &1968687643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810658928676046845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9993e7037557af48a5fe6d1aac2d6a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 0
+--- !u!114 &1968687644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810658928676046845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcc352fd31a0364d83da9c447de8eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equippedMeleeWeapon: {fileID: 0}
+  equippedRangedWeapon: {fileID: 0}
+  activeWeapon: {fileID: 0}
+--- !u!114 &6062337603907622159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810658928676046845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05429aff45215af4687b574932669b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 2800000, guid: a5f9cc9a5efbe894eb85de4851711ba8, type: 3}
+  moveCursor: {fileID: 2800000, guid: f27d2a87b8553f8438fadbb8f50e9bbd, type: 3}
+  fightCursor: {fileID: 2800000, guid: 24d21e256b498a944a00e2527ed7618c, type: 3}
 --- !u!1 &4942795873667455984
 GameObject:
   m_ObjectHideFlags: 0
