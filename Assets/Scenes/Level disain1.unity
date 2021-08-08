@@ -43825,6 +43825,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireTrap (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6278867576472954878, guid: a46a31f2fc03ece4fb0149d3e9dae976,
+        type: 3}
+      propertyPath: time
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a46a31f2fc03ece4fb0149d3e9dae976, type: 3}
 --- !u!4 &1952109850 stripped
