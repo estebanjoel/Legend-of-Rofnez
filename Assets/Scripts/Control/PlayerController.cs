@@ -71,7 +71,7 @@ namespace RPG.Control
         {
             RaycastHit hit;
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
-            if (hasHit)
+            if (hasHit && !CheckRaycastTags(hit))
             {
                 playerCursor.SetMoveCursor();
                 if (Input.GetMouseButtonDown(0))
@@ -104,6 +104,17 @@ namespace RPG.Control
             fighter.EquipWeapon(weaponInventory.GetActiveWeapon());
             if (fighter.GetCurrentWeapon() == weaponInventory.GetMeleeWeapon()) fighter.ShowShield();
             else fighter.HideShield();
+        }
+
+        private bool CheckRaycastTags(RaycastHit hitPoint)
+        {
+            switch(hitPoint.collider.gameObject.tag)
+            {
+                case "Prop":
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 }

@@ -52,7 +52,7 @@ namespace RPG.Movement
         //Cancela la acción de moverme
         public void Cancel()
         {
-            // runsound.Stop();
+            if (runsound != null) runsound.Stop();
             navMeshAgent.isStopped = true;
         }
     }
