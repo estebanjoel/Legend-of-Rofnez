@@ -705,10 +705,6 @@ MonoBehaviour:
   damageClipSound: {fileID: 8300000, guid: 2ebf38d5081e6024eb5214ce611bd747, type: 3}
   impactSound: {fileID: 2023191027}
   impactClipSound: {fileID: 8300000, guid: 151fa7778dc9cf14ba998127d188283b, type: 3}
-  listFX:
-  - {fileID: 9110215784235928284, guid: 8dfca03007bc7f24584fb16d41f3054a, type: 3}
-  - {fileID: 66467482940892299, guid: e293ba5db78eaf046971a1fa16835ba7, type: 3}
-  activeFX: 0
   poisoned: 0
   damagetik: 0
   poisonDamage: 0
@@ -1018,6 +1014,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WizardBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994264039517231212, guid: 716606a900d64c24abfa70679b6e56ed,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2994264039517231214, guid: 716606a900d64c24abfa70679b6e56ed,
         type: 3}

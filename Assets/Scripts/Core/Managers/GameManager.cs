@@ -88,7 +88,7 @@ namespace RPG.Core
             player.SetStartingHealthSettings();
             player.GetComponent<MagicPoints>().SetStartingMagicPointsSettings();
             CamaraFollower camaraFollower = GameObject.FindObjectOfType<CamaraFollower>();
-            camaraFollower.SetCameraStartingSettings();
+            //camaraFollower.SetCameraStartingSettings();
             questManager = GameObject.FindObjectOfType<QuestManager>();
             GameObject.FindObjectOfType<QuestManager>().StartingSettings();
             GetComponent<Deathcounter>().RestartCounter();

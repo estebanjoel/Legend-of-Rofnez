@@ -73,5 +73,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: dagger Guard Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3428849089670857681, guid: 78698cf7a23a12347a02382a2e58bf96,
+        type: 3}
+      propertyPath: dropRate
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3428849089670857681, guid: 78698cf7a23a12347a02382a2e58bf96,
+        type: 3}
+      propertyPath: rewardToDrop
+      value: 
+      objectReference: {fileID: 74154475075467199, guid: c540adee0a94bef48b1ea3adcd818be7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78698cf7a23a12347a02382a2e58bf96, type: 3}

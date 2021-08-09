@@ -24,7 +24,7 @@ namespace RPG.Control
         bool onTowerControl;
         bool isFalling;
         int currentWaypointIndex = 0;
-        [SerializeField] Transform towerPosition;
+        Transform towerPosition;
         [SerializeField] Transform towerControlPosition;
         [SerializeField] float ySpeed;
 

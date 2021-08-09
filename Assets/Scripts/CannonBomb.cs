@@ -7,7 +7,14 @@ public class CannonBomb : MonoBehaviour
     [SerializeField] GameObject explosionVFX;
     [SerializeField] GameObject[] enemiesToSpawn;
     [SerializeField] GameObject[] trapsToSpawn;
+    [SerializeField] GameObject crystal;
     [SerializeField] int spawnPercentageRate;
+    bool canSpawnCrystal;
+
+    public void SetIfICanSpawnCrystal(bool option)
+    {
+        canSpawnCrystal = option;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +26,8 @@ public class CannonBomb : MonoBehaviour
         float explosionYPos = transform.position.y + 1.75f;
         Vector3 explosionPos = new Vector3(transform.position.x, explosionYPos, transform.position.z);
         Instantiate(explosionVFX, explosionPos, transform.rotation);
-        if(CheckIfCanSpawn()) SpawnFromExplosion();
+        if(canSpawnCrystal) Instantiate(crystal, transform.position, transform.rotation);
+        else if(CheckIfCanSpawn()) SpawnFromExplosion();
         Destroy(gameObject);
     }
 

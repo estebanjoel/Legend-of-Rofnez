@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2327096279593742178}
-  - component: {fileID: 1417882749615275512}
+  - component: {fileID: 8970055726940042506}
   m_Layer: 0
   m_Name: camara controler
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1417882749615275512
+--- !u!114 &8970055726940042506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 932262753859906190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb3449ba6a388645a6943a91f97f1e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eccdc0e773da664c8e495df73751696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camSpeed: 20
-  mauseBorderMuv: 10
+  camSpeed: 10
   target: {fileID: 0}
 --- !u!1 &6759137803672969991
 GameObject:

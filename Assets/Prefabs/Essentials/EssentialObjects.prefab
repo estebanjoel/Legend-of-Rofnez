@@ -232,16 +232,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: camara controler
       objectReference: {fileID: 0}
-    - target: {fileID: 1417882749615275512, guid: 37cf05c82fe939e42b5d782b2772eb5a,
-        type: 3}
-      propertyPath: camSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1417882749615275512, guid: 37cf05c82fe939e42b5d782b2772eb5a,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 3089553515103796914}
     - target: {fileID: 2327096279593742178, guid: 37cf05c82fe939e42b5d782b2772eb5a,
         type: 3}
       propertyPath: m_LocalPosition.x

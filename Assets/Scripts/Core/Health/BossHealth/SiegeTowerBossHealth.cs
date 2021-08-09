@@ -8,10 +8,12 @@ namespace RPG.Core
 {
     public class SiegeTowerBossHealth : Health
     {
+        [Header("Boss Variables")]
         [SerializeField] GameObject explosionVFX;
         [SerializeField] float hpAmountToActivateShield;
         float currentAmount = 0;
         int timesShieldWasActivated = 0;
+        [SerializeField] int[] timesToChangeIndexes;
         [Header("Health Bar")]
         [SerializeField] HealBar bar;
 
@@ -33,7 +35,7 @@ namespace RPG.Core
                 }
             }
         }
-        
+
         public override void DeathBehaviour()
         {
             StartCoroutine(ExplodeCo());
@@ -41,14 +43,27 @@ namespace RPG.Core
         public override void ShowVisualChanges()
         {
             bar.ChangeBarFiller(GetHP(), GetMaxHP());
+            ChangeHPAmountToActivateShield();
         }
 
-        private void ChangeHPAmountToDoSomeMechanic()
+        private void ChangeHPAmountToActivateShield()
         {
             currentAmount += GetMaxHP() - GetHP() - currentAmount - hpAmountToActivateShield * timesShieldWasActivated;
         }
 
-        
+        public bool CheckIfICanActivateShield()
+        {
+            if (currentAmount >= hpAmountToActivateShield)
+            {
+                timesShieldWasActivated++;
+                currentAmount = 0;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         private void OnTriggerEnter(Collider other)
         {
@@ -76,6 +91,18 @@ namespace RPG.Core
             }
             yield return new WaitForSeconds(1f);
             Destroy(gameObject);
+        }
+
+        public int SetIndex()
+        {
+            int index = 0;
+            for(int i = 0; i < timesToChangeIndexes.Length; i++)
+            {
+                if(timesShieldWasActivated <= timesToChangeIndexes[i]) break;
+                index++;
+            }
+            print(index);
+            return index;
         }
 
     }

@@ -38,22 +38,25 @@ namespace RPG.Core
         public void TakeDamage(float damage)
         {
             //Antes de recibir daño, chequeo si puedo deflectar el daño en el caso de tener un escudo equipado
-            if(GetComponent<Fighter>() == null)
+            if(!isDead)
             {
-                DamageBehavoiur(damage);
-            } 
-            else
-            {
-                if(GetComponent<Fighter>().GetCurrentShield() != null)
+                if (GetComponent<Fighter>() == null)
                 {
-                    if (!GetComponent<Fighter>().GetCurrentShield().DeflectDamage())
-                    {
-                        DamageBehavoiur(damage);
-                    }
+                    DamageBehavoiur(damage);
                 }
                 else
                 {
-                    DamageBehavoiur(damage);
+                    if (GetComponent<Fighter>().GetCurrentShield() != null)
+                    {
+                        if (!GetComponent<Fighter>().GetCurrentShield().DeflectDamage())
+                        {
+                            DamageBehavoiur(damage);
+                        }
+                    }
+                    else
+                    {
+                        DamageBehavoiur(damage);
+                    }
                 }
             }
         }
