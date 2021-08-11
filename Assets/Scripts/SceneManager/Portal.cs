@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
+using RPG.Core;
 
 namespace RPG.SceneManagement
 {
@@ -12,9 +13,12 @@ namespace RPG.SceneManagement
         [SerializeField] Transform spawnPoint;
         [SerializeField] bool canBeUsed;
         [SerializeField] bool isOnPortal;
+        AudioManager audioManager;
+        [SerializeField] AudioClip portalClip;
 
         private void Start()
         {
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
             if(!canBeUsed)
             {
                 transform.GetChild(0).gameObject.SetActive(false);
@@ -36,10 +40,13 @@ namespace RPG.SceneManagement
 
         private IEnumerator TransitionCo()
         {
+            GameObject.FindWithTag("Player").GetComponent<ActionScheduler>().CancelCurrentAction();
+            audioManager.StopSoruce(audioManager.BGM);
+            audioManager.StopSoruce(audioManager.Ambience);
+            audioManager.PlayClip(audioManager.ItemSource, portalClip);
             SceneLoader sceneLoader = GameObject.FindObjectOfType<SceneLoader>();
             sceneLoader.SetSceneToLoad(sceneDestination);
             DontDestroyOnLoad(gameObject);
-
             yield return sceneLoader.TransitionBeginCo();
 
             Portal otherPortal = GetOtherPortal();

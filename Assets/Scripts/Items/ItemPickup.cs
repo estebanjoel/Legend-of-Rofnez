@@ -1,25 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Core;
 
 namespace RPG.Item
 {
     public abstract class ItemPickup : MonoBehaviour
     {
-        AudioSource audioSource;
+        AudioManager audioManager;
         [SerializeField] AudioClip itemClip;
-
-        void Start()
-        {
-            audioSource = GameObject.Find("PickupSource").GetComponent<AudioSource>();
-        }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Player")
             {
-                audioSource.clip = itemClip;
-                audioSource.Play();
+                audioManager = GameObject.FindObjectOfType<AudioManager>();
+                audioManager.PlayClip(audioManager.ItemSource, itemClip);
                 UseItem(other.gameObject);
                 Destroy(this.gameObject);
             }    

@@ -23,6 +23,7 @@ namespace RPG.Core
         public AudioClip deadClipSound;
         public AudioClip damageClipSound;
         public AudioClip impactClipSound;
+        public AudioClip poisonClipSound;
     
 
         public void ParentStartingSettings()
@@ -75,6 +76,7 @@ namespace RPG.Core
 
         public void poisonDamages(int tik,float damage) // Función que setea el daño y el tik del veneno y ejecuta la corrutina tikDamage()
         {
+            audioManager.TryToPlayClip(audioManager.PlayerSFXSources, poisonClipSound);
             poisonDamage = damage;
             damagetik = tik;
             poisoned = true;

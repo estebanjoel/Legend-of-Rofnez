@@ -11,8 +11,12 @@ namespace RPG.Combat
         private float lifeSpan;
         private float lifeTime = 0f;
         private ParticleSystem particle;
+        AudioManager audioManager;
+        [SerializeField] AudioClip magicClip;
         void Start()
         {
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
+            audioManager.TryToPlayClip(audioManager.PlayerSFXSources, magicClip);
             particle = transform.GetComponentInChildren<ParticleSystem>();
             lifeSpan = particle.duration;
             StartCoroutine(DestroyMagic());

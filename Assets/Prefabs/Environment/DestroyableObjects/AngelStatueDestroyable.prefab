@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5982901175988799322}
   - component: {fileID: 7726723752493667296}
   - component: {fileID: 5718119919425382371}
-  - component: {fileID: 7394195142832750089}
   - component: {fileID: 3157461569545698230}
+  - component: {fileID: 898828759}
+  - component: {fileID: 898828758}
   m_Layer: 0
   m_Name: AngelStatueDestroyable
   m_TagString: DestroyableObstacle
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1655494125038315806}
   m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
   m_LocalPosition: {x: -27.74, y: 5.79, z: -29.85}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.020000063, y: 0.020000001, z: 0.020000063}
   m_Children:
   - {fileID: 6017877743471716637}
   - {fileID: 1654689466030782058}
@@ -49,8 +50,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 125, y: 200, z: 150}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 115.48236, y: 115.31051, z: 112.25584}
+  m_Center: {x: -52.09118, y: -7.139998, z: 32.278008}
 --- !u!208 &7726723752493667296
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -61,11 +62,11 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 50, y: 50, z: 50}
+  m_Extents: {x: 75, y: 50, z: 100}
   m_MoveThreshold: 1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 27.46, z: 44.32}
+  m_Center: {x: -79.7, y: -21.33, z: 49.89}
   m_TimeToStationary: 0.5
 --- !u!114 &5718119919425382371
 MonoBehaviour:
@@ -81,21 +82,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 50
   maxHealthPoints: 50
-  deadSound: {fileID: 6717319618832998910, guid: 1ce5ceb58f4e27748b6d652537b01fa1,
-    type: 3}
-  deadClipSound: {fileID: 8300000, guid: 59da0ad043828c446b7a2acc7524d008, type: 3}
-  damageSound: {fileID: 2731295837708022014, guid: 1ce5ceb58f4e27748b6d652537b01fa1,
-    type: 3}
-  damageClipSound: {fileID: 8300000, guid: 35ea60cc5be64c24cbb54146158b100d, type: 3}
-  impactSound: {fileID: 2731295837708022014, guid: 1ce5ceb58f4e27748b6d652537b01fa1,
-    type: 3}
-  impactClipSound: {fileID: 8300000, guid: 35ea60cc5be64c24cbb54146158b100d, type: 3}
   poisoned: 0
   damagetik: 0
   poisonDamage: 0
   poisonedColor: {fileID: 0}
   shaderSpawnpoint: {fileID: 0}
---- !u!54 &7394195142832750089
+  audioManager: {fileID: 0}
+  deadClipSound: {fileID: 8300000, guid: 5fe93daa9ccf5d647ac987969442339a, type: 3}
+  damageClipSound: {fileID: 8300000, guid: 13764d1c31f17c34791b2a9181220f7e, type: 3}
+  impactClipSound: {fileID: 8300000, guid: 13764d1c31f17c34791b2a9181220f7e, type: 3}
+--- !u!114 &3157461569545698230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655494125038315806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fe1a05800091b40bb1dde11c052948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &898828759
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +119,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &3157461569545698230
+--- !u!114 &898828758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655494126015156798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 49, z: 0}
+  m_LocalPosition: {x: 0, y: 168, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1655494125038315807}
@@ -231,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4464497929771776, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: 4464497929771776, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -309,7 +317,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 15a78f3f4b2fb2a409d0bc44d150d51a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 119
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15a78f3f4b2fb2a409d0bc44d150d51a,
         type: 3}

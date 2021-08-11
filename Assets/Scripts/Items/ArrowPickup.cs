@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RPG.Core;
+using RPG.UI;
 
 namespace RPG.Item
 {
@@ -18,6 +19,7 @@ namespace RPG.Item
                 int currentAmmo = player.GetComponent<RangedWeaponAmmoInventory>().GetAmmo();
                 currentAmmo += arrowQuantity;
                 player.GetComponent<RangedWeaponAmmoInventory>().SetAmmo(currentAmmo);
+                GameObject.FindObjectOfType<WeaponInventorMenu>().SetAmmoText(currentAmmo.ToString());
             }
             else
             {

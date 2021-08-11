@@ -45,7 +45,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1385578161
 MonoBehaviour:
@@ -59,8 +59,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86c467b1e087834587511bcab775944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 2
+  sceneDestination: -1
   spawnPoint: {fileID: 2750968760509919768}
+  canBeUsed: 0
+  isOnPortal: 0
+  portalClip: {fileID: 8300000, guid: 9758543833fb64a158b685632c16522b, type: 3}
 --- !u!1 &5678015416230499572
 GameObject:
   m_ObjectHideFlags: 0

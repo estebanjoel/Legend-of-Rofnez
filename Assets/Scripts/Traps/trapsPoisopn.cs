@@ -9,13 +9,10 @@ public class trapsPoisopn : poison
     [SerializeField] float distanceToExlpote;
     [SerializeField] float distanceToPlayer;
     [SerializeField] PlayerHealth character;
-    [SerializeField] GameObject vFX;
-    [SerializeField] float currentTime;
-    [SerializeField] float time;
     
     void Start()
     {
-        currentTime = time;
+        SetTarget();
     }
 
     public void SetTarget()
@@ -47,14 +44,7 @@ public class trapsPoisopn : poison
     }
     public override void getPoisoned(Health isPoison)
     {
-        currentTime -= Time.deltaTime;
-        if(currentTime <= 0)
-        {
-            vFX.SetActive(true);
-            base.getPoisoned(isPoison);
-            Destroy(this.gameObject, 1.7f);
-        }
-
-        
+        base.getPoisoned(isPoison);
+        Destroy(gameObject);
     }
 }

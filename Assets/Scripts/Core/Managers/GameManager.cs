@@ -12,6 +12,8 @@ namespace RPG.Core
         PlayerHealth player;
         QuestManager questManager;
         PauseManager pauseManager;
+        AudioManager audioManager;
+        LevelMusic levelMusic;
         [SerializeField] int loseScene;
         SceneLoader sceneLoader;
         int currentScene;
@@ -23,6 +25,7 @@ namespace RPG.Core
             player = GameObject.FindObjectOfType<PlayerHealth>();
             pauseManager = GetComponent<PauseManager>();
             sceneLoader = GetComponent<SceneLoader>();
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
             SetLevelSettings();
         }
 
@@ -82,8 +85,8 @@ namespace RPG.Core
 
         void SetLevelSettings()
         {
-            isLoadingScene = false;
             failCondiction = false;
+            isLoadingScene = false;
             currentScene = sceneLoader.GetCurrentScene();
             player.SetStartingHealthSettings();
             player.GetComponent<MagicPoints>().SetStartingMagicPointsSettings();
@@ -92,6 +95,19 @@ namespace RPG.Core
             GameObject.FindObjectOfType<QuestManager>().StartingSettings();
             GetComponent<Deathcounter>().RestartCounter();
             GameObject.FindObjectOfType<ArenaObstacle>().SetEventText();
+            PlayLevelMusic();
+        }
+
+        private void PlayLevelMusic()
+        {
+            levelMusic = GameObject.FindObjectOfType<LevelMusic>();
+            audioManager.PlayClip(audioManager.BGM, levelMusic.GetBGMClip());
+            audioManager.PlayClip(audioManager.Ambience, levelMusic.GetAmbienceClip());
+        }
+
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
         }
     }
 }

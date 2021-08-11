@@ -26,11 +26,6 @@ namespace RPG.Core
             bossHealthBar = GameObject.Find("BossHealthBar");
             bossHealthBar.SetActive(false);
             collectableIdols.SetEventText();
-            // foreach(trapsPoisopn trap in poisonTrapContainer.GetTrapsPoisopns())
-            // {
-            //     trap.gameObject.SetActive(true);
-            //     trap.SetTarget();
-            // }
         }
         public override void QuestChecker()
         {

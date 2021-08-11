@@ -16,17 +16,17 @@ namespace RPG.Combat
             if(other.GetComponent<PlayerHealth>() != null)
             {
                 Health player = other.GetComponent<Health>();
-                getPoisoned(player);
-                
+                getPoisoned(player);   
             }
         }
 
         public virtual void getPoisoned(Health isPoison)
         {
-            // isPoison = FindObjectOfType<Health>();
             if (!isPoison.poisoned)
+            {
                 isPoison.poisonDamages(damageTik, damage);
-            isPoison.SpawnShader(poisonVFX);
+                isPoison.SpawnShader(poisonVFX);
+            }
         }
 
     }

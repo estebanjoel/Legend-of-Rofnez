@@ -388,7 +388,7 @@ NavMeshAgent:
   m_Acceleration: 100
   avoidancePriority: 49
   m_AngularSpeed: 5000
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5584445326ddab4ab604f7665f452ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runsound: {fileID: 6307831454561449773}
+  runClip: {fileID: 8300000, guid: bb278412058f6fc43963650d98564f98, type: 3}
 --- !u!114 &3810658928676046817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,17 +529,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 100
   maxHealthPoints: 100
-  deadSound: {fileID: 4159371018750396842}
-  deadClipSound: {fileID: 8300000, guid: 1bf9ee80f2374534b80d6c5880558f5e, type: 3}
-  damageSound: {fileID: 5048863658197523211}
-  damageClipSound: {fileID: 8300000, guid: c67b8f28ccb1a184cba5b958315fb75f, type: 3}
-  impactSound: {fileID: 6104651411220295137}
-  impactClipSound: {fileID: 8300000, guid: 0d3d7afb5ec538343a9fd9d4235bdefa, type: 3}
   poisoned: 0
   damagetik: 0
   poisonDamage: 0
   poisonedColor: {fileID: 1071873450655753457}
   shaderSpawnpoint: {fileID: 2013218034227970706}
+  audioManager: {fileID: 0}
+  deadClipSound: {fileID: 8300000, guid: 1bf9ee80f2374534b80d6c5880558f5e, type: 3}
+  damageClipSound: {fileID: 8300000, guid: c67b8f28ccb1a184cba5b958315fb75f, type: 3}
+  impactClipSound: {fileID: 8300000, guid: 0d3d7afb5ec538343a9fd9d4235bdefa, type: 3}
+  poisonClipSound: {fileID: 8300000, guid: 6e8d2234d41a8524080276e0c9138c93, type: 3}
 --- !u!114 &6980606017180765471
 MonoBehaviour:
   m_ObjectHideFlags: 0

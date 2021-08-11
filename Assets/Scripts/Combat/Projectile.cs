@@ -66,7 +66,7 @@ public class Projectile : MonoBehaviour
 
     private bool ImpactEffect()
     {
-        audioManager.PlayClip(audioManager.obstacleSource, impactClip);
+        audioManager.TryToPlayClip(audioManager.obstacleSources, impactClip);
         if(hitEffect != null)
         {
             Instantiate(hitEffect, GetAimLocation(), transform.rotation);

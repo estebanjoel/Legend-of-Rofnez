@@ -20,7 +20,7 @@ namespace RPG.Core
         
         public override void DeathBehaviour()
         {
-            audioManager.PlayClip(audioManager.obstacleSource, deadClipSound);
+            audioManager.TryToPlayClip(audioManager.obstacleSources, deadClipSound);
             GetComponent<NavMeshObstacle>().enabled = false;
             Destroy(gameObject);
             // GetComponent<MeshFilter>().mesh = null;
@@ -29,8 +29,8 @@ namespace RPG.Core
 
         public override void PlayAudibleFeedback()
         {
-            audioManager.PlayClip(audioManager.obstacleSource, impactClipSound);
-            audioManager.PlayClip(audioManager.obstacleSource, damageClipSound);
+            audioManager.TryToPlayClip(audioManager.obstacleSources, impactClipSound);
+            audioManager.TryToPlayClip(audioManager.obstacleSources, damageClipSound);
         }
 
 

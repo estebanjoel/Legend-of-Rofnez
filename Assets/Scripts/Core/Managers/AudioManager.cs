@@ -9,11 +9,17 @@ namespace RPG.Core
     {
         public AudioSource BGM, Ambience;
         public AudioSource[] PlayerSFXSources;
+        public AudioSource PlayerRunSource;
         public AudioSource[] EnemySFXSources;
         public AudioSource ItemSource;
         public AudioSource UISource;
         public AudioSource[] trapSources;
-        public AudioSource obstacleSource;
+        public AudioSource[] obstacleSources;
+
+        private void Start()
+        {
+            PlayerRunSource = PlayerSFXSources[0];
+        }
 
         public AudioSource ChangeAudioClip(AudioSource mySource, AudioClip myClip)
         {
@@ -57,6 +63,11 @@ namespace RPG.Core
                     if(sources[i].clip == clip) sources[i].Stop();
                 }
             }
+        }
+
+        public void StopSoruce(AudioSource source)
+        {
+            source.Stop();
         }
     }
 
