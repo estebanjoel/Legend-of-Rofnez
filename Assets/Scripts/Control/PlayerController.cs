@@ -102,8 +102,12 @@ namespace RPG.Control
                 weaponInventory.SetActiveWeapon(weaponInventory.GetMeleeWeapon());
             }
             fighter.EquipWeapon(weaponInventory.GetActiveWeapon());
-            if (fighter.GetCurrentWeapon() == weaponInventory.GetMeleeWeapon()) fighter.ShowShield();
-            else fighter.HideShield();
+
+            if(fighter.GetCurrentShield() != null)
+            {
+                if (fighter.GetCurrentWeapon() == weaponInventory.GetMeleeWeapon()) fighter.ShowShield();
+                else fighter.HideShield();
+            }
         }
 
         private bool CheckRaycastTags(RaycastHit hitPoint)

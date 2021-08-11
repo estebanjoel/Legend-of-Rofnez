@@ -735,6 +735,7 @@ GameObject:
   - component: {fileID: 1349910666415691002}
   - component: {fileID: 6737880079239686971}
   - component: {fileID: 5377178957433155649}
+  - component: {fileID: 2556047780067171864}
   m_Layer: 0
   m_Name: UICanvas
   m_TagString: Untagged
@@ -773,6 +774,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 3907638305582212651}
   fader: {fileID: 1653504693798559507}
+  weaponInventoryMenu: {fileID: 0}
+  currentWeaponActive: {fileID: 0}
+  ammoText: {fileID: 0}
 --- !u!114 &5377178957433155649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +787,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a73a5e1d1b483f049879f1a908e249e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2556047780067171864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526064008391684862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe734d23875b99408ddf23e67dd8f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1653504693798559507
@@ -1577,7 +1593,7 @@ GameObject:
   - component: {fileID: 4195044228748462280}
   - component: {fileID: 4734014138020577517}
   m_Layer: 5
-  m_Name: Espada
+  m_Name: CurrentWeaponActive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61cdd118c8f0cb74cb107f7dfe4d95b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loseScene: 3
+  loseScene: 5
 --- !u!114 &2061962139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   fadeInTime: 2
   fadeWaitTime: 0.5
   persistantObjectDestroyer: {fileID: 0}
-  lastPlayableScene: 2
+  lastPlayableScene: 4
 --- !u!114 &2061962116
 MonoBehaviour:
   m_ObjectHideFlags: 0

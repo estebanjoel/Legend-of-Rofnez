@@ -8,6 +8,9 @@ namespace RPG.UI
     {
         [SerializeField] GameObject pauseMenu;
         [SerializeField] GameObject fader;
+        [SerializeField] GameObject weaponInventoryMenu;
+        [SerializeField] GameObject currentWeaponActive;
+        [SerializeField] GameObject ammoText;
         
         public GameObject GetPauseMenu()
         {
@@ -18,6 +21,22 @@ namespace RPG.UI
         {
             return fader;
         }
+
+        public GameObject GetWeaponInventoryMenu()
+        {
+            return weaponInventoryMenu;
+        }
+
+        public GameObject GetCurrentWeaponActive()
+        {
+            return currentWeaponActive;
+        }
+
+        public GameObject GetAmmoText()
+        {
+            return ammoText;
+        }
+        
         public void ShowUIObject(GameObject UIObject)
         {
             UIObject.SetActive(true);
