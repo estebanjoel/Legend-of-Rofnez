@@ -381,6 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   GameIsPaused: 0
+  retryLevel: 0
 --- !u!114 &1275288679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,10 +411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -474,7 +475,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6395629352878775811, guid: ccbd8ee22cac268469761775ad37f512,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 86b7bf1966bfe4b4f87fe5c37cddf753, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 86d1ef7bd7c9bdb48ae7123dd36a7766, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

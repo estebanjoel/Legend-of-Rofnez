@@ -44,9 +44,7 @@ namespace RPG.SceneManagement
         {
             previousScene = GetCurrentScene();
             transform.parent = null;
-            GameObject.Find("AudioManager").transform.parent = null;
             DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(GameObject.Find("AudioManager"));
             UIFade fader = FindObjectOfType<UIFade>();
 
             yield return fader.FadeOut(fadeOutTime);
@@ -67,12 +65,10 @@ namespace RPG.SceneManagement
                 persistantObjectDestroyer.CheckIfPersistantMustBeDestroyed();
                 Destroy(Singleton.instance.gameObject);
                 Destroy(gameObject);
-                Destroy(GameObject.Find("AudioManager"));
             } 
             else
             {
                 transform.parent = Singleton.instance.transform;
-                GameObject.Find("AudioManager").transform.parent = Singleton.instance.transform;
             }
             yield return new WaitForSeconds(0.1f);
             SetLevelSetChecker(false);

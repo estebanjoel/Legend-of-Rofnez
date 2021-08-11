@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
         transform.LookAt(GetAimLocation());
         StartCoroutine(DestroyProjectileByLifeSpan());
         audioManager = GameObject.FindObjectOfType<AudioManager>();
-        
+        audioManager.TryToPlayClip(audioManager.trapSources, launchClip);
     }
 
     public void SetTarget(Health t, float d)

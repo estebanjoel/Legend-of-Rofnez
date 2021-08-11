@@ -99,6 +99,11 @@ PrefabInstance:
       propertyPath: renderer
       value: 
       objectReference: {fileID: 923113035045403928}
+    - target: {fileID: 8212890988055871080, guid: 78698cf7a23a12347a02382a2e58bf96,
+        type: 3}
+      propertyPath: impactClipSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 19efce6f6a3436f47a860f71985b2212, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78698cf7a23a12347a02382a2e58bf96, type: 3}
 --- !u!137 &923113035045403928 stripped

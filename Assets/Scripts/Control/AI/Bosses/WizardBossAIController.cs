@@ -27,8 +27,10 @@ namespace RPG.Control
         [SerializeField] GameObject teleportVFX;
         [SerializeField] float teleportVFXPosY;
         float teleportVFXDuration;
-        [Header("Spark Attack")]
-        [SerializeField] GameObject sparkVFX;
+        [Header("Audio Clips")]
+        AudioManager audioManager;
+        [SerializeField] AudioClip teleportClip;
+        [SerializeField] AudioClip tornadoClip;
         void Start()
         {
             ParentStartingSettings();
@@ -38,7 +40,7 @@ namespace RPG.Control
             lastWaypoint = bossWaypoints.transform.GetChild(bossWaypoints.transform.childCount-1);
             currentPosition = transform.position;
             teleportVFXDuration = teleportVFX.GetComponent<ParticleSystem>().duration;
-            // TeleportBehaviour();
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
         }
         
         public override void UpdateTimers()
@@ -86,6 +88,7 @@ namespace RPG.Control
             GetComponent<ActionScheduler>().StartAction(null); //Cancelo mi acción, por si el boss está atacando o por atacar
             timeSinceTeleport = 0;
             canTeleport = true;
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, teleportClip);
             GetHealth().SpawnShader(teleportVFX);
             GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, transform.position.y+teleportVFXPosY, transform.position.z);
             GetHealth().SetInvencibility(true);
@@ -104,6 +107,7 @@ namespace RPG.Control
         private IEnumerator Appear()
         {
             canTeleport = false;
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, teleportClip);
             GetHealth().SpawnShader(teleportVFX);
             GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, transform.position.y + teleportVFXPosY, transform.position.z);
             yield return new WaitForSeconds(teleportVFXDuration);
@@ -131,6 +135,7 @@ namespace RPG.Control
 
         private void TornadoBehaviour() //Ataque de Tornado
         {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, tornadoClip);
             GetComponent<ActionScheduler>().StartAction(null);
             madeATornado = true;
             GetHealth().SetInvencibility(true);
@@ -156,11 +161,6 @@ namespace RPG.Control
         public override void AttackBehaviour()
         {
             GetFighter().Attack(GetPlayer());
-        }
-
-        void Sparks()
-        {
-            GetPlayer().GetComponent<Health>().SpawnShader(sparkVFX);
         }
 
 

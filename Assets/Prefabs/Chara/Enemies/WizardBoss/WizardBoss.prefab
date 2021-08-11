@@ -671,8 +671,8 @@ MonoBehaviour:
   teleportVFX: {fileID: 3080725970149129262, guid: 20091e6578b062c4aac66d7f1bf6ad9c,
     type: 3}
   teleportVFXPosY: 1
-  sparkVFX: {fileID: 1857133050790566110, guid: 13a7f2452a4183a438b4c210f9149d64,
-    type: 3}
+  teleportClip: {fileID: 8300000, guid: ecbc25cd5a02c884183e8a33c45b2eb1, type: 3}
+  tornadoClip: {fileID: 8300000, guid: 553268877045e4841939097fefba76c2, type: 3}
 --- !u!114 &301880252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,17 +699,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 250
   maxHealthPoints: 250
-  deadSound: {fileID: 2120407895}
-  deadClipSound: {fileID: 8300000, guid: 3aa8b26622ee8e74895db604c5342b2b, type: 3}
-  damageSound: {fileID: 2098986997}
-  damageClipSound: {fileID: 8300000, guid: 2ebf38d5081e6024eb5214ce611bd747, type: 3}
-  impactSound: {fileID: 2023191027}
-  impactClipSound: {fileID: 8300000, guid: 151fa7778dc9cf14ba998127d188283b, type: 3}
   poisoned: 0
   damagetik: 0
   poisonDamage: 0
   poisonedColor: {fileID: 0}
   shaderSpawnpoint: {fileID: 1466499690001198019}
+  audioManager: {fileID: 0}
+  deadClipSound: {fileID: 8300000, guid: 3aa8b26622ee8e74895db604c5342b2b, type: 3}
+  damageClipSound: {fileID: 8300000, guid: 2ebf38d5081e6024eb5214ce611bd747, type: 3}
+  impactClipSound: {fileID: 8300000, guid: 151fa7778dc9cf14ba998127d188283b, type: 3}
+  poisonClipSound: {fileID: 0}
+  shieldClipSound: {fileID: 0}
   hpAmountToDoATornado: 50
   bar: {fileID: 0}
 --- !u!1001 &932250372696199866

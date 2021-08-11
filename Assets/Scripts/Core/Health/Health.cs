@@ -24,6 +24,7 @@ namespace RPG.Core
         public AudioClip damageClipSound;
         public AudioClip impactClipSound;
         public AudioClip poisonClipSound;
+        public AudioClip shieldClipSound;
     
 
         public void ParentStartingSettings()
@@ -40,8 +41,8 @@ namespace RPG.Core
         public void TakeDamage(float damage)
         {
             //Antes de recibir daño, chequeo si puedo deflectar el daño en el caso de tener un escudo equipado
-            if(!isDead)
-            {
+            if(!isDead && !isInvencible)
+            { 
                 if (GetComponent<Fighter>() == null)
                 {
                     DamageBehavoiur(damage);
@@ -53,6 +54,10 @@ namespace RPG.Core
                         if (!GetComponent<Fighter>().GetCurrentShield().DeflectDamage())
                         {
                             DamageBehavoiur(damage);
+                        }
+                        else
+                        {
+                            audioManager.TryToPlayClip(audioManager.PlayerSFXSources, shieldClipSound);
                         }
                     }
                     else

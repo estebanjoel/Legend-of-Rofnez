@@ -11,6 +11,7 @@ namespace RPG.UI
         [SerializeField] GameObject weaponInventoryMenu;
         [SerializeField] GameObject currentWeaponActive;
         [SerializeField] GameObject ammoText;
+        [SerializeField] GameObject godModeText;
         
         public GameObject GetPauseMenu()
         {
@@ -35,6 +36,11 @@ namespace RPG.UI
         public GameObject GetAmmoText()
         {
             return ammoText;
+        }
+
+        public GameObject GetGodModeText()
+        {
+            return godModeText;
         }
         
         public void ShowUIObject(GameObject UIObject)

@@ -34,6 +34,10 @@ namespace RPG.Control
         [SerializeField] int[] crystalPercentages;
         int crystalPercentagesIndex = 0;
         bool crystalSpawned = false;
+        [Header("Audio Clips")]
+        AudioManager audioManager;
+        [SerializeField] AudioClip fireClip;
+        [SerializeField] AudioClip shieldClip;
 
         private void Start()
         {
@@ -43,6 +47,7 @@ namespace RPG.Control
             boxCollider = GetComponent<BoxCollider>();
             boxCollider.enabled = false;
             SetElementsWithIndexs();
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
         }
 
 
@@ -106,6 +111,7 @@ namespace RPG.Control
         private bool CheckIfICanSpawnCrystal()
         {
             int percentage = Random.Range(0, 101);
+            Debug.Log(percentage);
             if (percentage <= percentageToSpawnCrystal)
             {
                 return true;
@@ -125,6 +131,7 @@ namespace RPG.Control
 
         private IEnumerator BombAttackCo()
         {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, fireClip);
             while (timesHasAttacked < timesUntilStopAttack)
             {
                 timesHasAttacked++;
@@ -137,6 +144,7 @@ namespace RPG.Control
 
         private void EnableShield()
         {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, shieldClip);
             shieldField.SetActive(true);
             siegeTowerBossHealth.SetInvencibility(true);
             boxCollider.enabled = false;

@@ -8,16 +8,23 @@ namespace RPG.Core
     {
         [SerializeField] SiegeTowerBossHealth boss;
         GameObject bossHealthBar;
+        BridgeObstacle bridgeObstacle;
         
         public override void LevelStartingSettings()
         {
             boss = GameObject.FindObjectOfType<SiegeTowerBossHealth>();
             bossHealthBar = GameObject.Find("BossHealthBar");
             bossHealthBar.SetActive(false);
+            bridgeObstacle = GameObject.FindObjectOfType<BridgeObstacle>();
+            bridgeObstacle.StartingSettings();
         }
         public override void QuestChecker()
         {
-            if(boss.IsDead()) CompleteQuests();
+            if(bridgeObstacle.CheckIfBridgeIsBuild())
+            {
+                if(!bossHealthBar.activeInHierarchy) bossHealthBar.SetActive(true);
+                if(boss.IsDead()) CompleteQuests();
+            }
         }
 
     }

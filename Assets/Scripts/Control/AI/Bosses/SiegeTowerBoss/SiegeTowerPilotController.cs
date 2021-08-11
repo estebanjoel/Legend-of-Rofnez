@@ -27,6 +27,12 @@ namespace RPG.Control
         Transform towerPosition;
         [SerializeField] Transform towerControlPosition;
         [SerializeField] float ySpeed;
+        [Header("Audio Clips")]
+        AudioManager audioManager;
+        [SerializeField] AudioClip laughClip;
+        [SerializeField] AudioClip losingBalanceClip;
+        [SerializeField] AudioClip fallScreamClip;
+        [SerializeField] AudioClip fallToTheFloorClip;
 
         
         // Start is called before the first frame update
@@ -38,6 +44,7 @@ namespace RPG.Control
             anim = GetComponent<Animator>();
             myPos = transform.position;
             towerPosition = patrolPath.transform.GetChild(patrolPath.transform.childCount - 1);
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
         }
 
         // Update is called once per frame
@@ -69,6 +76,7 @@ namespace RPG.Control
                             if (CheckIfTowerIsDestroyed())
                             {
                                 anim.SetTrigger("deadTrigger");
+                                audioManager.TryToPlayClip(audioManager.EnemySFXSources, losingBalanceClip);
                                 isFalling = true;
                             }
                         }
@@ -154,6 +162,7 @@ namespace RPG.Control
 
         private IEnumerator StartMoveToTowerCo()
         {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, laughClip);
             canStartFirstCoroutine = false;
             transform.LookAt(player.transform.position);
             anim.SetTrigger("encounterTrigger");
@@ -172,6 +181,8 @@ namespace RPG.Control
 
         private void FallFromTower()
         {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, fallScreamClip);
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, fallToTheFloorClip);
             transform.parent = null;
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.useGravity = true;

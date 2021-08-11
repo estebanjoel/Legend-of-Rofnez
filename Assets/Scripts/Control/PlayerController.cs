@@ -15,7 +15,9 @@ namespace RPG.Control
         Special special;
         Health health;
         WeaponInventory weaponInventory;
+        MenuController menuController;
         PlayerCursor playerCursor;
+        bool GodMode;
         private void Start()
         {
             fighter = GetComponent<Fighter>();
@@ -23,10 +25,26 @@ namespace RPG.Control
             health = GetComponent<Health>();
             weaponInventory = GetComponent<WeaponInventory>();
             playerCursor = GetComponent<PlayerCursor>();
+            menuController = GameObject.FindObjectOfType<MenuController>();
         }
         void Update()
         {
             if(health.IsDead()) return;
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                if(GodMode) GodMode = false;
+                else GodMode = true;
+            }
+            if(GodMode)
+            {
+                health.SetInvencibility(true);
+                menuController.ShowUIObject(menuController.GetGodModeText());
+            } 
+            else
+            {
+                health.SetInvencibility(false);
+                menuController.HideUIObject(menuController.GetGodModeText());
+            } 
             if(ActivateSpecialAttack()) return;
             if(InteractWithCombat()) return;
             if(Input.GetKeyDown(KeyCode.Q))
@@ -36,13 +54,13 @@ namespace RPG.Control
             }
             if(Input.GetKeyDown(KeyCode.Tab))
             {
-                GameObject.FindObjectOfType<MenuController>().ShowUIObject(GameObject.FindObjectOfType<MenuController>().GetWeaponInventoryMenu());
+                menuController.ShowUIObject(GameObject.FindObjectOfType<MenuController>().GetWeaponInventoryMenu());
                 GameObject.FindObjectOfType<WeaponInventorMenu>().SetAmmoInventoryText();
                 return;
             }
             if(Input.GetKeyUp(KeyCode.Tab))
             {
-                GameObject.FindObjectOfType<MenuController>().HideUIObject(GameObject.FindObjectOfType<MenuController>().GetWeaponInventoryMenu());
+                menuController.HideUIObject(GameObject.FindObjectOfType<MenuController>().GetWeaponInventoryMenu());
             }
             if(InteractWithMovement()) return;
         }

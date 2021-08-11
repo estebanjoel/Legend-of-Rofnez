@@ -11,7 +11,7 @@ public class BridgeObstacle : MonoBehaviour
     [SerializeField] int planksToCollect;
     EventText eventText;
 
-    private void Start()
+    public void StartingSettings()
     {
         eventText = GameObject.FindObjectOfType<EventText>();
         SetBridgeEventText("You need to collect " + planksToCollect + " planks in order to build the bridge");
@@ -50,5 +50,10 @@ public class BridgeObstacle : MonoBehaviour
     public void SetBridgeEventText(string myText)
     {
         eventText.SetEventText(myText);
+    }
+
+    public bool CheckIfBridgeIsBuild()
+    {
+        return bridgeIsBuild;
     }
 }

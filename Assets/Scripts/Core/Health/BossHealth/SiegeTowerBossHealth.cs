@@ -17,10 +17,16 @@ namespace RPG.Core
         [Header("Health Bar")]
         [SerializeField] HealBar bar;
 
+        [Header("Boss Audio Clips")]
+        AudioManager bossAudioManager;
+        [SerializeField] AudioClip swearClip;
+
+
         void Start()
         {
             ParentStartingSettings();
             SetHealthBar();
+            bossAudioManager = GameObject.FindObjectOfType<AudioManager>();
         }
 
         public void SetHealthBar()
@@ -62,6 +68,7 @@ namespace RPG.Core
             if (currentAmount >= hpAmountToActivateShield)
             {
                 timesShieldWasActivated++;
+                audioManager.TryToPlayClip(audioManager.EnemySFXSources, swearClip);
                 currentAmount = 0;
                 return true;
             }
