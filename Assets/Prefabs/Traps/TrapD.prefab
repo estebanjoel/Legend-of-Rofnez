@@ -125,7 +125,12 @@ GameObject:
   - component: {fileID: 617173063455226285}
   - component: {fileID: 617173063452371099}
   - component: {fileID: 617173063453389437}
+<<<<<<< Updated upstream
   - component: {fileID: 1202269121512581349}
+=======
+  - component: {fileID: 8501588503481124398}
+  - component: {fileID: 2140937570225852797}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: BuzzSaw
   m_TagString: Untagged
@@ -193,7 +198,11 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< Updated upstream
 --- !u!65 &1202269121512581349
+=======
+--- !u!65 &8501588503481124398
+>>>>>>> Stashed changes
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,8 +210,29 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617173063455569917}
   m_Material: {fileID: 0}
+<<<<<<< Updated upstream
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.3707888, y: 3.3707883, z: 0.15908813}
   m_Center: {x: -0.00000017881392, y: -0.0000011920929, z: -0.000005722046}
+=======
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3707895, y: 3.370789, z: 0.15908813}
+  m_Center: {x: -0.0000020861626, y: -0.0000011920929, z: 0}
+--- !u!114 &2140937570225852797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617173063455569917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90abe775ad0879b4fad9053a95041169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+>>>>>>> Stashed changes
