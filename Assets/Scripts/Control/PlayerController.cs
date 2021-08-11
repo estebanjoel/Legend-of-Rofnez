@@ -32,6 +32,7 @@ namespace RPG.Control
             if(Input.GetKeyDown(KeyCode.Q))
             {
                 ChangePlayerActiveWeapon();
+                return;
             }
             if(InteractWithMovement()) return;
         }
@@ -93,13 +94,16 @@ namespace RPG.Control
         private void ChangePlayerActiveWeapon()
         {
             GetComponent<ActionScheduler>().CancelCurrentAction();
+            WeaponInventorMenu myMenu = GameObject.FindObjectOfType<WeaponInventorMenu>();
             if (weaponInventory.GetActiveWeapon() == weaponInventory.GetMeleeWeapon() && weaponInventory.GetRangedWeapon() != null)
             {
                 weaponInventory.SetActiveWeapon(weaponInventory.GetRangedWeapon());
+                myMenu.SetCurrentWeaponActive(1);
             }
             else if (weaponInventory.GetActiveWeapon() == weaponInventory.GetRangedWeapon() && weaponInventory.GetMeleeWeapon() != null)
             {
                 weaponInventory.SetActiveWeapon(weaponInventory.GetMeleeWeapon());
+                myMenu.SetCurrentWeaponActive(0);
             }
             fighter.EquipWeapon(weaponInventory.GetActiveWeapon());
 

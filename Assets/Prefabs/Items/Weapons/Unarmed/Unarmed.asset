@@ -20,3 +20,5 @@ MonoBehaviour:
   animatorOverride: {fileID: 0}
   isRightHanded: 0
   projectile: {fileID: 0}
+  ammo: 0
+  weaponSprite: {fileID: 21300000, guid: 92f064f728a70f04f9cf729774eebd72, type: 3}

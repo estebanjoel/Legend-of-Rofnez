@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RPG.Movement;
 using RPG.Core;
+using RPG.UI;
 
 namespace RPG.Combat
 {
@@ -21,12 +22,14 @@ namespace RPG.Combat
         [SerializeField] Health target;
         float timeSinceLastAttack = Mathf.Infinity;
         AttackTrigger weaponAttackTrigger;
+        WeaponInventorMenu weaponInventoryMenu;
 
         private void Start()
         {
             mover = GetComponent<Mover>();  
             anim = GetComponent<Animator>();
             defaultRuntimeAnimatorController = anim.runtimeAnimatorController;
+            weaponInventoryMenu = GameObject.FindObjectOfType<WeaponInventorMenu>();
             EquipWeapon(defaultWeapon);
             if(gameObject.tag == "Player")
             {
@@ -84,6 +87,24 @@ namespace RPG.Combat
                 weaponAttackTrigger.DeactivateWeaponCollider();
             }
 
+            if(gameObject.tag == "Player") ChangeInventoryUI();
+        }
+
+        public void ChangeInventoryUI()
+        {
+            int currentWeaponSprite = -1;
+            if(currentWeapon.HasProjectile())
+            {
+                weaponInventoryMenu.SetRangedWeaponSprite(currentWeapon.GetWeaponSprite());
+                currentWeaponSprite = 1;
+                weaponInventoryMenu.SetAmmoText(GetComponent<RangedWeaponAmmoInventory>().GetAmmo().ToString());
+            } 
+            else
+            {
+                weaponInventoryMenu.SetMeleeWeaponSprite(currentWeapon.GetWeaponSprite());
+                currentWeaponSprite = 0;
+            }
+            weaponInventoryMenu.SetCurrentWeaponActive(currentWeaponSprite);
         }
 
         public Weapon GetCurrentWeapon()
@@ -125,7 +146,8 @@ namespace RPG.Combat
                 {
                     int currentAmmo = GetComponent<RangedWeaponAmmoInventory>().GetAmmo() - 1;
                     GetComponent<RangedWeaponAmmoInventory>().SetAmmo(currentAmmo);
-                    currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target); 
+                    weaponInventoryMenu.SetAmmoText(currentAmmo.ToString());
+                    currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
                 }
                 else
                 {

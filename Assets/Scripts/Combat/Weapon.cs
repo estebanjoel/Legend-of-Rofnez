@@ -15,6 +15,7 @@ namespace RPG.Combat
         [SerializeField] private bool isRightHanded = true;
         [SerializeField] Projectile projectile = null;
         [SerializeField] int ammo = 0;
+        [SerializeField] Sprite weaponSprite;
 
         const string weaponName = "Weapon";
 
@@ -81,6 +82,11 @@ namespace RPG.Combat
         public int GetAmmo()
         {
             return ammo;
+        }
+
+        public Sprite GetWeaponSprite()
+        {
+            return weaponSprite;
         }
     }
 }
