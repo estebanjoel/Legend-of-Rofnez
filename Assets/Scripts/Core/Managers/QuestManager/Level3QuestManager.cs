@@ -13,6 +13,7 @@ namespace RPG.Core
         public override void LevelStartingSettings()
         {
             boss = GameObject.FindObjectOfType<SiegeTowerBossHealth>();
+            boss.SetHealthBar();
             bossHealthBar = GameObject.Find("BossHealthBar");
             bossHealthBar.SetActive(false);
             bridgeObstacle = GameObject.FindObjectOfType<BridgeObstacle>();

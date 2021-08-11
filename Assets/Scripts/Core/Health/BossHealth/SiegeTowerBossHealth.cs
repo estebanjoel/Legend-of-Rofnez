@@ -25,7 +25,7 @@ namespace RPG.Core
         void Start()
         {
             ParentStartingSettings();
-            SetHealthBar();
+            // SetHealthBar();
             bossAudioManager = GameObject.FindObjectOfType<AudioManager>();
         }
 
