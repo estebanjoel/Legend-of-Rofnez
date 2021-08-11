@@ -129,7 +129,7 @@ namespace RPG.Control
 
         private void MoveToTowerControl()
         {
-            if(transform.position.y >= towerControlPosition.localPosition.y)
+            if(transform.position.y >= towerControlPosition.position.y)
             {
                 //transform.LookAt(towerControlPosition);
                 onTowerControl = true;

@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8877329035892370617}
   - component: {fileID: 8877329035893474887}
   - component: {fileID: 3750932213623036917}
+  - component: {fileID: 5191067849151120901}
   m_Layer: 0
   m_Name: SwingingAxe
   m_TagString: Untagged
@@ -201,8 +202,22 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8877329035891369451}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.693938, y: 7.329789, z: 0.29644918}
-  m_Center: {x: 0, y: -3.188858, z: -0.0000019073486}
+  m_Size: {x: 4.693938, y: 1.42, z: 0.49}
+  m_Center: {x: 0, y: -5.8, z: -0.0000019073486}
+--- !u!114 &5191067849151120901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877329035891369451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90abe775ad0879b4fad9053a95041169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  impulse: {x: 0, y: 0, z: 0}
