@@ -87,7 +87,7 @@ namespace RPG.Control
             timeSinceTeleport = 0;
             canTeleport = true;
             GetHealth().SpawnShader(teleportVFX);
-            GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, teleportVFXPosY, transform.position.z);
+            GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, transform.position.y+teleportVFXPosY, transform.position.z);
             GetHealth().SetInvencibility(true);
             currentWaypointIndex = GetNextTeleportWaypoint(); //Asigno nueva posición para teletransportarme
             StartCoroutine(Vanish(GetCurrentWaypoint()));
@@ -105,7 +105,7 @@ namespace RPG.Control
         {
             canTeleport = false;
             GetHealth().SpawnShader(teleportVFX);
-            GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, teleportVFXPosY, transform.position.z);
+            GameObject.Find(teleportVFX.name+"(Clone)").transform.position = new Vector3(transform.position.x, transform.position.y + teleportVFXPosY, transform.position.z);
             yield return new WaitForSeconds(teleportVFXDuration);
             GetHealth().SetInvencibility(false);
             bossCharacter.SetActive(true);
