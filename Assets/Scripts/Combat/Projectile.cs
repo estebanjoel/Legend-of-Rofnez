@@ -11,13 +11,18 @@ public class Projectile : MonoBehaviour
     float damage;
     [SerializeField] GameObject hitEffect = null;
     [SerializeField] float lifeSpan = 1f;
-    public AudioSource impactSound;
     float lifeTime = 0f;
+    [Header("Audio Clips")]
+    AudioManager audioManager;
+    public AudioClip impactClip;
+    public AudioClip launchClip;
     
     private void Start()
     {
         transform.LookAt(GetAimLocation());
         StartCoroutine(DestroyProjectileByLifeSpan());
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
+        
     }
 
     public void SetTarget(Health t, float d)
@@ -55,13 +60,13 @@ public class Projectile : MonoBehaviour
         }
         if(canBeDestroyed)
         {
-            StartCoroutine(DestroyProjectileByImpact());
+            DestroyProjectileByImpact();
         }
     }
 
     private bool ImpactEffect()
     {
-        impactSound.Play();
+        audioManager.PlayClip(audioManager.obstacleSource, impactClip);
         if(hitEffect != null)
         {
             Instantiate(hitEffect, GetAimLocation(), transform.rotation);
@@ -75,11 +80,10 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator DestroyProjectileByImpact()
+    private void DestroyProjectileByImpact()
     {
         speed = 0;
         StopCoroutine(DestroyProjectileByLifeSpan());
-        yield return new WaitForSeconds(impactSound.clip.length);
         Destroy(gameObject);
         
     }

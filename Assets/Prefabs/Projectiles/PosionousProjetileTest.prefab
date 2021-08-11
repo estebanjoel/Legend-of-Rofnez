@@ -127,4 +127,5 @@ MonoBehaviour:
   isHoming: 0
   hitEffect: {fileID: 1845240806346120, guid: b395d5d6eb4b4b846acc021ee036b744, type: 3}
   lifeSpan: 1
-  impactSound: {fileID: 0}
+  impactClip: {fileID: 8300000, guid: 884e3f10ab8b2574baf8bdee4f8f3f62, type: 3}
+  launchClip: {fileID: 8300000, guid: 716cea4d9ecea8b478d82edddc2450fe, type: 3}

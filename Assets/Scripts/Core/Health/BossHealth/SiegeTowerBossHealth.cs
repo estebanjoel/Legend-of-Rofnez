@@ -46,6 +46,12 @@ namespace RPG.Core
             ChangeHPAmountToActivateShield();
         }
 
+        public override void PlayAudibleFeedback()
+        {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, impactClipSound);
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, damageClipSound);
+        }
+
         private void ChangeHPAmountToActivateShield()
         {
             currentAmount += GetMaxHP() - GetHP() - currentAmount - hpAmountToActivateShield * timesShieldWasActivated;
@@ -83,6 +89,7 @@ namespace RPG.Core
             float explosionYPos = transform.position.y + 1.75f;
             Vector3 explosionPos = new Vector3(transform.position.x, explosionYPos, transform.position.z);
             yield return new WaitForSeconds(5f);
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, deadClipSound);
             Instantiate(explosionVFX, explosionPos, transform.rotation);
             yield return new WaitForSeconds(0.25f);
             for(int i = 0; i < transform.childCount; i++)

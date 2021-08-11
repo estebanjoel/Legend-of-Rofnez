@@ -10,12 +10,6 @@ namespace RPG.Core
     {
         [SerializeField] float healthPoints = 100f;
         [SerializeField] float maxHealthPoints = 100f;
-        public AudioSource deadSound;
-        public AudioClip deadClipSound;
-        public AudioSource damageSound;
-        public AudioClip damageClipSound;
-        public AudioSource impactSound;
-        public AudioClip impactClipSound;
         private bool isDead;
         public bool poisoned;
         public int damagetik;
@@ -23,10 +17,17 @@ namespace RPG.Core
         [SerializeField] Renderer poisonedColor;
         [SerializeField] Transform shaderSpawnpoint;
         bool isInvencible;
+
+        [Header("Audio Clips")]
+        public AudioManager audioManager;
+        public AudioClip deadClipSound;
+        public AudioClip damageClipSound;
+        public AudioClip impactClipSound;
     
 
         public void ParentStartingSettings()
         {
+            audioManager = GameObject.FindObjectOfType<AudioManager>();
             healthPoints = maxHealthPoints;
         }
 
@@ -65,8 +66,7 @@ namespace RPG.Core
         {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
             ShowVisualChanges();
-            impactSound.PlayOneShot(impactClipSound);
-            damageSound.PlayOneShot(damageClipSound);
+            PlayAudibleFeedback();
             if (healthPoints == 0)
             {
                 Die();
@@ -94,6 +94,7 @@ namespace RPG.Core
         }
 
         public abstract void ShowVisualChanges();
+        public abstract void PlayAudibleFeedback();
         public void Heal(float healPoints)
         {
             healthPoints = Mathf.Min(healthPoints + healPoints, maxHealthPoints);
@@ -111,7 +112,6 @@ namespace RPG.Core
         public void Die()
         {
             if (isDead) return;
-            deadSound.PlayOneShot(deadClipSound);
             isDead = true;
             DeathBehaviour();
         }

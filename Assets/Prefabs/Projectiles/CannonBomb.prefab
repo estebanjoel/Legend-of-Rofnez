@@ -54,11 +54,13 @@ MonoBehaviour:
   - {fileID: 4470589014757768301, guid: 4ed8e493b2ed05745afa885db67460f7, type: 3}
   trapsToSpawn:
   - {fileID: 6278867576472954877, guid: a46a31f2fc03ece4fb0149d3e9dae976, type: 3}
-  - {fileID: 8583504593457005398, guid: dac3bdb1c26b9284eb6a46f49c62ccfb, type: 3}
-  - {fileID: 617173063455554325, guid: 02254cc5420c3944591801e657a6b756, type: 3}
+  - {fileID: 435262578367545456, guid: 68f324396d32ffa429e388759fc6213b, type: 3}
+  - {fileID: 8553309187569402777, guid: 6f0ec5182be3194448af2baaa5bf57b1, type: 3}
   - {fileID: 7111539619299260994, guid: 0e38fe2e593550646b2ce8043a9c5af1, type: 3}
   crystal: {fileID: 3373680362984729578, guid: fae295e0cb87e16488a1a887ad7ea718, type: 3}
   spawnPercentageRate: 10
+  launchSound: {fileID: 8300000, guid: f88bdfc7500ddf5498818ab41a5e8ae4, type: 3}
+  impactSound: {fileID: 8300000, guid: fcac80aca76b0104fa253298f694605c, type: 3}
 --- !u!135 &6646001616765841035
 SphereCollider:
   m_ObjectHideFlags: 0

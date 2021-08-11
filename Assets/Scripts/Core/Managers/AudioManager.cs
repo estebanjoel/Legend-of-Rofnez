@@ -12,6 +12,8 @@ namespace RPG.Core
         public AudioSource[] EnemySFXSources;
         public AudioSource ItemSource;
         public AudioSource UISource;
+        public AudioSource[] trapSources;
+        public AudioSource obstacleSource;
 
         public AudioSource ChangeAudioClip(AudioSource mySource, AudioClip myClip)
         {
@@ -19,24 +21,42 @@ namespace RPG.Core
             return mySource;
         }
 
-        public void PlayBGM()
+        public void PlayClip(AudioSource source, AudioClip clip)
         {
-            BGM.Play();
+            if(!source.isPlaying)
+            {
+                source.clip = clip;
+                source.Play();
+            }
         }
 
-        public void StopBGM()
+        public void TryToPlayClip(AudioSource[] sources, AudioClip clip)
         {
-            BGM.Stop();
+            for(int i = 0; i < sources.Length; i++)
+            {
+                if(!sources[i].isPlaying)
+                {
+                    sources[i].clip = clip;
+                    sources[i].Play();
+                    break;
+                }
+            }
         }
 
-        public void PlayAmbience()
+        public void StopClipFromSource(AudioSource source, AudioClip clip)
         {
-            Ambience.Play();
+            if(source.isPlaying && source.clip == clip) source.Stop();
         }
 
-        public void StopAmbience()
+        public void StopClipFromSources(AudioSource[] sources, AudioClip clip)
         {
-            Ambience.Stop();
+            for(int i = 0; i < sources.Length; i++)
+            {
+                if(sources[i].isPlaying)
+                {
+                    if(sources[i].clip == clip) sources[i].Stop();
+                }
+            }
         }
     }
 

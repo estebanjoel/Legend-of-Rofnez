@@ -32,8 +32,15 @@ namespace RPG.Core
 
         public override void DeathBehaviour()
         {
+            audioManager.TryToPlayClip(audioManager.PlayerSFXSources, deadClipSound);
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
+        }
+
+        public override void PlayAudibleFeedback()
+        {
+            audioManager.TryToPlayClip(audioManager.PlayerSFXSources, impactClipSound);
+            audioManager.TryToPlayClip(audioManager.PlayerSFXSources, damageClipSound);
         }
 
         private void OnTriggerEnter(Collider other)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RPG.Core;
 
 public class CannonBomb : MonoBehaviour
 {
@@ -10,6 +11,16 @@ public class CannonBomb : MonoBehaviour
     [SerializeField] GameObject crystal;
     [SerializeField] int spawnPercentageRate;
     bool canSpawnCrystal;
+    [Header("Audio Clips")]
+    AudioManager audioManager;
+    [SerializeField] AudioClip launchSound;
+    [SerializeField] AudioClip impactSound;
+
+    void Start()
+    {
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
+        audioManager.TryToPlayClip(audioManager.trapSources, launchSound);
+    }
 
     public void SetIfICanSpawnCrystal(bool option)
     {
@@ -25,6 +36,7 @@ public class CannonBomb : MonoBehaviour
     {
         float explosionYPos = transform.position.y + 1.75f;
         Vector3 explosionPos = new Vector3(transform.position.x, explosionYPos, transform.position.z);
+        audioManager.TryToPlayClip(audioManager.trapSources, impactSound);
         Instantiate(explosionVFX, explosionPos, transform.rotation);
         if(canSpawnCrystal) Instantiate(crystal, transform.position, transform.rotation);
         else if(CheckIfCanSpawn()) SpawnFromExplosion();

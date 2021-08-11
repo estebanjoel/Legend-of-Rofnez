@@ -34,8 +34,15 @@ namespace RPG.Core
             bar.ChangeBarFiller(GetHP(), GetMaxHP());
         }
 
+        public override void PlayAudibleFeedback()
+        {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, impactClipSound);
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, damageClipSound);
+        }
+
         public override void DeathBehaviour()
         {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, deadClipSound);
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }

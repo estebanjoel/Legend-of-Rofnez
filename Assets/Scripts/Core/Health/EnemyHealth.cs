@@ -28,11 +28,19 @@ namespace RPG.Core
             // StartCoroutine(BackToNormal());  
         }
 
+         public override void PlayAudibleFeedback()
+        {
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, impactClipSound);
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, damageClipSound);
+        }
+
+
         public override void DeathBehaviour()
         {
             Deathcounter deathcounter = GameObject.FindObjectOfType<Deathcounter>();
             deathcounter.AddToCounter();
             GetComponent<Animator>().SetTrigger("Die");
+            audioManager.TryToPlayClip(audioManager.EnemySFXSources, deadClipSound);
             GetComponent<ActionScheduler>().CancelCurrentAction();
             GameObject.FindObjectOfType<PlayerHealth>().GetComponent<MagicPoints>().RestoreMagicPoints(2.5f);
             GetComponent<RewardDrop>().CheckIfCanDropReward();
