@@ -93,15 +93,20 @@ namespace RPG.Combat
         public void ChangeInventoryUI()
         {
             int currentWeaponSprite = -1;
+            Debug.Log(currentWeapon.name);
             if(currentWeapon.HasProjectile())
             {
                 weaponInventoryMenu.SetRangedWeaponSprite(currentWeapon.GetWeaponSprite());
+                weaponInventoryMenu.SetInventoryRangedSprite();
+                weaponInventoryMenu.SetRangedInventoryText(currentWeapon.name);
                 currentWeaponSprite = 1;
                 weaponInventoryMenu.SetAmmoText(GetComponent<RangedWeaponAmmoInventory>().GetAmmo().ToString());
             } 
             else
             {
                 weaponInventoryMenu.SetMeleeWeaponSprite(currentWeapon.GetWeaponSprite());
+                weaponInventoryMenu.SetInventoryMeleeSprite();
+                weaponInventoryMenu.SetMeleeInventoryText(currentWeapon.name);
                 currentWeaponSprite = 0;
             }
             weaponInventoryMenu.SetCurrentWeaponActive(currentWeaponSprite);

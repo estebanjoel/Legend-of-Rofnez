@@ -10,6 +10,11 @@ namespace RPG.UI
         MenuController menuController;
         [SerializeField] Sprite currentMeleeWeaponSprite;
         [SerializeField] Sprite currentRangedWeaponSprite;
+        [SerializeField] Image inventoryMeleeSprite;
+        [SerializeField] Image inventoryRangedSprite;
+        [SerializeField] Text inventoryMeleeText;
+        [SerializeField] Text inventoryRangedText;
+        [SerializeField] Text inventoryAmmoText;
         // Start is called before the first frame update
         void Start()
         {
@@ -49,6 +54,31 @@ namespace RPG.UI
         public void SetAmmoText(string ammo)
         {
             menuController.GetAmmoText().GetComponent<Text>().text = "x"+ammo;
+        }
+
+        public void SetInventoryMeleeSprite()
+        {
+            inventoryMeleeSprite.sprite = currentMeleeWeaponSprite;
+        }
+
+        public void SetInventoryRangedSprite()
+        {
+            inventoryRangedSprite.sprite = currentRangedWeaponSprite;
+        }
+
+        public void SetMeleeInventoryText(string weapoName)
+        {
+            inventoryMeleeText.text = weapoName;
+        }
+
+        public void SetRangedInventoryText(string weaponName)
+        {
+            inventoryRangedText.text = weaponName;
+        }
+
+        public void SetAmmoInventoryText()
+        {
+            inventoryAmmoText.text = menuController.GetAmmoText().GetComponent<Text>().text;
         }
 
     }

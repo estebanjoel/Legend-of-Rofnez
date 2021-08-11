@@ -34,6 +34,16 @@ namespace RPG.Control
                 ChangePlayerActiveWeapon();
                 return;
             }
+            if(Input.GetKeyDown(KeyCode.Tab))
+            {
+                GameObject.FindObjectOfType<MenuController>().ShowUIObject(GameObject.FindObjectOfType<MenuController>().GetWeaponInventoryMenu());
+                GameObject.FindObjectOfType<WeaponInventorMenu>().SetAmmoInventoryText();
+                return;
+            }
+            if(Input.GetKeyUp(KeyCode.Tab))
+            {
+                GameObject.FindObjectOfType<MenuController>().HideUIObject(GameObject.FindObjectOfType<MenuController>().GetWeaponInventoryMenu());
+            }
             if(InteractWithMovement()) return;
         }
 
