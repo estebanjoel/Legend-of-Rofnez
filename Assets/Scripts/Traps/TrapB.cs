@@ -6,15 +6,19 @@ using RPG.Core;
 public class TrapB : MonoBehaviour
 {
     [SerializeField] private int damage;
-    //[SerializeField] private Vector3 impulse;
+    [SerializeField] private Vector3 impulse;
     protected void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {            
-            // Rigidbody playerForse = other.GetComponent<Rigidbody>();
-            // playerForse.AddForce(impulse, ForceMode.Impulse);
+        if (other.GetComponent<PlayerHealth>() != null)
+        {
+            
+            Rigidbody playerForse = other.GetComponent<Rigidbody>();
+            playerForse.AddForce(impulse, ForceMode.Impulse);
             Health player = other.GetComponent<Health>();
-            player.TakeDamage(damage);
+            player.TakeDamage(20);
+            Debug.Log(impulse);
+
+
         }
     }
 }
